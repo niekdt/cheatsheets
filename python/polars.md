@@ -138,6 +138,7 @@ Lazy operations are advised because they allow for query optimization and more p
 
 
 # Transform
+| What | How | Details |
 |---|---|---|
 | From wide to long format | <pre lang='python'>data.melt(id_vars='sex', value_vars=['a', 'b']) | |
 | To narrow format | <pre lang='python'>data.explode(?) | ? |
@@ -151,6 +152,7 @@ Lazy operations are advised because they allow for query optimization and more p
 | Anti join (exclude matches from table 2) | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'anti') | |
 
 # Convert
+| What | How | Details |
 |---|---|---|
 | To list of series | <pre lang='python'>data.get_columns() | |
 | Split into list of data frames based on column | <pre lang='python'>data.partition_by('sex') | |
