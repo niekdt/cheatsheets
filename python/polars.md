@@ -5,6 +5,7 @@
 |---|---|---|
 | Create series | <pre lang='python'>pl.Series('name', [1, 2, 3]) |  |
 | Create data frame | <pre lang='python'>pl.DataFrame('A': [1, 2], 'fruits': ['banana', 'apple']) | |
+| Clone (create new instance) | <pre lang='python'>data.clone() | |
 | From dict | <pre lang='python'>pl.DataFrame(dict) | |
 | From dict with schema | <pre lang='python'>pl.DataFrame(dict, schema = {'col1': pl.Float32, 'col2': pl.Int64, 'col3': pl.Date} | |
 | From array | <pre lang='python'>data = np.array([[1, 2], [3, 4]])&#13;pl.DataFrame(data, schema = ['a', 'b'], orient = 'col') | |
@@ -137,4 +138,24 @@ Lazy operations are advised because they allow for query optimization and more p
 
 
 # Transform
+|---|---|---|
+| From wide to long format | <pre lang='python'>data.melt(id_vars='sex', value_vars=['a', 'b']) | |
+| To narrow format | <pre lang='python'>data.explode(?) | ? |
+| Merge two data frames on the sorted key | <pre lang='python'>data.merge(data2) | |
+| Inner join | <pre lang='python'>data.join(data2, on = ['sex', 'country']) | |
+| Left join | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'left') | |
+| Right join | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'right') | |
+| Outer join | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'outer') | |
+| Cross join | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'cross') | |
+| Semi join (one match per index) | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'semi') | |
+| Anti join (exclude matches from table 2) | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'anti') | |
+
 # Convert
+|---|---|---|
+| To list of series | <pre lang='python'>data.get_columns() | |
+| Split into list of data frames based on column | <pre lang='python'>data.partition_by('sex') | |
+| Split into list of data frames based on column tuples | <pre lang='python'>data.partition_by('sex', 'country') | |
+| Split into dict of data frames based on column(s) | <pre lang='python'>data.partition_by('sex', 'country', as_dict = True) | |
+| To CSV file | <pre lang='python'>data.write_csv('derp.csv') | |
+| To Parquet file | <pre lang='python'>data.write_parquet('derp.parquet') | |
+| To JSON | ? | |
