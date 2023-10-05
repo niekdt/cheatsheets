@@ -105,9 +105,9 @@ Lazy operations are advised because they allow for query optimization and more p
 |---|---|---|
 | Rename column | <pre lang='python'>data.rename({'old1': 'new1', 'old2': 'new2'}) | |
 | Update column values | <pre lang='python'>data.with_columns(pl.col('age') + 5) | |
-| Update column values on condition | <pre lang='python'>df.with_columns(&#13;pl.when(pl.col('age') >= 18).&#13;then(pl.lit(1)).&#13;otherwise(pl.lit(-1))&#13;)
-| Update column values on conditions | <pre lang='python'>df.with_columns(&#13;pl.when(pl.col('age') >= 18).&#13;then(pl.lit(1)).&#13;when(pl.col('Sex') == 'M').&#13;then(4).&#13;otherwise(pl.lit(-1))&#13;)
-| Update row values | ? | |
+| Update column values on condition | <pre lang='python'>df.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;otherwise(pl.lit(-1))&#13;)
+| Update column values on conditions | <pre lang='python'>df.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;when(pl.col('Sex') == 'M').&#13;&#09;then(4).&#13;&#09;otherwise(pl.lit(-1))&#13;)
+| Update column values for specific rows | <pre lang='python'>rows = [1, 3, 5]&#13;data.with_row_count().with_columns(&#13;&#09;pl.when(pl.col('row_nr').is_in(rows)).&#13;&#09;then(pl.lit(True)).&#13;&#09;otherwise(pl.lit(False))&#13;)| |
 | Fill nulls with zero | <pre lang='python'>data.fill_null(strategy = 'zero') | |
 | Fill nulls with value | <pre lang='python'>data.fill_null(value) | |
 | Fill nulls with LOCF | <pre lang='python'>data.fill_null(strategy='forward') | Wrong for grouped data |
