@@ -14,6 +14,7 @@
 | Create $n$ copies of iterable | `itertools.tee(x, 2)`<br>or<br>`x1, x2 = itertools.tee(x)` | |
 
 # Using iterators
+Note that each operation consumes element(s) of the iterator!
 | What | How | Details |
 |---|---|---|
 | Consume fully | `collections.deque(x, maxlen=0)` | |
@@ -81,3 +82,9 @@
 | All elements are false | `not any(bool_iter)` | |
 | All elements are equal | <pre lang='python'>g = groupby(x)&#13;return next(g, True) and not next(g, False) | |
 | All elements are true conditional on function | `all(map(boolFun, iter))` | |
+
+# Convert
+| What | How | Details |
+|---|---|---|
+| To list | `list(iter)` | |
+| To tuple | `tuple(iter)` | |
