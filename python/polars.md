@@ -105,6 +105,8 @@ Lazy operations are advised because they allow for query optimization and more p
 |---|---|---|
 | Rename column | <pre lang='python'>data.rename({'old1': 'new1', 'old2': 'new2'}) | |
 | Update column values | <pre lang='python'>data.with_columns(pl.col('age') + 5) | |
+| Update column values on condition | <pre lang='python'>df.with_columns(&#13;pl.when(pl.col('age') >= 18).&#13;then(pl.lit(1)).&#13;otherwise(pl.lit(-1))&#13;)
+| Update column values on conditions | <pre lang='python'>df.with_columns(&#13;pl.when(pl.col('age') >= 18).&#13;then(pl.lit(1)).&#13;when(pl.col('Sex') == 'M').&#13;then(4).&#13;otherwise(pl.lit(-1))&#13;)
 | Update row values | ? | |
 | Fill nulls with zero | <pre lang='python'>data.fill_null(strategy = 'zero') | |
 | Fill nulls with value | <pre lang='python'>data.fill_null(value) | |
