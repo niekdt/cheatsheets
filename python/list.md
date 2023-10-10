@@ -83,6 +83,7 @@ Shallow copies preserve references to the original object.
 | Nested ternary map | `[e if e > 2 else 10 if e < 3 else 5 for e in x]` | Good luck reading this |
 | Map | `[fun(e) for e in x]` | |
 | Map function | `list(map(fun, x))` | Slow |
+| Elements to string | `[str(e) for e in x]` | |
 
 # Iterating
 | What | How | Details |
@@ -93,5 +94,7 @@ Shallow copies preserve references to the original object.
 # Convert
 | What | How | Details |
 |---|---|---|
+| Multiple assignment | <pre lang='python'>x = [1, 2]&#13;a, b = x | |
+| To tuple | `tuple(x)` | |
 | To set | `set(x)` | | 
 | To dict (from keys and values) | `dict(zip(keys, values))` | | 
