@@ -77,14 +77,6 @@ Lazy operations are advised because they allow for query optimization and more p
 |---|---|---|
 | Moving average | <pre lang='python'>data.group_by_dynamic('ts', every='1d').agg(pl.col('value').mean()) | ? |
 
-# Row masking
-| What | How | Details |
-|---|---|---|
-| Duplicated rows | <pre lang='python'>data.is_duplicated() | |
-| Unique rows | <pre lang='python'>data.is_unique() | |
-
-# Column masking
-
 # Tests
 | What | How | Details |
 |---|---|---|
@@ -94,34 +86,21 @@ Lazy operations are advised because they allow for query optimization and more p
 | Columns are equal (ignoring name) | ? | |
 | Column has missing value | <pre lang='python'>data['sex'].is_null().any() | |
 | Column has no missing values | <pre lang='python'>data['sex'].is_not_null().all() | |
+| Column has no duplicate values | ? | |
+| Column has duplicate values | ? | |
 | Column is of dtype | <pre lang='python'>data.schema['col1'] == dtype | | 
 | Column is bool dtype | <pre lang='python'>data.schema['alive'] == pl.Bool | |
 | Column is string type | <pre lang='python'>data.schema['sex'] == pl.Utf8 | |
 | Column is integer type | <pre lang='python'>data.schema['age'] in pl.datatypes.INTEGER_DTYPES | |
 | Column is standard integer | <pre lang='python'>data.schema['age'] == pl.Int64 | |
 
-# Update
+# Row masking
 | What | How | Details |
 |---|---|---|
-| Rename column | <pre lang='python'>data.rename({'old1': 'new1', 'old2': 'new2'}) | |
-| Update column values | <pre lang='python'>data.with_columns(pl.col('age') + 5) | |
-| Update column values on condition | <pre lang='python'>df.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;otherwise(pl.lit(-1))&#13;)
-| Update column values on conditions | <pre lang='python'>df.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;when(pl.col('Sex') == 'M').&#13;&#09;then(4).&#13;&#09;otherwise(pl.lit(-1))&#13;)
-| Update column values for specific rows | <pre lang='python'>rows = [1, 3, 5]&#13;data.with_row_count().with_columns(&#13;&#09;pl.when(pl.col('row_nr').is_in(rows)).&#13;&#09;then(pl.lit(True)).&#13;&#09;otherwise(pl.lit(False))&#13;)| |
-| Fill nulls with zero | <pre lang='python'>data.fill_null(strategy = 'zero') | |
-| Fill nulls with value | <pre lang='python'>data.fill_null(value) | |
-| Fill nulls with LOCF | <pre lang='python'>data.fill_null(strategy='forward') | Wrong for grouped data |
-| Fill NaNs with value | <pre lang='python'>data.fill_nan(value) | |
-| Replace column inplace | <pre lang='python'>data.replace('age', newAgeSeries) | |
-| Sort table by column | <pre lang='python'>data.sort('col1') | |
+| Duplicated rows | <pre lang='python'>data.is_duplicated() | |
+| Unique rows | <pre lang='python'>data.is_unique() | |
 
-## Casting / parsing
-| What | How | Details |
-|---|---|---|
-| Cast column dtype | <pre lang='python'>data.with_columns(pl.col('col1').cast(pl.Float32)) | |
-| Cast columns to dtypes | <pre lang='python'>data.cast({'col1': pl.Float32, 'col2': pl.UInt8}) | |
-| Parse string column to date | <pre lang='python'>data.with_columns(pl.col('Date').str.to_date()) | |
-| Parse string column to date with known format | <pre lang='python'>data.with_columns(pl.col("Date").str.to_date('%Y-%m-%d')) | |
+# Column masking
 
 # Append rows
 | What | How | Details |
@@ -133,11 +112,48 @@ Lazy operations are advised because they allow for query optimization and more p
 | Append data frames inplace | <pre lang='python'>data.vstack(data2)&#13;data.vstack(dataN)&#13;data.rechunk() | |
 
 # Add/remove columns
-# Derive columns
 | What | How | Details |
 |---|---|---|
-| Month from date | <pre lang='python'>data['Date'].dt.month() | |
+| Append constant numeric column | <pre lang='python'>data.with_columns(Intercept=pl.lit(1)) | |
+| Append column from series | <pre lang='python'>s = pl.Series("apple", [10, 20, 30])&#13;data.hstack([s]) | Note the brackets |
+| Append column from series inplace | <pre lang='python'>data.hstack(s, in_place = True) | |
+| Insert column from series inplace | <pre lang='python'>data.insert_at_idx(1, s) | |
+| Remove column | <pre lang='python'>data.drop('Age') | |
+| Remove column inplace | <pre lang='python'>data.drop_in_place('Age') | Returns the dropped column |
+| Remove columns | <pre lang='python'>data.drop(['Age', 'Sex']) | |
+| Remove all numeric columns | <pre lang='python'>data.drop(cs.numeric()) | |
+| Remove columns based on selector | <pre lang='python'>data.drop(cs) | |
 
+# Update
+| What | How | Details |
+|---|---|---|
+| Cast column dtype | <pre lang='python'>data.with_columns(pl.col('col1').cast(pl.Float32)) | |
+| Cast columns to dtypes | <pre lang='python'>data.cast({'col1': pl.Float32, 'col2': pl.UInt8}) | |
+| Rename column | <pre lang='python'>data.rename({'old1': 'new1', 'old2': 'new2'}) | |
+| Update column values | <pre lang='python'>data.with_columns(pl.col('age') + 5) | |
+| Update column values on condition | <pre lang='python'>df.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;otherwise(pl.lit(-1))&#13;)
+| Update column values on conditions | <pre lang='python'>df.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;when(pl.col('Sex') == 'M').&#13;&#09;then(4).&#13;&#09;otherwise(pl.lit(-1))&#13;) | |
+| Update column values for specific rows | <pre lang='python'>rows = [1, 3, 5]&#13;data.with_row_count().with_columns(&#13;&#09;pl.when(pl.col('row_nr').is_in(rows)).&#13;&#09;then(pl.lit(True)).&#13;&#09;otherwise(pl.lit(False))&#13;)| |
+| Fill nulls with zero | <pre lang='python'>data.fill_null(strategy = 'zero') | |
+| Fill nulls with value | <pre lang='python'>data.fill_null(value) | |
+| Fill nulls with LOCF | <pre lang='python'>data.fill_null(strategy='forward') | Wrong for grouped data |
+| Fill NaNs with value | <pre lang='python'>data.fill_nan(value) | |
+| Replace column inplace | <pre lang='python'>data.replace('age', newAgeSeries) | |
+| Sort table by column | <pre lang='python'>data.sort('col1') | |
+
+# Derive new columns
+| What | How | Details |
+|---|---|---|
+| Transform another column | <pre lang='python'>data.with_columns(AgeSq = pl.col('Age') ** 2) | |
+| Multiple transformations from another column | <pre lang='python'>data.with_columns(&#13;&#09;Age2 = pl.col('Age') ** 2&#13;&#09;Age3 = pl.col('Age') ** 3&#13;) | |
+| Conditional on the value of another column | <pre lang='python'>data.with_columns(&#13;&#09;pl.when(pl.col('age') >= 18).&#13;&#09;then(pl.lit(1)).&#13;&#09;otherwise(pl.lit(-1))&#13;)
+| Map another column | <pre lang='python'>map = dict(1 = 'a', 2 = 'b', 3 = 'c')&#13;data.with_columns(&#13;&#09;NumCat = pl.col('Num').map_dict(map).cast(pl.Categorical)&#13;) | |
+| Parse string column to date | <pre lang='python'>data.with_columns(&#13;&#09;Date=pl.col('RawDate').str.to_date()&#13;) | |
+| Parse string column to date with known format | <pre lang='python'>data.with_columns(&#13;&#09;Date = pl.col("RawDate").str.to_date('%Y-%m-%d')&#13;) | |
+| Week-day from date column | | |
+| Month from date column | <pre lang='python'>data.with_columns(Month = pl.col('Date').dt.month()) | |
+| Year from date column | <pre lang='python'>data.with_columns(Month = pl.col('Date').dt.year()) | |
+| Group-wise from aggregate value | <pre lang='python'>data.with_columns(&#13;&#09;DaysSinceStart = pl.col('Date') - pl.col('Date').min().over('Subject').cast(pl.Int) + 1&#13;) | |
 
 # Transform
 | What | How | Details |
