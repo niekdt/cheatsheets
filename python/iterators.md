@@ -17,8 +17,8 @@
 Note that each operation consumes element(s) of the iterator!
 | What | How | Details |
 |---|---|---|
+| Iterate over iterator elements | <pre lang='python'>for i in iter:&#13;print(i) | |
 | Consume fully | `collections.deque(x, maxlen=0)` | |
-| Iterate over | <pre lang='python'> for i in iter: | |
 | Get next element | `next(iter)` | |
 | Get next element with default if depleted | `next(iter, 0)` |
 | Get $n$ th element | `next(itertools.islice(x, n, None), default)` | |
@@ -33,11 +33,13 @@ Note that each operation consumes element(s) of the iterator!
 # Map
 | What | How | Details |
 |---|---|---|
+| Map elements | `x + 1 for x in iter` | |
 | Map elements with function | `map(fun, iter)` | |
 | Invert boolean iterator | `map(lambda x: not x, bool_iter)`<br>or<br>`map(operator.not_, bool_iter)` | |
 | Cumulative sum | `itertools.accumulate(iter)` | |
 | Accumulate function (reduce() with keeping all results) | `itertools.accumulate(iter, fun)` | |
-| Combine iterable elements as tuples | `itertools.zip_longest(x, y, ..., fillvalue = None)` | |
+| Combine iterable elements as tuple, stop on shortest iterable | `zip(x, y, ...)` | |
+| Combine iterable elements as tuple until all iterables are exhausted, with default value for depleted iterables | `itertools.zip_longest(x, y, ..., fillvalue = None)` | |
 
 # Shrink
 | What | How | Details |
@@ -59,7 +61,7 @@ Note that each operation consumes element(s) of the iterator!
 | Append iterable | `itertools.chain(iter, append_iter)` | |
 | Prepend iterable | `itertools.chain(prepend_iter, iter)` | |
 | Create combinations of pairs | `itertools.combinations(x, 2)` | |
-| Create combinations of size $n$ | `itertools.combinations(x, n) | |
+| Create combinations of size $n$ | `itertools.combinations(x, n)` | |
 | Create combinations of pairs with replacement (so including pairs of (A, A)) | `itertools.combinations_with_replacement(x, 2)` | |
 | Create combinations of size n with replacement | `itertools.combinations_with_replacement(x, n)` | |
 | Create permutations | `itertools.permutations(x)` | |
