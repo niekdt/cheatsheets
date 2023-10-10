@@ -1,5 +1,3 @@
-% Polars quick reference sheet
-
 # Creation
 | What | How | Details |
 |---|---|---|
