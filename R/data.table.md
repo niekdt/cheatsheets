@@ -1,9 +1,7 @@
-% data.table quick reference sheet
-
 # Creation
 | What | How | Details |
 |---|---|---|
-| From `data.frame` | <pre lang='R'>as.data.table(df) | |
+| From `data.frame` | <pre lang='R'>as.data.table(df)</pre> | |
 | From `data.frame` byref | <pre lang='R'>setDT(df) | |
 | From `data.frame`, storing row names as the first column | <pre lang='R'>as.data.table(df, keep.rownames=TRUE) | |
 | From list of named vectors | <pre lang='R'>as.data.table(do.call(rbind, veclist)) | |
@@ -37,17 +35,20 @@ Data tables are sorted by the keys
 # Query
 | What | How | Details |
 |---|---|---|
-| Select columns | <pre lang='R'>dt[, .(x, y)] | |
-| Select all columns except | <pre lang='R'>dt[, -c('x', 'y')] | |
-| Select columns and apply function | <pre lang='R'>dt[, lapply(.SD, mean), .SDcols=c('x', 'y')] | |
+| Select column | <pre lang='R'>dt$Age | |
+| Select column | <pre lang='R'>dt[, .(Age)] | |
+| Select column by variable name | <pre lang='R'>dt[[x]] | |
+| Select columns | <pre lang='R'>dt[, .(Age, Sex)] | |
+| Select all columns except | <pre lang='R'>dt[, -c('Age', 'Sex')] | |
+| Select columns and apply function | <pre lang='R'>dt[, lapply(.SD, mean), .SDcols=c('Age', 'Sex')] | |
 | Select rows by row number | <pre lang='R'>dt[1:10] | |
-| Select rows with key value | dt[dtquery[query, .(ID)]] | |
+| Select rows with key value | <pre lang='R'>dt[dtquery[query, .(ID)]] | |
 | Select rows with key value, dropping factor levels | <pre lang='R'>dt[c('a1', 'a2')] | Discards factor level order! |
 | Select first/last row with key values | <pre lang='R'>dt[c('a1', 'a2'), mult='first'] | |
 | Select rows with value over multiple keys | <pre lang='R'>dt[.('a1', 'b1')] | Notice the dot |
 | Select rows of groups specified in table | <pre lang='R'>dtquery = data.table(..., by=keys); dt[dtquery] | |
 | Select rows of groups, excluding non-existent queried rows | <pre lang='R'>dtquery = data.table(..., by=keys); dt[dtquery, nomatch=0] | |
-| Select rows with values specified in table | <pre lang='R'>dtquery = data.table(...); merge(dt, dtquery, by=COLUMNS) | |
+| Select rows with values specified in table | <pre lang='R'>dtquery = data.table(...)&#13;merge(dt, dtquery, by=COLUMNS) | |
 | Unique rows | <pre lang='R'>unique(dt) | |
 | Unique rows by columns | <pre lang='R'>unique(dt, by = keys(dt)) | | 
 | Duplicated rows | <pre lang='R'>dt[duplicated(dt),] | |
