@@ -1,9 +1,25 @@
+**Contents**
+* [Create](#creation)
+* [Properties](#properties)
+* [Query](#query)
+* [Test](#tests)
+* [Update](#update)
+* [Add](#add)
+* [Remove](#remove)
+* [Reshape](#reshape)
+* [Merge](#merge)
+
+Special:
+* [Extract](#extract)
+* [Convert](#convert)
+
 # Creation
 | What | How | Details |
 |---|---|---|
 | Create series | <pre lang='python'>pl.Series('name', [1, 2, 3]) |  |
 | Create data frame | <pre lang='python'>pl.DataFrame('A': [1, 2], 'fruits': ['banana', 'apple']) | |
 | Clone (create new instance) | <pre lang='python'>data.clone() | |
+| From `pandas.DataFrame` | <pre lang='python'>pl.from_pandas(data) | |
 | From dict | <pre lang='python'>pl.DataFrame(dict) | |
 | From dict with schema | <pre lang='python'>pl.DataFrame(dict, schema = {'col1': pl.Float32, 'col2': pl.Int64, 'col3': pl.Date} | |
 | From array | <pre lang='python'>data = np.array([[1, 2], [3, 4]])&#13;pl.DataFrame(data, schema = ['a', 'b'], orient = 'col') | |
@@ -22,19 +38,8 @@
 | Find column index by name | <pre lang='python'>data.find_idx_by_name('age') | |
 | Number of rows | <pre lang='python'>data.height | |
 
-# Extract
-| What | How | Details |
-|---|---|---|
-| Get column (as series) | <pre lang='python'>data['col1'] | |
-| Get column (as list) | <pre lang='python'>list(data['col1']) | ? |
-| Get $i$ th row (as tuple) | <pre lang='python'>data.row(i) | |
-| Get rows (as list of tuple) | <pre lang='python'>data.rows(...) | ? |
-| First item (cell) | <pre lang='python'>data.item(0, 0) | |
-| Item (cell) from row $i$ and column index $j$ | <pre lang='python'>data.item(i, j) | |
-| Item (cell) from row $i$ and column name $name$ | <pre lang='python'>data.item(i, name) | |
-
-# Query (as data frame)
-Start a lazy query using a LazyFrame by data.lazy(). Operations on a LazyFrame are not executed until this is requested by either calling collect() or fetch().
+# Query
+Start a lazy query using a LazyFrame by `data.lazy()`. Operations on a LazyFrame are not executed until this is requested by either calling collect() or fetch().
 Lazy operations are advised because they allow for query optimization and more parallelization.
 
 ## Columns
@@ -64,13 +69,13 @@ Lazy operations are advised because they allow for query optimization and more p
 | Number of unique values in a column | <pre lang='python'>data['col1'].n_unique() | |
 | Number of unique rows over columns | ? | |
 
-# Aggregate
-## Grouped
+## Aggregate
+### Grouped
 | What | How | Details |
 |---|---|---|
 | Mean of column | <pre lang='python'>data.group_by('sex').agg(pl.col('age').mean()) | |
 
-## Over time
+### Over time
 | What | How | Details |
 |---|---|---|
 | Moving average | <pre lang='python'>data.group_by_dynamic('ts', every='1d').agg(pl.col('value').mean()) | ? |
@@ -92,35 +97,11 @@ Lazy operations are advised because they allow for query optimization and more p
 | Column is integer type | <pre lang='python'>data.schema['age'] in pl.datatypes.INTEGER_DTYPES | |
 | Column is standard integer | <pre lang='python'>data.schema['age'] == pl.Int64 | |
 
-# Row masking
+## Row masking
 | What | How | Details |
 |---|---|---|
 | Duplicated rows | <pre lang='python'>data.is_duplicated() | |
 | Unique rows | <pre lang='python'>data.is_unique() | |
-
-# Column masking
-
-# Append rows
-| What | How | Details |
-|---|---|---|
-| Append row (as tuple) | ? | |
-| Append rows (as list of tuples) | ? | |
-| Append data frame | |
-| Append data frame inplace | <pre lang='python'>data.extend(data2) | |
-| Append data frames inplace | <pre lang='python'>data.vstack(data2)&#13;data.vstack(dataN)&#13;data.rechunk() | |
-
-# Add/remove columns
-| What | How | Details |
-|---|---|---|
-| Append constant numeric column | <pre lang='python'>data.with_columns(Intercept=pl.lit(1)) | |
-| Append column from series | <pre lang='python'>s = pl.Series("apple", [10, 20, 30])&#13;data.hstack([s]) | Note the brackets |
-| Append column from series inplace | <pre lang='python'>data.hstack(s, in_place = True) | |
-| Insert column from series inplace | <pre lang='python'>data.insert_at_idx(1, s) | |
-| Remove column | <pre lang='python'>data.drop('Age') | |
-| Remove column inplace | <pre lang='python'>data.drop_in_place('Age') | Returns the dropped column |
-| Remove columns | <pre lang='python'>data.drop(['Age', 'Sex']) | |
-| Remove all numeric columns | <pre lang='python'>data.drop(cs.numeric()) | |
-| Remove columns based on selector | <pre lang='python'>data.drop(cs) | |
 
 # Update
 | What | How | Details |
@@ -139,7 +120,16 @@ Lazy operations are advised because they allow for query optimization and more p
 | Replace column inplace | <pre lang='python'>data.replace('age', newAgeSeries) | |
 | Sort table by column | <pre lang='python'>data.sort('col1') | |
 
-# Derive new columns
+# Add
+## New columns
+| What | How | Details |
+|---|---|---|
+| Append constant numeric column | <pre lang='python'>data.with_columns(Intercept=pl.lit(1)) | |
+| Append column from series | <pre lang='python'>s = pl.Series("apple", [10, 20, 30])&#13;data.hstack([s]) | Note the brackets |
+| Append column from series inplace | <pre lang='python'>data.hstack(s, in_place = True) | |
+| Insert column from series inplace | <pre lang='python'>data.insert_at_idx(1, s) | |
+
+## Derive new columns
 | What | How | Details |
 |---|---|---|
 | Transform another column | <pre lang='python'>data.with_columns(AgeSq = pl.col('Age') ** 2) | |
@@ -153,11 +143,36 @@ Lazy operations are advised because they allow for query optimization and more p
 | Year from date column | <pre lang='python'>data.with_columns(Month = pl.col('Date').dt.year()) | |
 | Group-wise from aggregate value | <pre lang='python'>data.with_columns(&#13;&#09;DaysSinceStart = pl.col('Date') - pl.col('Date').min().over('Subject').cast(pl.Int) + 1&#13;) | |
 
-# Transform
+## Rows
+| What | How | Details |
+|---|---|---|
+| Add row as tuple | ? | |
+| Add list of tuples | ? | |
+| Add data frame | |
+| Add data frame inplace | <pre lang='python'>data.extend(data2) | |
+| Add data frames inplace | <pre lang='python'>data.vstack(data2)&#13;data.vstack(dataN)&#13;data.rechunk() | |
+
+# Remove
+## Columns
+| What | How | Details |
+|---|---|---|
+| Remove column | <pre lang='python'>data.drop('Age') | |
+| Remove column inplace | <pre lang='python'>data.drop_in_place('Age') | Returns the dropped column |
+| Remove columns | <pre lang='python'>data.drop(['Age', 'Sex']) | |
+| Remove all numeric columns | <pre lang='python'>data.drop(cs.numeric()) | |
+| Remove columns based on selector | <pre lang='python'>data.drop(cs) | |
+
+## Rows
+
+# Reshape
 | What | How | Details |
 |---|---|---|
 | From wide to long format | <pre lang='python'>data.melt(id_vars='sex', value_vars=['a', 'b']) | |
 | To narrow format | <pre lang='python'>data.explode(?) | ? |
+
+# Merge
+| What | How | Details |
+|---|---|---|
 | Merge two data frames on the sorted key | <pre lang='python'>data.merge(data2) | |
 | Inner join | <pre lang='python'>data.join(data2, on = ['sex', 'country']) | |
 | Left join | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'left') | |
@@ -167,9 +182,21 @@ Lazy operations are advised because they allow for query optimization and more p
 | Semi join (one match per index) | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'semi') | |
 | Anti join (exclude matches from table 2) | <pre lang='python'>data.join(data2, on = ['sex', 'country'], how = 'anti') | |
 
+# Extract
+| What | How | Details |
+|---|---|---|
+| Get column (as series) | <pre lang='python'>data['col1'] | |
+| Get column (as list) | <pre lang='python'>list(data['col1']) | ? |
+| Get $i$ th row (as tuple) | <pre lang='python'>data.row(i) | |
+| Get rows (as list of tuple) | <pre lang='python'>data.rows(...) | ? |
+| First item (cell) | <pre lang='python'>data.item(0, 0) | |
+| Item (cell) from row $i$ and column index $j$ | <pre lang='python'>data.item(i, j) | |
+| Item (cell) from row $i$ and column name $name$ | <pre lang='python'>data.item(i, name) | |
+
 # Convert
 | What | How | Details |
 |---|---|---|
+| To `pandas.DataFrame` | <pre lang='python'>data.to_pandas() | |
 | To list of series | <pre lang='python'>data.get_columns() | |
 | Split into list of data frames based on column | <pre lang='python'>data.partition_by('sex') | |
 | Split into list of data frames based on column tuples | <pre lang='python'>data.partition_by('sex', 'country') | |
