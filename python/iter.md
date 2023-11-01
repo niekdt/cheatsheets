@@ -6,8 +6,11 @@
 | Create counter starting from $n$ with step size $s$ | `itertools.count(n, s)` | |
 | Create limited counter from $n$ to $m$ | ? | |
 | Repeat constant $n$ times | `itertools.repeat(123, n)` | |
+| 2D coordinates grid from (0, 0) to ($n - 1$, $m - 1$) | `itertools.product(range(n), range(m))` | |
 | From string (over chars) | `iter(str)` | |
 | From list | `iter(lst)` | |
+| Index-element pairs from list | `enumerate(lst)` | |
+| Key-value pairs from dict | `enumerate(dct)` | |
 | Recycle through list | `itertools.cycle(lst)` | |
 | Recycle through list $n$ times | `itertools.product(lst, n)` | |
 | Concatenate lists | `itertools.chain(lst1, lst2)` | | 
@@ -28,7 +31,7 @@ Note that each operation consumes element(s) of the iterator!
 | Get index of first false element | ? | |
 | Get index of last true element | ? | |
 | Get index of last false element | ? | |
-| Get remaining length | <pre lang='python'>sum(1 for _ in iter)</pre>or `len(tuple(iter))` | Depletes the iterator! |
+| Get remaining length | <pre lang='python'>sum(1 for _ in iter)</pre> | |
 
 # Map
 | What | How | Details |
@@ -39,6 +42,7 @@ Note that each operation consumes element(s) of the iterator!
 | Cumulative sum | `itertools.accumulate(iter)` | |
 | Accumulate function (reduce() with keeping all results) | `itertools.accumulate(iter, fun)` | |
 | Combine iterable elements as tuple, stop on shortest iterable | `zip(x, y, ...)` | |
+| Combine iterable elements as tuple, expect equal length | `zip(x, y, ..., strict=True)` | Throws error if an iterable is depleted prematurely |
 | Combine iterable elements as tuple until all iterables are exhausted, with default value for depleted iterables | `itertools.zip_longest(x, y, ..., fillvalue = None)` | |
 
 # Shrink
@@ -74,6 +78,10 @@ Note that each operation consumes element(s) of the iterator!
 # Aggregate
 | What | How | Details |
 |---|---|---|
+| Min | `min(iter)` | |
+| Max | `max(iter)` | |
+| Sum | `sum(iter)` | |
+| Hash | `hash(iter)` | |
 | Reduce | `reduce(binary_fun, iter)` | |
 | Group by | <pre lang='python'>for key, group in itertools.groupby(robots, key=lambda x: x['faction']):&#13;print(key)&#13;print(list(group)) | |
 
@@ -84,9 +92,12 @@ Note that each operation consumes element(s) of the iterator!
 | All elements are false | `not any(bool_iter)` | |
 | All elements are equal | <pre lang='python'>g = groupby(x)&#13;return next(g, True) and not next(g, False) | |
 | All elements are true conditional on function | `all(map(boolFun, iter))` | |
+| Any element is true | `any(bool_iter)` | |
+| Any element is false | `not all(bool_iter)` | |
 
 # Convert
 | What | How | Details |
 |---|---|---|
 | To list | `list(iter)` | |
 | To tuple | `tuple(iter)` | |
+| To dict | `dict(zip(key_iter, value_iter))` | |
