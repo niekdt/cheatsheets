@@ -14,10 +14,13 @@
 | Get entry | `x['color']` | Throws an error if missing |
 | Try get entry | `x.get('color')` | Returns `None` if missing |
 | Try get entry with default $v$ | `x.get('color', v)` | |
+| Get entries from list of keys | `[x[k] for k in keys_list]` | | 
 | Get keys (as dict_keys) | `x.keys()` | |
-| Get keys as list| `list(x)` | |
+| Get keys as list | `list(x)` | |
+| Get keys as sorted list | `sorted(x)` | |
 | Get values (as dict_values) | `x.values()` | |
 | Get values as list | `list(x.values())` | |
+| Get values sorted by keys | `[x[k] for k in sorted(x)]` | |
 | Get entries (as list of tuples) | `x.items()` | |
 | Get first key with value $v$ | `next(k for k in x if x[k] == v)` | |
 | Get all keys with value $v$ | `[k for k in x if x[k] == v]` | |
