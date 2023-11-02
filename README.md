@@ -1,5 +1,5 @@
 # Quick reference sheets
-A place where I gather all my quick reference sheets
+A place where I gather all my quick reference sheets. Ideas/suggestions/additions/fixes are very welcome! 🙂
 
 ## Python
 * [strings](python/str.md)
