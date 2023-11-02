@@ -18,6 +18,7 @@ A place where I gather all my quick reference sheets
 
 ## R
 * [data.table](R/data.table.md)
+* [roxygen2](R/roxygen.md)
 
 ## Shell
 * [ksh](shell/ksh.md)
