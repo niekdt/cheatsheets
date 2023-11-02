@@ -1,4 +1,4 @@
-# Cheat sheets
+# Quick reference sheets
 A place where I gather all my quick reference sheets
 
 ## Python
