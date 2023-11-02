@@ -82,7 +82,7 @@ All operations produce a scalar value.
 |---|---|---|
 | Clip (truncate) between [ $a$, $b$ ] | `np.clip(v, a_min=a, a_max=b)` | |
 | Bin index | `np.digitize(v, bins)` | |
-| Linear interpolation of coordinate mapping `xp -> yp` | `np.interp(v, xp, yp)` | 
+| Linear interpolation of coordinate mapping `xp -> yp` | `np.interp(v, xp, yp)` | No option for extrapolation! |
 
 # Reorder
 | What | How | Details |
