@@ -20,6 +20,7 @@ A place where I gather all my quick reference sheets
 * [factor](R/factor.md)
 * [formulas](R/formula.md)
 * [data.table](R/data.table.md)
+* [dynamic evaluation](R/eval.md)
 * [roxygen2](R/roxygen.md)
 
 ## Shell
