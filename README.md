@@ -17,6 +17,7 @@ A place where I gather all my quick reference sheets
 * [pytest](python/pytest.py)
 
 ## R
+* [matrix](R/matrix.md)
 * [factor](R/factor.md)
 * [formulas](R/formula.md)
 * [data.table](R/data.table.md)
