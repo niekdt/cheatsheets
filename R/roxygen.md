@@ -114,6 +114,6 @@
 # IDE shortcuts
 | What | How | Keys |
 |---|---|---|
-| Generate docs | `roxygen2::roxygenise()` | Ctrl+D |
+| Generate docs | `roxygen2::roxygenise()` | Ctrl+Shift+D |
 | Clean files, then generate docs | `roxygen2::roxygenise(clean = TRUE)` | |
 
