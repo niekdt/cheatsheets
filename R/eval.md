@@ -11,6 +11,15 @@
 | Get package environment | `getNamespace('package')` | |
 | Find environment of variable | `pryr::where('var')` | |
 
+# Variables
+| What | How | Details |
+|---|---|---|
+| Generate valid variable names from string(s) | `make.names('a@b')` | |
+| Generate unique variable names from string(s) | `make.unique(rep('a', 2))` | |
+| Get variable name from expression | `deparse(substitute(expr))` | |
+| Fill in variable values in expression | `substitute(expr, env)` | Useful when expression is called in another function |
+| Force evaluation of variable | `force(arg)` | |
+
 # Dynamic evaluation
 | What | How | Details |
 |---|---|---|
@@ -21,16 +30,13 @@
 | Evaluate expression | `eval(expr)` | |
 | Evaluate expression with undefined terms | `a = 1`<br>`q = quote(a + b)`<br>`eval(q, list(b=3))` | |
 | Force evaluation of variable | `force(arg)` | |
+| Lazy-evaluate a variable assignment through expression | `delayedAssign('x', 2 + 2)` | |
 | Call inline function | `{function(x) x + 1}(5)` | |
 | Call function with some arguments forced | `forceAndCall(f)` | |
 | Call function with arguments in list | `do.call(fun, list(5))` | |
 | Call function with arguments in list, ignoring unused | `R.utils::doCall(fun, n=100, args=env)` | |
-| Get name of the parent calling function | `parentCall = sys.calls()[[sys.nframe()-2]]`<br>`as.character(parentCall[[1]])` | |
-| Fill in variable values in expression | `substitute(expr, env)` | Useful when expression is called in another function |
-| Get variable name | `deparse(substitute(expr))` | |
-| Get expression as string | `deparse(expr, width.cutoff=500)` | |
 | Substitute a call | `do.call(substitute, list(CALL, env=ENV))` | where CALL is stored in a variable |
-| Evaluate an expression of a variable upon request | `delayedAssign('x', 2 + 2)` | |
+| Get expression as string | `deparse(expr, width.cutoff=500)` | |
 
 # Chained evaluation
 | What | How | Details |
@@ -40,7 +46,7 @@
 | Call consecutive function  but return the former value | `y = x %>% table %T>% print` | |
 | Call functions and update the LHS | `x %<>% sort %>% abs` | |
 
-# Function argument handling
+# Functions
 | What | How | Details |
 |---|---|---|
 | Get all arguments, including defaults | `mget(names(formals()),sys.frame(sys.nframe()))` | |
@@ -48,5 +54,6 @@
 | Pass all specified arguments to a nested function | `match.call() %>% eval()` | |
 | Pass all specified arguments to a nested function | `call = match.call()`<br>`call$extra = 'test'`<br>`eval(call)` | |
 | Pass all specified arguments to another function | `call = match.call()`<br>`call[[1] ] = as.symbol('newFunction')`<br>`eval(call)` | |
+| Get name of the parent calling function | `parentCall = sys.calls()[[sys.nframe()-2]]`<br>`as.character(parentCall[[1]])` | |
 
 
