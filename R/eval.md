@@ -1,24 +1,24 @@
-# Environment
-| What | How | Details |
-|---|---|---|
-| Create new environment | `environment()` | |
-| Check if variable exists | `exists('var')` | |
-| Check if variable exists in env | `exists('var', envir=env)` | |
-| Get value of variable | `get('var', envir=env)` | |
-| Try get value, with default return | `get0('var', envir=env, ifnotfound='default value')` | |
-| Get current environment | `sys.frame()` | |
-| Get parent environment | `parent.frame()` | |
-| Get package environment | `getNamespace('package')` | |
-| Find environment of variable | `pryr::where('var')` | |
-
 # Variables
 | What | How | Details |
 |---|---|---|
 | Generate valid variable names from string(s) | `make.names('a@b')` | |
 | Generate unique variable names from string(s) | `make.unique(rep('a', 2))` | |
+| Check if variable exists | `exists('var')` | |
 | Get variable name from expression | `deparse(substitute(expr))` | |
 | Fill in variable values in expression | `substitute(expr, env)` | Useful when expression is called in another function |
 | Force evaluation of variable | `force(arg)` | |
+
+# Environment
+| What | How | Details |
+|---|---|---|
+| Create new environment | `environment()` | |
+| Check if variable exists in environment | `exists('var', envir=env)` | |
+| Get current environment | `sys.frame()` | |
+| Get parent environment | `parent.frame()` | |
+| Get package environment | `getNamespace('package')` | |
+| Find environment of variable | `pryr::where('var')` | |
+| Get value of variable in environment | `get('var', envir=env)` | |
+| Try get value of variable, with default return | `get0('var', envir=env, ifnotfound='default value')` | |
 
 # Dynamic evaluation
 | What | How | Details |
