@@ -1,17 +1,4 @@
-**Contents**
-* [Create](#creation)
-* [Query](#query)
-* [Test](#tests)
-* [Update](#update)
-* [Resize](#resize)
-* [Derive](#derive)
-* [Iterate](#iterate)
-* [Convert](#convert)
-
-# Uses
-* Lists can be efficiently used as a stack through `append()` (for push) and `pop()`.
-
-# Creation
+# Create
 | What | How | Details |
 |---|---|---|
 | Empty | `x = []` | |
@@ -23,7 +10,7 @@
 | From iterator (consumes) | `x = list(iter)` | |
 | Lists from zipped list | <pre lang='python'>a = (1, 2); b = (-1, -2)&#13;ab = zip(a, b)&#13;a2, b2 = zip(*ab) | |
 
-# Tests
+# Test
 | What | How | Details |
 |---|---|---|
 | Is list | `isinstance(x, list)` | |
@@ -39,7 +26,7 @@
 | No duplicate elements | `len(x) == len(set(x))` | |
 | Has duplicate elements | `len(x) != len(set(x))` | |
 
-# Query
+# Extract
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
@@ -48,6 +35,7 @@
 | Slice | `x[1:3]` | |
 | Get first $n$ elements | `x[:n]` | |
 | Get last $n$ elements | `x[-n:]` | |
+| Get list of elements from a list of indices | `[x[i] for i in indices]` | |
 | Count number of occurrences of element | `x.count(e)` | |
 | Find index of element | `x.index(e)` | Throws error if not found |
 | Find index of element in slice [a,b] | `x.index(e, a, b)` | Throws error if not found |
@@ -65,25 +53,21 @@
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
-| Update index $i$ | `x[i] = new_value` | |
+| Update value at index $i$ | `x[i] = new_value` | |
 | Update slice with list | `x[2:3] = [5, 6]` | |
 | Reverse elements | `x.reverse()` | |
-| Sort elements | `x.sort()` | |
-| Sort on transformed elements | `x.sort(key=str.lower)` | |
-| Reverse-sort elements | `x.sort(reverse=True)` | |
+| Sort elements ascending | `x.sort()` | |
+| Sort elements descending | `x.sort(reverse=True)` | |
+| Sort on transformed elements, ascending | `x.sort(key=str.lower)` | |
 | Shuffle elements | `random.shuffle(x)` | |
+| Append list of elements | `x.extend(y)` | |
 
-# Resize
+## Shrink
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
 | Clear | `x.clear()` | |
 | Clear by slicing | `x[:] = []` | Probably slower |
-| Concatenate | `x + [1, 2]` | |
-| Append/push element | `x.append(e)` | |
-| Append/push elements | `x += [e1, e2]` | |
-| Append/push elements | `x.extend([e1, e2])` | |
-| Insert at index $i$ | `x.insert(i, e)` | |
 | Remove at index $i$ | `del x[i]` | |
 | Remove at index $i$ | `x[i] = []` | |
 | Remove last index and return the element | `x.pop()` | |
@@ -94,18 +78,32 @@ All operations are in-place.
 | Remove all elements with value | ? | |
 | Remove and get last element | `x.pop()` | |
 
+## Grow
+All operations are in-place.
+| What | How | Details |
+|---|---|---|
+| Append/push element | `x.append(e)` | |
+| Append/push a list | `x += y` | |
+| Append/push a list | `x.extend(y)` | |
+| Insert at index $i$ | `x.insert(i, e)` | |
+
 # Derive
-Shallow copies preserve references to the original object.
+## Map
+All operations create a new list unless specified otherwise, but preserves references to the original elements.
 | What | How | Details |
 |---|---|---|
 | Shallow copy | `[*x]` | Fastest for small lists |
 | Shallow copy | `x[:]` | Probably very slow |
 | Shallow copy | `x.copy()` | Fastest for large lists |
 | Shallow copy | `copy.copy(x)` | Not sure what the difference to `.copy()` is |
-| Deep copy | `copy.deepcopy(x)` | Constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original. |
+| Deep copy (don't preserve refs) | `copy.deepcopy(x)` | Constructs a new compound object and then, recursively, inserts copies into it of the objects found in the original. |
 | Reversed order | `reversed(x)` | |
-| Sorted | `sorted(x)` | Elements must be sortable |
-| Reverse-sorted | `sorted(x, reverse=True)` | Elements must be sortable |
+| Rank ascendingly | `list(scipy.stats.rankdata(x))` | Uses scipy |
+| Sort-index ascendingly | `list(np.argsort(x))` | Uses numpy |
+| Sort-index ascendingly | `sorted(range(len(x)), key=x.__getitem__)` | |
+| Sort-index ascendingly | `[e[0] for e in sorted(enumerate(x), key=lambda x: x[1])]` | Tedious | |
+| Sorted ascendingly | `sorted(x)` | Elements must be sortable |
+| Sorted descendingly | `sorted(x, reverse=True)` | Elements must be sortable |
 | Sorted by reference order | `[x for _, x in sorted(zip(ref_order, x))]` | Elements must be sortable |
 | Map | `[e + 1 for e in x]` | |
 | Map function | `[fun(e) for e in x]` | |
@@ -117,6 +115,14 @@ Shallow copies preserve references to the original object.
 | Filter on predicate function | `filter(fun, x)` | |
 | Elements to string | `[str(e) for e in x]` | |
 | Replicate $n$ times | `x * n` | |
+
+## Grow
+All operations create a new list, but preserves references to the original elements.
+| What | How | Details |
+|---|---|---|
+| Replicate $n$ times | `x * n` | |
+| Replicate to ensure length $n$ | ? | |
+| Append a list | `x + y` | |
 
 # Iterate
 | What | How | Details |
@@ -137,3 +143,7 @@ Shallow copies preserve references to the original object.
 | To set | `set(x)` | | 
 | To dict (from keys and values) | `dict(zip(keys, values))` | | 
 | Flatten a list of lists | `list(itertools.chain.from_iterable(x))` | |
+
+# Tips
+* Sorting seems to be broken for numeric lists containing NaN
+* Lists can be efficiently used as a stack through `append()` (for push) and `pop()`.
