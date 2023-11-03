@@ -15,13 +15,13 @@ grand_parent: Python
 
 | What | How | Details |
 |---|---|---|
-| Undefined (size $n$ x $m$) | `np.empty((n, m))` | Warning: don't use the initial values |
-| Zeros (size $n$ x $m$) | `np.zeros((n, m))` | |
-| Ones (size $n$ x $m$) | `np.ones((n, m))` | |
-| True values (size $n$ x $m$) | `np.full((n, m), fill_value=True)` | |
-| False values (size $n$ x $m$) | `np.full((n, m), fill_value=False)` | |
-| Fill with value $v$ (size $n$ x $m$) | `np.full((n, m), fill_value=v)` | |
-| Identity matrix of size $n$ x $m$ | `np.eye(n, m)` | |
+| Undefined (size _n_ x _m_) | `np.empty((n, m))` | Warning: don't use the initial values |
+| Zeros (size _n_ x _m_) | `np.zeros((n, m))` | |
+| Ones (size _n_ x _m_) | `np.ones((n, m))` | |
+| True values (size _n_ x _m_) | `np.full((n, m), fill_value=True)` | |
+| False values (size _n_ x _m_) | `np.full((n, m), fill_value=False)` | |
+| Fill with value _v_ (size _n_ x _m_) | `np.full((n, m), fill_value=v)` | |
+| Identity matrix of size _n_ x _m_ | `np.eye(n, m)` | |
 | Diagonal matrix from vector | `np.diag(v)` | |
 | From vectors as rows | `np.row_stack((v1, v2))` | |
 | From vectors as rows | `np.vstack((v1, v2))` | |
@@ -34,18 +34,18 @@ grand_parent: Python
 
 | What | How | Details |
 |---|---|---|
-| Element at row $i$, column $j$ | `m[i,j]` | |
+| Element at row _i_, column _j_ | `m[i,j]` | |
 
 ## Update
 All operations are in-place.
 
 | What | How | Details |
 |---|---|---|
-| Update element at row $i$, column $j$ | `m[i,j] = v` | |
+| Update element at row _i_, column _j_ | `m[i,j] = v` | |
 | Fill with scalar value | `m.fill(v)` | |
 | Fill with array values | `m[...] = np.array(3)` | |
-| Fill row $i$ with value | `m[i] = v` | | 
-| Fill column $j$ with value | `m[:,j] = v` | |
+| Fill row _i_ with value | `m[i] = v` | | 
+| Fill column _j_ with value | `m[:,j] = v` | |
 | Resize to shape, fill with zeros | `m.resize(m, d)` | |
 
 ## Map
@@ -57,7 +57,7 @@ Operations are element-wise and preserve the shape of the matrix.
 | Increment elements by the respective element of another matrix | `m + m2` | Must be equal shape |
 | Find min between two matrices | `np.fmin(m, m2)` | |
 | Find max between two matrices | `np.fmax(m, m2)` | |
-| Clip (truncate) between \[ $a$, $b$] | `np.clip(m, a_min=a, a_max=b)` | `a_min < a_max` is not checked |
+| Clip (truncate) between \[_a_, _b_] | `np.clip(m, a_min=a, a_max=b)` | `a_min < a_max` is not checked |
 
 ## Reorder
 Operations preserve the shape of the matrix.

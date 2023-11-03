@@ -58,13 +58,13 @@ grand_parent: Python
 | Drop singular dimensions | `a.squeeze()` | |
 | Drop singular dimensions | `np.squeeze(a)` | |
 | Difference along axis | `np.diff(a, axis=ax)` | |
-| Difference along axis with lag $l$ | `np.diff(a, n=l, axis=ax)` | |
+| Difference along axis with lag | `np.diff(a, n=lag, axis=ax)` | |
 
 ## Reshape
 
 | What | How | Details |
 |---|---|---|
-| Reshape to dimensions $d$ | `x.reshape(d)` |  
+| Reshape to dimensions _d_ | `x.reshape(d)` |  
 
 ## Convert
 

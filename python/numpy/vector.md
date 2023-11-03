@@ -15,21 +15,21 @@ grand_parent: Python
 
 | What | How | Details |
 |---|---|---|
-| Undefined, length $n$ | `np.empty(n)` | Warning: don't use the initial values |
-| Zeros (FP, length $n$) | `np.zeros(n)` | |
-| Zeros (int, length $n$) | `np.zeros(n, dtype=np.int64)` | |
-| Ones (length $n$) | `np.ones(n)` | |
-| True values (bool, length $n$) | `np.full(n, fill_value=True)` | |
-| False values (bool, length $n$) | `np.full(n, fill_value=False)` | |
-| Fill with value $v$ (bool, length $n$) | `np.full(n, fill_value=v)` | |
-| Increasing numbers \[0, $b$-1] | `np.arrange(b)` | |
-| Increasing numbers \[ $a$, $b$] | `np.arrange(a, b)` | |
-| Numbers from $a$ to $b$ with step size $s$ | `np.arrange(a, b, s)` | |
-| Linear range from $a$ to $b$ of length $n$ | `np.linspace(a, b, num=n)` | |
+| Undefined, length _n_ | `np.empty(n)` | Warning: don't use the initial values |
+| Zeros (FP, length _n_) | `np.zeros(n)` | |
+| Zeros (int, length _n_) | `np.zeros(n, dtype=np.int64)` | |
+| Ones (length _n_) | `np.ones(n)` | |
+| True values (bool, length _n_) | `np.full(n, fill_value=True)` | |
+| False values (bool, length _n_) | `np.full(n, fill_value=False)` | |
+| Fill with value _v_ (bool, length _n_) | `np.full(n, fill_value=v)` | |
+| Increasing numbers \[0, _b_-1] | `np.arrange(b)` | |
+| Increasing numbers \[_a_, _b_] | `np.arrange(a, b)` | |
+| Numbers from _a_ to _b_ with step size _s_ | `np.arrange(a, b, s)` | |
+| Linear range from _a_ to _b_ of length _n_ | `np.linspace(a, b, num=n)` | |
 | From tuple | `np.array(tuple)` | |
 | From list | `np.array(list)` | |
 | From iter | `np.fromiter(iter)` | |
-| From iter (max length $n$) | `np.fromiter(iter, count=n)` | |
+| From iter (max length _n_) | `np.fromiter(iter, count=n)` | |
 | From two vectors | `np.append(v1, v2)` | |
 | From vectors (concat) | `np.concatenate((v1, v2))` | |
 
@@ -59,9 +59,9 @@ Operations are in-place.
 |---|---|---|
 | Set first element | `v[0] = value` | |
 | Set last element | `v[-1] = value` | |
-| Set value for element $i$ | `v[i] = value` | |
+| Set value for element _i_ | `v[i] = value` | |
 | Fill | `v[:] = value` | |
-| Fill first $n$ values | `v[:n] = value` | |
+| Fill first _n_ values | `v[:n] = value` | |
 | Sort elements ascending | `v.sort()` | NaNs are put last|
 | Sort elements descending | `v[::-1].sort()` | Note that this puts NaNs first! |
 
@@ -91,13 +91,13 @@ All operations produce a scalar value.
 | Standard deviation | `np.std(v)` | |
 | Variance | `np.var(v)` | |
 | Median | `np.median(v)` | |
-| Quantile $q$ | `np.quantile(v, q)` | |
+| Quantile _q_ | `np.quantile(v, q)` | |
 
 ## Map
 
 | What | How | Details |
 |---|---|---|
-| Clip (truncate) between \[ $a$, $b$ ] | `np.clip(v, a_min=a, a_max=b)` | |
+| Clip (truncate) between \[_a_, _b_ ] | `np.clip(v, a_min=a, a_max=b)` | |
 | Bin index | `np.digitize(v, bins)` | |
 | Piecewise-linear interpolation of coordinate mapping `xp -> yp` | `np.interp(v, xp, yp)` | No option for extrapolation! |
 | Piecewise-linear interpolation with extrapolation | `f = scipy.interpolate.interp1d(xp, yp, fill_value = 'extrapolate')`<br>`f(v)` | Deprecated and without replacement lol |
@@ -120,7 +120,7 @@ All operations produce a scalar value.
 | What | How | Details |
 |---|---|---|
 | Difference | `np.diff(v)` | |
-| Difference with lag $l$ | `np.diff(v, n=l)` | |
+| Difference with lag | `np.diff(v, n=lag)` | |
 
 ## Grow
 
@@ -128,7 +128,7 @@ All operations produce a scalar value.
 |---|---|---|
 | Pad with value | `np.pad(v, pad_width=1, constant_values=v)` | | 
 | Pad with edge elements | `np.pad(v, pad_width=1, mode='edge')` | |
-| Replicate $n$ times | `np.repeat(v, n)` | |
+| Replicate _n_ times | `np.repeat(v, n)` | |
 | Append vector | `np.append(v1, v2)` | |
 | Concatenate vectors | `np.concatenate((v1, v2, v3))` | |
 
