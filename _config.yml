@@ -1,4 +1,4 @@
 title: Quick reference sheets, mostly for python and R
-description: A place where I gather all my quick reference sheets. All sheets uses groupings based on a type of action (e.g., create, extract, update, convert). Lookups are written from the angle of WHAT you want to achieve, and then giving code that describes HOW to achieve that.
+description: A place where I gather quick reference sheets. All sheets uses groupings based on a type of action (e.g., create, extract, update, convert). Lookups are written from the angle of WHAT you want to achieve, and then giving code that describes HOW to achieve that.
 remote_theme: pmarsceill/just-the-docs
 markdown: GFM
