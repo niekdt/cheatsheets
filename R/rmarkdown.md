@@ -46,7 +46,7 @@
 | What | How | Details |
 |---|---|---|
 | Figure | `{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}` | [Source](https://holtzy.github.io/Pimp-my-rmd/) |
-| Subfigures | <pre lang='md'>\```{r out.width=c('50%', '50%'), fig.show='hold'}&#13;boxplot(1:10)&#13;plot(rnorm(10))&#13;``` | [Source](https://holtzy.github.io/Pimp-my-rmd/) | 
+| Subfigures | <pre lang='md'>\```{r out.width=c('50%', '50%'), fig.show='hold'}&#13;boxplot(1:10)&#13;plot(rnorm(10))&#13;\``` | [Source](https://holtzy.github.io/Pimp-my-rmd/) </pre> | 
 | Interactive ggplot | `p = ggplot(data, aes(x=x, y=y, color=z)) + geom_point()`<br>`plotly::ggplotly(p)` | |
 
 ### Tables

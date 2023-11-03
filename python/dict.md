@@ -1,3 +1,10 @@
+---
+layout: default
+title: Dictionary
+parent: Python
+---
+
+
 # Dict
 {:toc}
 

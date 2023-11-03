@@ -1,5 +1,7 @@
 # Quick reference sheets
-A place where I gather all my quick reference sheets. Ideas/suggestions/additions/fixes are very welcome! 🙂
+A place where I gather quick reference sheets. Ideas/suggestions/additions/fixes are very welcome! 🙂
+
+The main inspiration for this is that Google search is become more unusable by the day. Simple code snippet searches do not yield usable results right away.
 
 ## Python
 * [strings](python/str.md)
