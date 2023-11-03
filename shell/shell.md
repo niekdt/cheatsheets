@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Python
+title: Shell
 has_children: true
 ---
 
-# Python
+# Shell
+{: .no_toc}

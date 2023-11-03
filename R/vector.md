@@ -5,6 +5,10 @@ parent: R
 ---
 
 # Vector
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
 

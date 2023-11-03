@@ -5,6 +5,10 @@ parent: Python
 ---
 
 # Tuple
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
 
@@ -47,8 +51,8 @@ parent: Python
 | Max of elements | `max(x)` | |
 
 ## Derive
-
 Creates a new immutable copy.
+
 | What | How | Details |
 |---|---|---|
 | Subset between \[$n$, $m$] (slice) | `x[n:m]` | |

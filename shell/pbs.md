@@ -1,6 +1,18 @@
 # PBS
+---
+layout: default
+title: PBS
+parent: Shell
+---
+
+# PBS
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Basics
+
 | What | How | Details |
 |---|---|---|
 | Start interactive shell | `qsh` | |
@@ -17,6 +29,7 @@
 | Kill all jobs | `qselect -u $user \| xargs qdel` | | 
 
 ## qsub arguments
+
 | What | How | Details |
 |---|---|---|
 | Job name | `#PBS -N $name` | |

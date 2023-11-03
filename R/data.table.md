@@ -5,6 +5,10 @@ parent: R
 ---
 
 # data.table
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
 

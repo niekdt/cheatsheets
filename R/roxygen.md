@@ -5,6 +5,10 @@ parent: R
 ---
 
 # Roxygen2
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Basic
 

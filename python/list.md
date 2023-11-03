@@ -66,8 +66,8 @@ parent: Python
 | Most frequent element | `statistics.mode(x)` | |
 
 ## Update
-
 All operations are in-place.
+
 | What | How | Details |
 |---|---|---|
 | Update value at index $i$ | `x[i] = new_value` | |
@@ -80,8 +80,8 @@ All operations are in-place.
 | Append list of elements | `x.extend(y)` | |
 
 ## Shrink
-
 All operations are in-place.
+
 | What | How | Details |
 |---|---|---|
 | Clear | `x.clear()` | |
@@ -97,8 +97,8 @@ All operations are in-place.
 | Remove and get last element | `x.pop()` | |
 
 ## Grow
-
 All operations are in-place.
+
 | What | How | Details |
 |---|---|---|
 | Append/push element | `x.append(e)` | |
@@ -107,9 +107,10 @@ All operations are in-place.
 | Insert at index $i$ | `x.insert(i, e)` | |
 
 ## Derive
-### Map
 
+### Map
 All operations create a new list unless specified otherwise, but preserves references to the original elements.
+
 | What | How | Details |
 |---|---|---|
 | Shallow copy | `[*x]` | Fastest for small lists |
@@ -137,8 +138,8 @@ All operations create a new list unless specified otherwise, but preserves refer
 | Replicate $n$ times | `x * n` | |
 
 ### Grow
-
 All operations create a new list, but preserves references to the original elements.
+
 | What | How | Details |
 |---|---|---|
 | Replicate $n$ times | `x * n` | |

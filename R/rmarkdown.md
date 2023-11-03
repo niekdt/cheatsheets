@@ -5,6 +5,10 @@ parent: R
 ---
 
 # Rmarkdown
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Title page
 
@@ -71,8 +75,8 @@ parent: R
 | Knitr params list as table | `` `r unlist(params) %>% as.data.frame %>% kable(col.names='Value', caption='Parameters')` `` | |
 
 ## Code block arguments
-
 To hide code blocks by default, set `code_folding: "hide"` in the output document parameters.
+
 | What | How | Details |
 |---|---|---|
 | Run, show output only | `echo=F` | |

@@ -5,6 +5,10 @@ parent: Python
 ---
 
 # File system paths
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Generate path
 
@@ -20,6 +24,7 @@ parent: Python
 
 ## Generate paths from directory
 All snippets return a list of string paths.
+
 | What | How | Details |
 |---|---|---|
 | File names | <pre lang='python'>os.listdir(dir_path) | |

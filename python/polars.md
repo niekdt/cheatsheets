@@ -5,6 +5,10 @@ parent: Python
 ---
 
 # Polars
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
 

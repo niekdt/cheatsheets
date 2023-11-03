@@ -31,6 +31,7 @@ parent: Python
 
 ## Using iterators
 Note that each operation consumes element(s) of the iterator!
+
 | What | How | Details |
 |---|---|---|
 | Iterate over iterator elements | <pre lang='python'>for i in iter:&#13;print(i) | |

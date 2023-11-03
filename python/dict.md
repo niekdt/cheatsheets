@@ -4,11 +4,8 @@ title: Dictionary
 parent: Python
 ---
 
-# Dict
+# Dictionary
 {: .no_toc}
-
-## Table of contents
-{: .no_toc .text-delta }
 
 1. TOC
 {:toc}
@@ -25,6 +22,7 @@ parent: Python
 | Merge dictionaries | `z = {**x, **y}` | ? |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Value | `x['color']` | Throws an error if missing |

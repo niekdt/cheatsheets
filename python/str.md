@@ -5,6 +5,10 @@ parent: Python
 ---
 
 # String
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
 

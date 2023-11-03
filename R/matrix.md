@@ -5,7 +5,12 @@ parent: R
 ---
 
 # Matrix
-WIP 
+WIP
+{: .no_toc}
+
+1. TOC
+{:toc}
+
 
 ## Create
 

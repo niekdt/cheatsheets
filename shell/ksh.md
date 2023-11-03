@@ -1,11 +1,23 @@
 # Ksh
+---
+layout: default
+title: Ksh
+parent: Shell
+---
+
+# Ksh
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Command-line arguments
+
 | What | How | Details |
 |---|---|---|
 | Program name, including the path if started from another directory | `$0` | |
 | Number of arguments | `$#` | |
-| Check for zero arguments | <pre lang='ksh'>if [[ $# -eq 0 ]];then&#13;&#09;print "No Arguments"&#13;&#09;exit&#13;fi </pre> | |
+| Check for zero arguments | <pre lang='ksh'>if \[\[ $# -eq 0 ]];then&#13;&#09;print "No Arguments"&#13;&#09;exit&#13;fi </pre> | |
 | Get the $n$th argument | `$n` | |
 | Get the $n$th argument, with default value | `${n-"Default value here"}` | |
 | Expand all arguments to a single word | `$*` | |
@@ -13,6 +25,7 @@
 | Expand arguments to separate words | `"$@"` | |
 
 ## Special variables
+
 Note that the positional parameters are special variables too.
 | What | How | Details |
 |---|---|---|
@@ -21,13 +34,15 @@ Note that the positional parameters are special variables too.
 | Process id of last background job | `$!` | |
 
 ## Constants
+
 | What | How | Details |
 |---|---|---|
 | Declare constant | `declare -r PASSWD_FILE=/etc/passwd` | |
 
 ## Variables
-Don't put dots in variable names!
-By default, all variables are global! Even within functions!
+* Don't put dots in variable names!
+* By default, all variables are global! Even within functions!
+
 | What | How | Details |
 |---|---|---|
 | Get variable value | `$var` | |
@@ -43,6 +58,7 @@ By default, all variables are global! Even within functions!
 
 ## Functions
 Use the local statement to define local variables.
+
 | What | How | Details |
 |---|---|---|
 | Define function | <pre lang='ksh'>function foo {&#13;&#09;return $name&#13;}</pre> | |
@@ -52,18 +68,20 @@ Use the local statement to define local variables.
 
 ## Control flows
 See http://www.bolthole.com/solaris/ksh-basics.html
+
 | What | How | Details |
 |---|---|---|
 | Chain (pipe) commands | `command1 \| command2 \| command3` | |
-| If | <pre lang='ksh'>if [[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;fi</pre> | |
-| If-else | <pre lang='ksh'>if [[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;else&#13;&#09;print "$value is not 7"&#13;fi</pre> | |
-| If-elseif | <pre lang='ksh'>if [[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;elif [[ $value -eq 8 ]];then&#13;&#09;print "$value is not 7 but 8"&#13;else&#13;&#09;print "$value is neither 7 or 8"&#13;fi</pre> | |
+| If | <pre lang='ksh'>if \[\[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;fi</pre> | |
+| If-else | <pre lang='ksh'>if \[\[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;else&#13;&#09;print "$value is not 7"&#13;fi</pre> | |
+| If-elseif | <pre lang='ksh'>if \[\[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;elif \[\[ $value -eq 8 ]];then&#13;&#09;print "$value is not 7 but 8"&#13;else&#13;&#09;print "$value is neither 7 or 8"&#13;fi</pre> | |
 | Switch | <pre lang='ksh'>case $var in&#13;&#09;john\|fred) print $invitation;;&#13;&#09;martin)  print $declination;;&#13;&#09;*)  print "Wrong name...";;&#13;esac</pre> | There is no "fall through" with ;;. You hit only one set of commands.. UNLESS you use ";&" instead of ";;'. You can use WILDCARDS to match strings.
 | For | <pre lang='ksh'>for foo in $(ls);do&#13;&#09;print "\$count is $count"&#13;&#09;(( count -= 1 ))&#13;done | Use `continue` to skip the loop. Use `break` to exit the loop. |
 | Until | | |
 | Pause for $n$ seconds | `sleep n` |
 
 ### Error handling
+
 | What | How | Details |
 |---|---|---|
 | Stop execution with unspecified error | `exit 1` | |
@@ -77,6 +95,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Run cleanup function on error | `trap cleanup ERR` | For a previously defined `cleanup` function |
 
 ## Arithmetic
+
 | What | How | Details |
 |---|---|---|
 | Increment variable | `(( a += 1))` | |
@@ -84,6 +103,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Sum variables | `sum = $(( a + b ))` | |
 
 ## Comparisons
+
 | What | How | Details |
 |---|---|---|
 | And operator | `&&` |
@@ -96,6 +116,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Less than number _num_ | `$bar -lt num` | |
 
 ## Strings
+
 | What | How | Details |
 |---|---|---|
 | Length | `"${#var}"` | |
@@ -105,6 +126,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 ## Output
 
 ### Standard
+
 | What | How | Details |
 |---|---|---|
 | Print message | `echo "Hello world!"` | |
@@ -112,6 +134,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Formatted printing | `printf "counting %d days" $days` | |
 
 ### Data redirection
+
 | What | How | Details |
 |---|---|---|
 | Write to new file or overwrite file | `command > file` | |
@@ -123,6 +146,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | File as input to command | `command < file` | |
 
 ## File handling
+
 | What | How | Details |
 |---|---|---|
 | Check if directory exists | `[ -d "$DIRPATH" ]` | |
