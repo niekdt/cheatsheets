@@ -2,6 +2,7 @@
 layout: default
 title: ND-array
 parent: Numpy
+grand_parent: Python
 ---
 
 # N-D array operations

@@ -2,6 +2,7 @@
 layout: default
 title: Scalar
 parent: Numpy
+grand_parent: Python
 ---
 
 # Scalar: 0D array operations.

@@ -2,6 +2,7 @@
 layout: default
 title: Matrix
 parent: Numpy
+grand_parent: Python
 ---
 
 # Matrix: 2D array operations

@@ -2,6 +2,7 @@
 layout: default
 title: Vector
 parent: Numpy
+grand_parent: Python
 ---
 
 # Vector: 1D array operations
