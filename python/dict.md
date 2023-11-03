@@ -7,7 +7,7 @@ parent: Python
 # Dictionary
 {: .no_toc}
 
-1. TOC
+- TOC
 {:toc}
 
 ## Create
