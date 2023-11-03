@@ -23,6 +23,7 @@ A place where I gather all my quick reference sheets. Ideas/suggestions/addition
 * [formulas](R/formula.md)
 * [data.table](R/data.table.md)
 * [dynamic evaluation](R/eval.md)
+* [rmarkdown](R/rmarkdown.md)
 * [roxygen2](R/roxygen.md)
 
 ## Shell
