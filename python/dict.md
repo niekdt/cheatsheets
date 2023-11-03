@@ -4,13 +4,11 @@ title: Dictionary
 parent: Python
 ---
 
-
 # Dict
+
 {:toc}
 
 ## Create
-
-????
 
 | What | How | Details |
 |:-------------|:------------------|:------|
