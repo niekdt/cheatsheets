@@ -1,6 +1,8 @@
-title: Quick reference sheets
-description: A place where I gather quick reference sheets. All sheets uses groupings based on a type of action (e.g., create, extract, update, convert). Lookups are written from the angle of WHAT you want to achieve, and then giving code that describes HOW to achieve that.
+title: Just the Docs Template
+description: A starter template for a Jeykll site using the Just the Docs theme!
 theme: just-the-docs
+
+url: https://just-the-docs.github.io
 
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
