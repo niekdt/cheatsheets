@@ -10,6 +10,8 @@ parent: Python
 
 ## Create
 
+????
+
 | What | How | Details |
 |:-------------|:------------------|:------|
 | Empty | `x = {}` | |

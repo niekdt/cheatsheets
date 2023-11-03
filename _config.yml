@@ -3,5 +3,3 @@ description: A place where I gather quick reference sheets. All sheets uses grou
 theme: just-the-docs
 color_scheme: dark
 url: https://niekdt.github.io/cheatsheets/
-plugins:
-  - jekyll-default-layout
