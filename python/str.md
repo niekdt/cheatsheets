@@ -64,6 +64,8 @@
 | Last $n$ characters | `x[-n:]` | |
 | Strip leading whitespace | `x.strip()` | | 
 | Strip leading characters | `x.strip('abc')` | |
+| Substring up to first occurrence of _y_ | `x.split(y)[0]` | _y_ is excluded | 
+| Substring up to first line break | `x.split('\n')[0]` | Line break is excluded | 
 | Remove prefix | `x.removeprefix(y)` | |
 | Remove suffix | `x.removesuffix(y)` | |
 | Remove substring |  | |
