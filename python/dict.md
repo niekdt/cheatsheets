@@ -9,8 +9,9 @@ parent: Python
 {:toc}
 
 ## Create
+
 | What | How | Details |
-|---|---|---|
+|:-------------|:------------------|:------|
 | Empty | `x = {}` | |
 | Define with string keys | `x = {'color': 'blue', 'size': 'large'}` | |
 | Define from keys (iterator) and constant value $v$ | `dict.fromkeys(key_iter, v)` | |
@@ -21,6 +22,7 @@ parent: Python
 ## Get
 | What | How | Details |
 |---|---|---|
+
 | Value | `x['color']` | Throws an error if missing |
 | Try get value | `x.get('color')` | Returns `None` if missing |
 | Try get value with default $v$ | `x.get('color', v)` | |
