@@ -1,6 +1,13 @@
+---
+layout: default
+title: File system path
+parent: Python
+---
+
 # File system paths
 
 ## Generate path
+
 | What | How | Details |
 |---|---|---|
 | From directory for given file name | `os.path.join(dir_path, filename)` | | 
@@ -22,6 +29,7 @@ All snippets return a list of string paths.
 | File paths that match regex pattern | <pre lang='python'>\[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)] | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | File/dir exists | `os.path.exists(path)` | |
@@ -31,6 +39,7 @@ All snippets return a list of string paths.
 | Paths refer to same file | `os.path.samefile(path1, path2)` | |
 
 ## Path manipulation
+
 | What | How | Details |
 |---|---|---|
 | Normalize path | `os.path.normpath(path)` | |
@@ -44,6 +53,7 @@ All snippets return a list of string paths.
 | Split path into file path and extension | `file_path, ext = os.path.splitext(path)` | |
 
 ## File info
+
 | What | How | Details |
 |---|---|---|
 | Filename | `os.path.basename(r'C:\Files\derp.csv')` | Returns `derp.csv` |

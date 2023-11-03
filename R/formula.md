@@ -1,6 +1,13 @@
+---
+layout: default
+title: Formula
+parent: R
+---
+
 # Formula
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | With intercept and single variable | `y ~ x` | |
@@ -10,6 +17,7 @@
 | From string | `eval(parse(text='y ~ x'))` | Not recommended | 
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Is formula | `is(f, 'formula')` | |
@@ -17,6 +25,7 @@
 | Formulas are equal | `isTRUE(all.equal(f1, f2))` | |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Variable names | `all.vars(f)` | |
@@ -25,6 +34,7 @@
 | Environment | `environment(f)` | |
 
 ## Update
+
 | What | How | Details |
 |---|---|---|
 | Change terms | `update(y~x, ~ w + z)` | |
@@ -34,11 +44,13 @@
 | Remove the environment | `environment(f) = NULL` | |
 
 ## Evaluate
+
 | What | How | Details |
 |---|---|---|
 | Evaluate a formula with known coefficients | `mm = model.matrix( ~ a + poly(b, 2, raw=TRUE), data.frame(a=1, b=2:4))`<br>`pred = coef %*% t(mm)` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | String | `deparse(f)` | |

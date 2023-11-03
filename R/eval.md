@@ -1,6 +1,13 @@
+---
+layout: default
+title: Evaluation
+parent: R
+---
+
 # Evaluation
 
 ## Variables
+
 | What | How | Details |
 |---|---|---|
 | Generate valid variable names from string(s) | `make.names('a@b')` | |
@@ -11,6 +18,7 @@
 | Force evaluation of variable | `force(arg)` | |
 
 ## Environment
+
 | What | How | Details |
 |---|---|---|
 | Create new environment | `environment()` | |
@@ -23,6 +31,7 @@
 | Try get value of variable, with default return | `get0('var', envir=env, ifnotfound='default value')` | |
 
 ## Dynamic evaluation
+
 | What | How | Details |
 |---|---|---|
 | Create call | `call = quote(A = 1)` | |
@@ -41,6 +50,7 @@
 | Get expression as string | `deparse(expr, width.cutoff=500)` | |
 
 ## Chained evaluation
+
 | What | How | Details |
 |---|---|---|
 | Chain function calls | `y = x %>% table %>% prop.table` | |
@@ -49,6 +59,7 @@
 | Call functions and update the LHS | `x %<>% sort %>% abs` | |
 
 ## Functions
+
 | What | How | Details |
 |---|---|---|
 | Get all arguments, including defaults | `mget(names(formals()),sys.frame(sys.nframe()))` | |

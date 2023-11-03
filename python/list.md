@@ -1,6 +1,17 @@
+---
+layout: default
+title: List
+parent: Python
+---
+
 # List
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Empty | `x = []` | |
@@ -13,6 +24,7 @@
 | Lists from zipped list | <pre lang='python'>a = (1, 2); b = (-1, -2)&#13;ab = zip(a, b)&#13;a2, b2 = zip(*ab) | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Is list | `isinstance(x, list)` | |
@@ -29,6 +41,7 @@
 | Has duplicate elements | `len(x) != len(set(x))` | |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
@@ -43,6 +56,7 @@
 | Index of element in slice \[a,b] | `x.index(e, a, b)` | Throws error if not found |
 
 ## Aggregate
+
 | What | How | Details |
 |---|---|---|
 | Min | `min(x)` | | 
@@ -52,6 +66,7 @@
 | Most frequent element | `statistics.mode(x)` | |
 
 ## Update
+
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
@@ -65,6 +80,7 @@ All operations are in-place.
 | Append list of elements | `x.extend(y)` | |
 
 ## Shrink
+
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
@@ -81,6 +97,7 @@ All operations are in-place.
 | Remove and get last element | `x.pop()` | |
 
 ## Grow
+
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
@@ -91,6 +108,7 @@ All operations are in-place.
 
 ## Derive
 ### Map
+
 All operations create a new list unless specified otherwise, but preserves references to the original elements.
 | What | How | Details |
 |---|---|---|
@@ -119,6 +137,7 @@ All operations create a new list unless specified otherwise, but preserves refer
 | Replicate $n$ times | `x * n` | |
 
 ### Grow
+
 All operations create a new list, but preserves references to the original elements.
 | What | How | Details |
 |---|---|---|
@@ -127,6 +146,7 @@ All operations create a new list, but preserves references to the original eleme
 | Append a list | `x + y` | |
 
 ## Iterate
+
 | What | How | Details |
 |---|---|---|
 | Iterate | <pre lang='python'>for e in x: | |
@@ -137,6 +157,7 @@ All operations create a new list, but preserves references to the original eleme
 | Iterate over a list of lists for each nested element | <pre lang='python'>itertools.chain.from_iterable(x) | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | Multiple assignment | <pre lang='python'>x = [1, 2]&#13;a, b = x | |

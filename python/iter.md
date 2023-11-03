@@ -1,12 +1,17 @@
 ---
 layout: default
-title: Iterators
+title: Iterator
 parent: Python
 ---
 
 # Iterators
+{:.no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Create counter | `itertools.count()` | |
@@ -42,6 +47,7 @@ Note that each operation consumes element(s) of the iterator!
 | Get remaining length | <pre lang='python'>sum(1 for _ in iter)</pre> | |
 
 ## Map
+
 | What | How | Details |
 |---|---|---|
 | Map elements | `x + 1 for x in iter` | |
@@ -54,6 +60,7 @@ Note that each operation consumes element(s) of the iterator!
 | Combine iterable elements as tuple until all iterables are exhausted, with default value for depleted iterables | `itertools.zip_longest(x, y, ..., fillvalue = None)` | |
 
 ## Shrink
+
 | What | How | Details |
 |---|---|---|
 | First $n$ items of iterable | `itertools.islice(x, n)` | |
@@ -68,6 +75,7 @@ Note that each operation consumes element(s) of the iterator!
 | Drop while predicate is true | `itertools.dropwhile(lambda x: x < 5, x)` | |
 
 ## Grow
+
 | What | How | Details |
 |---|---|---|
 | Append iterable | `itertools.chain(iter, append_iter)` | |
@@ -84,6 +92,7 @@ Note that each operation consumes element(s) of the iterator!
 | Chain iterables | `itertools.chain.from_iterable(x, y, ...)` | |
 
 ## Aggregate
+
 | What | How | Details |
 |---|---|---|
 | Min | `min(iter)` | |
@@ -94,6 +103,7 @@ Note that each operation consumes element(s) of the iterator!
 | Group by | <pre lang='python'>for key, group in itertools.groupby(robots, key=lambda x: x['faction']):&#13;print(key)&#13;print(list(group)) | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | All elements are true | `all(bool_iter)` | |
@@ -104,6 +114,7 @@ Note that each operation consumes element(s) of the iterator!
 | Any element is false | `not all(bool_iter)` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | To list | `list(iter)` | |

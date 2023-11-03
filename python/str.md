@@ -1,6 +1,13 @@
+---
+layout: default
+title: String
+parent: Python
+---
+
 # String
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Empty | `''` | |
@@ -11,6 +18,7 @@
 | Object to string | `str(x)` | |
 
 ## Format
+
 | What | How | Details |
 |---|---|---|
 | Positional formatting | `'First {0} then {1}'.format(1 + 1, 2 * 2)` | |
@@ -29,6 +37,7 @@
 | Datetime with format | `'{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))` | |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
@@ -39,6 +48,7 @@
 | Count number of non-overlapping substring occurrences in range \[$n$, $m$] | `x.count(substr, n, m)` | |
 
 ## Tests
+
 | What | How | Details |
 |---|---|---|
 | String | `isinstance(x, str)` | |
@@ -56,6 +66,7 @@
 | Contains $n$ regex substrings | `len(re.findall('\\w', 'a. a')) == n` | |
 
 ## Substring
+
 | What | How | Details |
 |---|---|---|
 | First character | `x[0]` | |
@@ -74,6 +85,7 @@
 | Remove regex group pattern | ? | |
 
 ## Transform
+
 | What | How | Details |
 |---|---|---|
 | Lower case | `x.lower()` | |
@@ -83,6 +95,7 @@
 | Reverse | `x[::-1]` | |
 
 ## Grow
+
 | What | How | Details |
 |---|---|---|
 | Left-pad to length $n$ | `x.ljust(n)` | |
@@ -93,6 +106,7 @@
 | Join with iterable | `x.join(iter)` | |
 
 ## Split
+
 | What | How | Details |
 |---|---|---|
 | Split string into two parts by separator (as triplet) | `x.partition(sep)` | |
@@ -100,6 +114,7 @@
 | Split string into lines (as list) | `x.splitlines()` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | Session hash | `hash(x)` | |

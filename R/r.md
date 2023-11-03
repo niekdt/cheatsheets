@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Python
+title: R
 has_children: true
 ---
 
-# Python
+# R
 asdasdas

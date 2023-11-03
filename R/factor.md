@@ -1,6 +1,13 @@
+---
+layout: default
+title: Factor
+parent: R
+---
+
 # Factor
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | From vector | `factor(x)` | |
@@ -10,6 +17,7 @@
 | Combine factors | `factor(c(as.character(x), as.character(y)), union(levels(x), levels(y)))` | |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Levels | `levels(f)` | |
@@ -17,6 +25,7 @@
 | Subset and drop unused levels | `f[1:2, drop=TRUE]` | |
 
 ## Update
+
 | What | How | Details |
 |---|---|---|
 | Add NA as a factor level | `addNA(f)` | |

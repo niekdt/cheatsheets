@@ -1,6 +1,13 @@
+---
+layout: default
+title: Polars
+parent: Python
+---
+
 # Polars
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Create series | <pre lang='python'>pl.Series('name', \[1, 2, 3]) |  |
@@ -16,6 +23,7 @@
 | From list of data frames with different columns | <pre lang='python'>pl.concat(\[data, data2, ..., dataN], how = 'diagonal') | |
 
 ## Properties
+
 | What | How | Details |
 |---|---|---|
 | Number of columns | <pre lang='python'>len(data.columns) | ? |
@@ -26,16 +34,19 @@
 | Number of rows | <pre lang='python'>data.height | |
 
 ## Query
+
 Start a lazy query using a LazyFrame by `data.lazy()`. Operations on a LazyFrame are not executed until this is requested by either calling collect() or fetch().
 Lazy operations are advised because they allow for query optimization and more parallelization.
 
 ### Columns
+
 | What | How | Details |
 |---|---|---|
 | Single column | <pre lang='python'>data.select('col1') | |
 | Multiple columns | <pre lang='python'>data.select('col1', 'col2') | |
 
 ### Rows
+
 | What | How | Details |
 |---|---|---|
 | No rows | `data.clear()` | |
@@ -57,17 +68,21 @@ Lazy operations are advised because they allow for query optimization and more p
 | Number of unique rows over columns | ? | |
 
 ### Aggregate
+
 ### Grouped
+
 | What | How | Details |
 |---|---|---|
 | Mean of column | <pre lang='python'>data.group_by('sex').agg(pl.col('age').mean()) | |
 
 #### Over time
+
 | What | How | Details |
 |---|---|---|
 | Moving average | <pre lang='python'>data.group_by_dynamic('ts', every='1d').agg(pl.col('value').mean()) | ? |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Empty | <pre lang='python'>data.is_empty() | |
@@ -85,12 +100,14 @@ Lazy operations are advised because they allow for query optimization and more p
 | Column is standard integer | <pre lang='python'>data.schema\['age'] == pl.Int64 | |
 
 ### Row masking
+
 | What | How | Details |
 |---|---|---|
 | Duplicated rows | <pre lang='python'>data.is_duplicated() | |
 | Unique rows | <pre lang='python'>data.is_unique() | |
 
 ## Update
+
 | What | How | Details |
 |---|---|---|
 | Cast column dtype | <pre lang='python'>data.with_columns(pl.col('col1').cast(pl.Float32)) | |
@@ -110,6 +127,7 @@ Lazy operations are advised because they allow for query optimization and more p
 ## Add
 
 ### New columns
+
 | What | How | Details |
 |---|---|---|
 | Append constant numeric column | <pre lang='python'>data.with_columns(Intercept=pl.lit(1)) | |
@@ -118,6 +136,7 @@ Lazy operations are advised because they allow for query optimization and more p
 | Insert column from series inplace | <pre lang='python'>data.insert_at_idx(1, s) | |
 
 ### Derive new columns
+
 | What | How | Details |
 |---|---|---|
 | Transform another column | <pre lang='python'>data.with_columns(AgeSq = pl.col('Age') ** 2) | |
@@ -132,6 +151,7 @@ Lazy operations are advised because they allow for query optimization and more p
 | Group-wise from aggregate value | <pre lang='python'>data.with_columns(&#13;&#09;DaysSinceStart = pl.col('Date') - pl.col('Date').min().over('Subject').cast(pl.Int) + 1&#13;) | |
 
 ### Rows
+
 | What | How | Details |
 |---|---|---|
 | Add row as tuple | ? | |
@@ -143,6 +163,7 @@ Lazy operations are advised because they allow for query optimization and more p
 ## Remove
 
 ### Columns
+
 | What | How | Details |
 |---|---|---|
 | Remove column | <pre lang='python'>data.drop('Age') | |
@@ -154,12 +175,14 @@ Lazy operations are advised because they allow for query optimization and more p
 ### Rows
 
 ## Reshape
+
 | What | How | Details |
 |---|---|---|
 | From wide to long format | <pre lang='python'>data.melt(id_vars='sex', value_vars=['a', 'b']) | |
 | To narrow format | <pre lang='python'>data.explode(?) | ? |
 
 ## Merge
+
 | What | How | Details |
 |---|---|---|
 | Merge two data frames on the sorted key | <pre lang='python'>data.merge(data2) | |
@@ -172,6 +195,7 @@ Lazy operations are advised because they allow for query optimization and more p
 | Anti join (exclude matches from table 2) | <pre lang='python'>data.join(data2, on = \['sex', 'country'], how = 'anti') | |
 
 ## Extract
+
 | What | How | Details |
 |---|---|---|
 | Get column (as series) | <pre lang='python'>data\['col1'] | |
@@ -183,6 +207,7 @@ Lazy operations are advised because they allow for query optimization and more p
 | Item (cell) from row $i$ and column name $name$ | <pre lang='python'>data.item(i, name) | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | To `pandas.DataFrame` | <pre lang='python'>data.to_pandas() | |

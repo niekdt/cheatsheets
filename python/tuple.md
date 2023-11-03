@@ -1,6 +1,13 @@
+---
+layout: default
+title: Tuple
+parent: Python
+---
+
 # Tuple
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Empty | `()` | |
@@ -13,6 +20,7 @@
 | From comprehension | `tuple(v * 2 for v in a)` | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Empty | `if not x:` | |
@@ -25,6 +33,7 @@
 | No elements are True | `not any(x)` | |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
@@ -38,6 +47,7 @@
 | Max of elements | `max(x)` | |
 
 ## Derive
+
 Creates a new immutable copy.
 | What | How | Details |
 |---|---|---|
@@ -53,6 +63,7 @@ Creates a new immutable copy.
 | Replicate elements $n$ times | `x * n` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | Multiple assignment | `a, b = x` | |

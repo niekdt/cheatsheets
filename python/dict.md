@@ -5,12 +5,13 @@ parent: Python
 ---
 
 # Dict
+{: .no_toc}
+
 ## Table of contents
 {: .no_toc .text-delta }
 
 1. TOC
 {:toc}
-
 
 ## Create
 
@@ -26,7 +27,6 @@ parent: Python
 ## Get
 | What | How | Details |
 |---|---|---|
-
 | Value | `x['color']` | Throws an error if missing |
 | Try get value | `x.get('color')` | Returns `None` if missing |
 | Try get value with default $v$ | `x.get('color', v)` | |
@@ -42,6 +42,7 @@ parent: Python
 | All keys with value $v$ | `[k for k in x if x[k] == v]` | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Empty | `if x:` | |
@@ -51,6 +52,7 @@ parent: Python
 | Contains duplicate values | `len(x) != len(set(x.values()))` | |
 
 ## Update
+
 | What | How | Details |
 |---|---|---|
 | Set default entry value for missing key | `x.setdefault('size', 'medium')` |
@@ -58,6 +60,7 @@ parent: Python
 | Update entry, error if missing | ? | |
 
 ## Grow
+
 | What | How | Details |
 |---|---|---|
 | Add/update entry | `x['size'] = 'small'` | |
@@ -65,6 +68,7 @@ parent: Python
 | Merge with another dictionary | `x.update(y)` | |
 
 ## Shrink
+
 | What | How | Details |
 |---|---|---|
 | Remove key | `del x['size']` | |
@@ -75,6 +79,7 @@ parent: Python
 | Clear | `x.clear()` | |
 
 ## Derive
+
 | What | How | Details |
 |---|---|---|
 | Copy | `x.copy()` | |
@@ -85,6 +90,7 @@ parent: Python
 | Subset except for keys | `{k: x[k] for k in x.keys() if k not in keys}` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | Pretty print | `pprint.pprint(x)` | |

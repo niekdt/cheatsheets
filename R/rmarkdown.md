@@ -1,6 +1,13 @@
+---
+layout: default
+title: Rmarkdown
+parent: R
+---
+
 # Rmarkdown
 
 ## Title page
+
 | What | How | Details |
 |---|---|---|
 | Title | `title: my title` | |
@@ -12,6 +19,7 @@
 | Keywords | `tags: [longitudinal, sleep]` | |
 
 ## Format
+
 | What | How | Details |
 |---|---|---|
 | Bold | `**text**` | |
@@ -23,6 +31,7 @@
 ## Structures
 
 ### Sections / paragraphs
+
 | What | How | Details |
 |---|---|---|
 | Section | `# Section title` | |
@@ -36,6 +45,7 @@
 | Horizontal line | `***` | |
 
 ### Lists
+
 | What | How | Details |
 |---|---|---|
 | Define list | `* a`<br>`* b` | |
@@ -43,6 +53,7 @@
 | Dynamic list from code section | <pre lang='md'>\```{r, results='asis'}&#13;paste0('* ', items, collapse='\n') %>% cat&#13;\```</pre> | |
 
 ### Figures
+
 | What | How | Details |
 |---|---|---|
 | Figure | `{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}` | [Source](https://holtzy.github.io/Pimp-my-rmd/) |
@@ -50,6 +61,7 @@
 | Interactive ggplot | `p = ggplot(data, aes(x=x, y=y, color=z)) + geom_point()`<br>`plotly::ggplotly(p)` | |
 
 ### Tables
+
 | What | How | Details |
 |---|---|---|
 | Table | `kable(df)` | |
@@ -59,6 +71,7 @@
 | Knitr params list as table | `` `r unlist(params) %>% as.data.frame %>% kable(col.names='Value', caption='Parameters')` `` | |
 
 ## Code block arguments
+
 To hide code blocks by default, set `code_folding: "hide"` in the output document parameters.
 | What | How | Details |
 |---|---|---|

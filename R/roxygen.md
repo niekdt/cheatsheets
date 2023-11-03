@@ -1,6 +1,13 @@
+---
+layout: default
+title: Roxygen2
+parent: R
+---
+
 # Roxygen2
 
 ## Basic
+
 | What | How | Details |
 |---|---|---|
 | Title | `@title Title here` | |
@@ -14,6 +21,7 @@
 | Data format | `@format Format description here` | |
 
 ## Format
+
 | What | How | Details |
 |---|---|---|
 | Enable markdown | `@md` | |
@@ -35,6 +43,7 @@
 | Subsections | <pre>@details&#13;## This is a subsection &#13;With text &#13;#### Subsubsection here&#13;With text</pre> | |
 
 ## Link
+
 | What | How | Details |
 |---|---|---|
 | Website | `<https://r-project.org>` | |
@@ -57,6 +66,7 @@
 | E-mail | `\email{example@@example.com}` | |
 
 ## Code examples
+
 | What | How | Details |
 |---|---|---|
 | Examples | <pre>@examples&#13;1 + 1&#13;mean(1:9)</pre> | |
@@ -65,6 +75,7 @@
 | Interactive example only | <pre>@examples&#13;if interactive()&#13;&#09;browseURL("https://roxygen2.r-lib.org")</pre>
 
 ## Function/class import/export and loading
+
 | What | How | Details |
 |---|---|---|
 | Import package | `@import stats` | |
@@ -80,6 +91,7 @@
 | Export class method | `@exportMethod evaluate` | |
 
 ## Docs
+
 | What | How | Details |
 |---|---|---|
 | Don't generate topic | `@noRd` | |
@@ -99,12 +111,14 @@
 | Hide documentation | `@keywords internal` | |
 
 ## Figures 
+
 | What | How | Details |
 |---|---|---|
 | Add figure | `![](example-plot.jpg "Example Plot Title")` | |
 
 
 ## Dynamic content
+
 | What | How | Details |
 |---|---|---|
 | In-line code evaluation | `` `r getRversion()` `` | Evaluated during every roxygenize call |
@@ -114,6 +128,7 @@
 
 
 ## IDE shortcuts
+
 | What | How | Keys |
 |---|---|---|
 | Generate docs | `roxygen2::roxygenise()` | Ctrl+Shift+D |
