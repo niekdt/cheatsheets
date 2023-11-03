@@ -1,11 +1,11 @@
-# ksh
+# Ksh
 
 ## Command-line arguments
 | What | How | Details |
 |---|---|---|
 | Program name, including the path if started from another directory | `$0` | |
 | Number of arguments | `$#` | |
-| Check for zero arguments | <pre lang='ksh'>if [[ $# -eq 0 ]];then&#13;&#09;print "No Arguments"&#13;&#09;exit&#13;fi | |
+| Check for zero arguments | <pre lang='ksh'>if [[ $# -eq 0 ]];then&#13;&#09;print "No Arguments"&#13;&#09;exit&#13;fi </pre> | |
 | Get the $n$th argument | `$n` | |
 | Get the $n$th argument, with default value | `${n-"Default value here"}` | |
 | Expand all arguments to a single word | `$*` | |

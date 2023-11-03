@@ -10,8 +10,8 @@
 | True values (bool, length $n$) | `np.full(n, fill_value=True)` | |
 | False values (bool, length $n$) | `np.full(n, fill_value=False)` | |
 | Fill with value $v$ (bool, length $n$) | `np.full(n, fill_value=v)` | |
-| Increasing numbers [0, $b$-1] | `np.arrange(b)` | |
-| Increasing numbers [ $a$, $b$] | `np.arrange(a, b)` | |
+| Increasing numbers \[0, $b$-1] | `np.arrange(b)` | |
+| Increasing numbers \[ $a$, $b$] | `np.arrange(a, b)` | |
 | Numbers from $a$ to $b$ with step size $s$ | `np.arrange(a, b, s)` | |
 | Linear range from $a$ to $b$ of length $n$ | `np.linspace(a, b, num=n)` | |
 | From tuple | `np.array(tuple)` | |
@@ -59,7 +59,7 @@ Operations are in-place.
 | Number of unique values | `len(numpy.unique(v))` | |
 | Count non-zero values | `np.count_nonzero(v)` | |
 | Count per unique value | `np.unique(v, return_counts=True)` | |
-| Count per positive integer from [0, `max(v)`] | `np.bincount(v)` | Elements must be nonnegative ints|
+| Count per positive integer from \[0, `max(v)`] | `np.bincount(v)` | Elements must be nonnegative ints|
 
 ## Aggregate
 All operations produce a scalar value.
@@ -80,7 +80,7 @@ All operations produce a scalar value.
 ## Map
 | What | How | Details |
 |---|---|---|
-| Clip (truncate) between [ $a$, $b$ ] | `np.clip(v, a_min=a, a_max=b)` | |
+| Clip (truncate) between \[ $a$, $b$ ] | `np.clip(v, a_min=a, a_max=b)` | |
 | Bin index | `np.digitize(v, bins)` | |
 | Piecewise-linear interpolation of coordinate mapping `xp -> yp` | `np.interp(v, xp, yp)` | No option for extrapolation! |
 | Piecewise-linear interpolation with extrapolation | `f = scipy.interpolate.interp1d(xp, yp, fill_value = 'extrapolate')`<br>`f(v)` | Deprecated and without replacement lol |

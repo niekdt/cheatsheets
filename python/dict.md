@@ -1,4 +1,6 @@
 # Dict
+{:toc}
+
 ## Create
 | What | How | Details |
 |---|---|---|
