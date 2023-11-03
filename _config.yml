@@ -1,6 +1,6 @@
 title: Quick reference sheets
 description: A place where I gather quick reference sheets. All sheets uses groupings based on a type of action (e.g., create, extract, update, convert). Lookups are written from the angle of WHAT you want to achieve, and then giving code that describes HOW to achieve that.
-footer_content: Created by Niek Den Teuling, distributed under an <a href=\"https://github.com/niekdt/cheatsheets/tree/main/LICENSE\">MIT license</a>. Please submit new code snippets, ideas, or suggestions by creating an <a href=\"https://github.com/niekdt/cheatsheets/issues\">issue</a>.
+footer_content: Created by Niek Den Teuling, distributed under an <a href=https://github.com/niekdt/cheatsheets/tree/main/LICENSE>MIT license</a>. Please submit new code snippets, ideas, or suggestions by creating an <a href=https://github.com/niekdt/cheatsheets/issues>issue</a>.
 theme: just-the-docs
 color_scheme: dark
 url: https://niekdt.github.io/cheatsheets/
