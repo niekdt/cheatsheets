@@ -1,20 +1,20 @@
-0D array operations.
+# Scalar: 0D array operations.
 
-# Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | Boolean scalar | `np.array(True)` | |
 | Floating point scalar | `np.array(0)` | |
 | Int scalar | `np.array(0, dtype=np.int64)` | |
 
-# Test
+## Test
 | What | How | Details |
 |---|---|---|
 | Is NaN | `np.isnan(x)` | |
 | Is infinite | `np.isinf(x)` | |
 | Is finite | `np.isfinite(x)` | |
 
-# Map
+## Map
 | What | How | Details |
 |---|---|---|
 | Log transform | `np.log(x)` | |

@@ -1,4 +1,6 @@
-# Variables
+# Evaluation
+
+## Variables
 | What | How | Details |
 |---|---|---|
 | Generate valid variable names from string(s) | `make.names('a@b')` | |
@@ -8,7 +10,7 @@
 | Fill in variable values in expression | `substitute(expr, env)` | Useful when expression is called in another function |
 | Force evaluation of variable | `force(arg)` | |
 
-# Environment
+## Environment
 | What | How | Details |
 |---|---|---|
 | Create new environment | `environment()` | |
@@ -20,7 +22,7 @@
 | Get value of variable in environment | `get('var', envir=env)` | |
 | Try get value of variable, with default return | `get0('var', envir=env, ifnotfound='default value')` | |
 
-# Dynamic evaluation
+## Dynamic evaluation
 | What | How | Details |
 |---|---|---|
 | Create call | `call = quote(A = 1)` | |
@@ -38,7 +40,7 @@
 | Substitute a call | `do.call(substitute, list(CALL, env=ENV))` | where CALL is stored in a variable |
 | Get expression as string | `deparse(expr, width.cutoff=500)` | |
 
-# Chained evaluation
+## Chained evaluation
 | What | How | Details |
 |---|---|---|
 | Chain function calls | `y = x %>% table %>% prop.table` | |
@@ -46,7 +48,7 @@
 | Call consecutive function  but return the former value | `y = x %>% table %T>% print` | |
 | Call functions and update the LHS | `x %<>% sort %>% abs` | |
 
-# Functions
+## Functions
 | What | How | Details |
 |---|---|---|
 | Get all arguments, including defaults | `mget(names(formals()),sys.frame(sys.nframe()))` | |

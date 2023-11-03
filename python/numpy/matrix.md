@@ -1,6 +1,6 @@
-2D array operations
+# Matrix: 2D array operations
 
-## Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | Undefined (size $n$ x $m$) | `np.empty((n, m))` | Warning: don't use the initial values |
@@ -18,12 +18,12 @@
 | From vectors as columns | `np.stack((v1, v2), axis=1)` | |
 | From vectors as columns | `np.vstack((v1, v2)).transpose()` | |
 
-# Query
+## Get
 | What | How | Details |
 |---|---|---|
-| Get element at row $i$, column $j$ | `m[i,j]` | |
+| Element at row $i$, column $j$ | `m[i,j]` | |
 
-# Update
+## Update
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
@@ -34,7 +34,7 @@ All operations are in-place.
 | Fill column $j$ with value | `m[:,j] = v` | |
 | Resize to shape, fill with zeros | `m.resize(m, d)` | |
 
-# Map
+## Map
 Operations are element-wise and preserve the shape of the matrix.
 | What | How | Details |
 |---|---|---|
@@ -42,9 +42,9 @@ Operations are element-wise and preserve the shape of the matrix.
 | Increment elements by the respective element of another matrix | `m + m2` | Must be equal shape |
 | Find min between two matrices | `np.fmin(m, m2)` | |
 | Find max between two matrices | `np.fmax(m, m2)` | |
-| Clip (truncate) between [ $a$, $b$] | `np.clip(m, a_min=a, a_max=b)` | `a_min < a_max` is not checked |
+| Clip (truncate) between \[ $a$, $b$] | `np.clip(m, a_min=a, a_max=b)` | `a_min < a_max` is not checked |
 
-# Reorder
+## Reorder
 Operations preserve the shape of the matrix.
 | What | How | Details |
 |---|---|---|
@@ -55,7 +55,7 @@ Operations preserve the shape of the matrix.
 | Sort elements by column descending | `np.sort(m, axis=0)` | |
 | Sort elements per row descending | `np.sort(m, axis=1)` | |
 
-# Aggregate (per column)
+## Aggregate (per column)
 Summarize along an axis. Set `axis=1` for per-row operation.
 | What | How | Details |
 |---|---|---|
@@ -66,18 +66,18 @@ Summarize along an axis. Set `axis=1` for per-row operation.
 | Mean | `np.mean(m, axis=0)` | Use `nanmean()` to ignore NaNs |
 | Median | `np.median(m, axis=0)` | Use `nanmedian()` to ignore NaNs |
 
-# Shrink
+## Shrink
 | What | How | Details |
 |---|---|---|
 | Diagonal vector | `np.diag(m)` | | 
 
-# Grow
+## Grow
 | What | How | Details |
 |---|---|---|
 | Pad with value | `np.pad(m, pad_width=1, constant_values=v)` | |
 | Pad with edge element | `np.pad(m, pad_width=1, mode='edge')` | |
 
-# Reshape
+## Reshape
 | What | How | Details |
 |---|---|---|
 | Transpose | `m.T` | |
@@ -85,7 +85,7 @@ Summarize along an axis. Set `axis=1` for per-row operation.
 | Rotate | `np.rot90(m)` | |
 | Reshape to dimensions | `m.reshape(d)` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | 1D array (concat rows) | `m.flatten()` | |

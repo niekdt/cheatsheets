@@ -1,4 +1,6 @@
-# Basic
+# Roxygen2
+
+## Basic
 | What | How | Details |
 |---|---|---|
 | Title | `@title Title here` | |
@@ -11,7 +13,7 @@
 | Note | `@note Notes here` | |
 | Data format | `@format Format description here` | |
 
-# Formatting
+## Format
 | What | How | Details |
 |---|---|---|
 | Enable markdown | `@md` | |
@@ -21,7 +23,7 @@
 | Display equation | `\deqn{a + b}` | |
 | Code | `` `mu <- mean(data)` `` | |
 | Code | `\code{mu <- mean(data)}` | |
-| Code block | <pre>\```&#13;mu <- mean(data)&#13;```</pre> | |
+| Code block | <pre>\```&#13;mu <- mean(data)&#13;\```</pre> | |
 | Monospace font (looks like code) | <pre>\preformatted{&#13;&#09;text&#13;}</pre> | | 
 | Package name | `\pkg{stats}` | |
 | Unordered list | <pre>\itemize{&#13;&#09;\item Option A&#13;&#09;\item Option B&#13;}</pre> | |
@@ -32,7 +34,7 @@
 | Arbitrary sections | <pre>@section Title:&#13;Text here </pre> | |
 | Subsections | <pre>@details&#13;## This is a subsection &#13;With text &#13;#### Subsubsection here&#13;With text</pre> | |
 
-# Linking
+## Link
 | What | How | Details |
 |---|---|---|
 | Website | `<https://r-project.org>` | |
@@ -54,7 +56,7 @@
 | References | `@references`<br>`\insertRef{benaglia2009mixtools}{latrend}` | |
 | E-mail | `\email{example@@example.com}` | |
 
-# Code examples
+## Code examples
 | What | How | Details |
 |---|---|---|
 | Examples | <pre>@examples&#13;1 + 1&#13;mean(1:9)</pre> | |
@@ -62,7 +64,7 @@
 | Examples that should not be tested | <pre>@examples&#13;\donttest{&#13;&#09;stop('oops')&#13;}</pre> | |
 | Interactive example only | <pre>@examples&#13;if interactive()&#13;&#09;browseURL("https://roxygen2.r-lib.org")</pre>
 
-# Function/class import/export and loading
+## Function/class import/export and loading
 | What | How | Details |
 |---|---|---|
 | Import package | `@import stats` | |
@@ -77,7 +79,7 @@
 | Export class | `@exportClass lcModel` | |
 | Export class method | `@exportMethod evaluate` | |
 
-# Docs
+## Docs
 | What | How | Details |
 |---|---|---|
 | Don't generate topic | `@noRd` | |
@@ -96,13 +98,13 @@
 | Inherit dot parameters | `@inheritDotParams` | |
 | Hide documentation | `@keywords internal` | |
 
-# Figures 
+## Figures 
 | What | How | Details |
 |---|---|---|
 | Add figure | `![](example-plot.jpg "Example Plot Title")` | |
 
 
-# Dynamic content
+## Dynamic content
 | What | How | Details |
 |---|---|---|
 | In-line code evaluation | `` `r getRversion()` `` | Evaluated during every roxygenize call |
@@ -111,7 +113,7 @@
 | Dynamic documentation | ![image](https://github.com/niekdt/cheatsheets/assets/8193083/e8cd9182-e05b-4f48-a9a1-ff5edf34dcba) | |
 
 
-# IDE shortcuts
+## IDE shortcuts
 | What | How | Keys |
 |---|---|---|
 | Generate docs | `roxygen2::roxygenise()` | Ctrl+Shift+D |

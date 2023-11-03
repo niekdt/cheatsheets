@@ -1,4 +1,6 @@
-# Creation
+# data.table
+
+## Create
 | What | How | Details |
 |---|---|---|
 | From `data.frame` | <pre lang='R'>as.data.table(df)</pre> | |
@@ -12,7 +14,7 @@
 | From array to long format | <pre lang='R'>as.data.table(x) | Ensure that all dims are named |
 | From CSV | <pre lang='R'>fread('derp.csv') | |
 
-# Properties
+## Properties
 | What | How | Details |
 |---|---|---|
 | Column names | <pre lang='R'>names(dt) | |
@@ -25,14 +27,14 @@
 | Remove attribute byref | <pre lang='R'>setattr(dt, 'myAttr', NULL) | |
 | Number of duplicated rows | <pre lang='R'>sum(duplicated(dt)) | |
 
-# Sorting
+## Sort
 Data tables are sorted by the keys
 | What | How | Details |
 |---|---|---|
 | Sort by column symbols byref | <pre lang='R'>setorder(dt, Age, Sex) | |
 | Sort by column names byref | <pre lang='R'>setorderv(dt, c('Age', 'Sex')) | |
 
-# Query
+## Query
 | What | How | Details |
 |---|---|---|
 | Select column | <pre lang='R'>dt$Age | |
@@ -57,8 +59,9 @@ Data tables are sorted by the keys
 | Find row index of key value | <pre lang='R'>dt['a1', which=TRUE] | |
 | Repeat rows | <pre lang='R'>dt[rep(1:.N, 10)] | |
 
-# Aggregate
-## Grouped
+## Aggregate
+
+### Grouped
 | What | How | Details |
 |---|---|---|
 | By key | <pre lang='R'>dt[,, by = ID] | |
@@ -73,12 +76,12 @@ Data tables are sorted by the keys
 | Select columns by key | <pre lang='R'>dt[, .(x, y), by=ID] | |
 | Select rows by key | <pre lang='R'>dt[dt[, .I[1:10], by=ID]] | |
 
-## Rolling
+### Rolling
 | What | How | Details |
 |---|---|---|
 | Right-aligned rolling sum of size $w$ | <pre lang='R'>dt[, RMean := Reduce('+', shift(x, 1:w-1, fill=0)) / pmin(w, .I)] | |
 
-## Grouped rolling
+### Grouped rolling
 | What | How | Details |
 |---|---|---|
 | Right-aligned rolling sum of size $w$ | <pre lang='R'>dt[, RSum := Reduce('+', shift(x, 0:(w-1), fill=0)), by=ID] | Easily 50 times faster than `zoo::rollapply` |
@@ -92,23 +95,23 @@ Data tables are sorted by the keys
 | Count column for consecutive matches | <pre lang='R'>dt[, MatchNr := {function(x) cumsum(x) + cummin(c(0, diff(x)) * cumsum(x))}(MATCH), by=ID] | |
 | Impute NA values | <pre lang='R'>dt[, X := Hmisc::impute(X, mean), by=ID] |  |
 
-# Row masking
+## Row masking
 
-# Tests
+## Test
 
-# Update
+## Update
 | What | How | Details |
 |---|---|---|
 | Fill NAs by zero | <pre lang='R'>dt[is.na(dt)] = 0 | |
 
-# Append rows
+## Append rows
 | What | How | Details |
 |---|---|---|
 | Insert missing rows based on missing combination of keys | <pre lang='R'>dt[CJ(unique(IDa), unique(IDb))] | |
 | Replace missing values using LOCF | <pre lang='R'>locf = function(x) x[cummax(c(TRUE, tail(is.finite(x) * seq_along(x), -1)))]&#13;dt[, x := locf(x), by=ID] | |
 | Replace missing values using NOCB | <pre lang='R'>locf = function(x) x[cummax(c(TRUE, tail(is.finite(x) * seq_along(x), -1)))]&#13;nocb = function(x) rev(locf(rev(x))&#13;dt[, x := nocb(x), by=ID] | |
 
-# Update (byref)
+## Update (byref)
 | What | How | Details |
 |---|---|---|
 | Assign/update column byref | <pre lang='R'>dt[, x:=1] | |
@@ -126,9 +129,9 @@ Data tables are sorted by the keys
 | Remove columns | <pre lang='R'>dt[, ':='(x=NULL, y=NULL)] | |
 | Remove columns dynamically | <pre lang='R'>dt[, c('x', 'y') := NULL] | |
 
-# Derive columns
+## Derive columns
 
-# Transform
+## Transform
 | What | How | Details |
 |---|---|---|
 | Inner join | <pre lang='R'>merge(dt1, dt2)</pre>or<pre lang='R'>dt1[dt2, nomatch=0] | |
@@ -156,14 +159,14 @@ Data tables are sorted by the keys
 | Repeat rows by group | <pre lang='R'>dt[, lapply(.SD, rep, 10), by=ID] | |
 | Repeat data.table along a sequence | <pre lang='R'>s = LETTERS[1:5]&#13;dt2 = replicate(length(s), dt, simplify=FALSE) %>% setNames(s) %>% rbindlist(idcol=TRUE) | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | To grouped list | <pre lang='R'>split(dt, by='Id') | |
 | To matrix | <pre lang='R'>data.matrix(dt) | |
 
 
-# Syntax notes
+## Syntax notes
 * `.()` is a shortcut for list(), alternative is `J()`
 * `:=` operator assigns by reference
 * `(variable)` to refer to the column names stored in the variable

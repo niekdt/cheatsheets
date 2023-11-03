@@ -1,4 +1,6 @@
-# Options
+# Base
+
+## Options
 | What | How | Details |
 |---|---|---|
 | Debug (browse) on error | `options(error=recover)` | |
@@ -6,14 +8,14 @@
 | Readable traceback | `options(error=function() traceback(max.lines=3))` | |
 | Disable scientific notation | `options(scipen=999)` | |
 
-# Sourcing
+## Sourcing
 | What | How | Details |
 |---|---|---|
 | Run R script (source) | `source('file.R')` | |
 | Get sourced file from within script | `as.character(sys.call(1))[2]` | Does not work during start-up! |
 | Get sourced directory from within script | `dirname(as.character(sys.call(1))[2])` | |
 
-# Output
+## Output
 | What | How | Details |
 |---|---|---|
 | Output | `cat('hello')` | |
@@ -32,7 +34,7 @@
 | Suppress package messages on load | `suppressPackageStartupMessages({...})` | |
 | Suppress warnings | `suppressWarnings({...})` | |
 
-# Version check
+## Version check
 | What | How | Details |
 |---|---|---|
 | Run code conditional on R version | <pre lang='R'>if (compareVersion(paste(version$major, version$minor, sep='.'), '3.6.0') >= 0) {&#13;&#09;RNGkind(sample.kind='Rounding') # fix to reproduce RNG of R 3.5.0&#13;}</pre> | |

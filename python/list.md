@@ -1,16 +1,16 @@
-# Create
+## Create
 | What | How | Details |
 |---|---|---|
 | Empty | `x = []` | |
 | Define | `x = [1, 3, 9]` | |
 | Define with $n$ repeated values $v$ | `x = [v] * n` | |
-| Sample $n$ random numbers between [ $a$, $b$ ) with replacement | `random.choices(range(a, b), k=n)` | About 6 times faster than list comprehension |
-| Sample $n$ random numbers between [ $a$, $b$ ) w/o replacement | `random.sample(range(a, b), n)` | |
+| Sample $n$ random numbers between \[ $a$, $b$ ) with replacement | `random.choices(range(a, b), k=n)` | About 6 times faster than list comprehension |
+| Sample $n$ random numbers between \[ $a$, $b$ ) w/o replacement | `random.sample(range(a, b), n)` | |
 | From tuple | `t = (1, 3, 9)`<br>`x = [t]` | Faster than `list(t)` |
 | From iterator (consumes) | `x = list(iter)` | |
 | Lists from zipped list | <pre lang='python'>a = (1, 2); b = (-1, -2)&#13;ab = zip(a, b)&#13;a2, b2 = zip(*ab) | |
 
-# Test
+## Test
 | What | How | Details |
 |---|---|---|
 | Is list | `isinstance(x, list)` | |
@@ -26,21 +26,21 @@
 | No duplicate elements | `len(x) == len(set(x))` | |
 | Has duplicate elements | `len(x) != len(set(x))` | |
 
-# Extract
+## Get
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
-| Get first element | `x[0]` | |
-| Get last element | `x[-1]` | |
+| First element | `x[0]` | |
+| Last element | `x[-1]` | |
 | Slice | `x[1:3]` | |
-| Get first $n$ elements | `x[:n]` | |
-| Get last $n$ elements | `x[-n:]` | |
-| Get list of elements from a list of indices | `[x[i] for i in indices]` | |
-| Count number of occurrences of element | `x.count(e)` | |
-| Find index of element | `x.index(e)` | Throws error if not found |
-| Find index of element in slice [a,b] | `x.index(e, a, b)` | Throws error if not found |
+| First $n$ elements | `x[:n]` | |
+| Last $n$ elements | `x[-n:]` | |
+| List of elements from a list of indices | `[x[i] for i in indices]` | |
+| Number of occurrences of element | `x.count(e)` | |
+| Index of element | `x.index(e)` | Throws error if not found |
+| Index of element in slice \[a,b] | `x.index(e, a, b)` | Throws error if not found |
 
-# Aggregate
+## Aggregate
 | What | How | Details |
 |---|---|---|
 | Min | `min(x)` | | 
@@ -49,7 +49,7 @@
 | Mean | `sum(x) / len(x)` | Faster than `fmean` and `mean` from `statistics` | 
 | Most frequent element | `statistics.mode(x)` | |
 
-# Update
+## Update
 All operations are in-place.
 | What | How | Details |
 |---|---|---|
@@ -87,8 +87,8 @@ All operations are in-place.
 | Append/push a list | `x.extend(y)` | |
 | Insert at index $i$ | `x.insert(i, e)` | |
 
-# Derive
-## Map
+## Derive
+### Map
 All operations create a new list unless specified otherwise, but preserves references to the original elements.
 | What | How | Details |
 |---|---|---|
@@ -116,7 +116,7 @@ All operations create a new list unless specified otherwise, but preserves refer
 | Elements to string | `[str(e) for e in x]` | |
 | Replicate $n$ times | `x * n` | |
 
-## Grow
+### Grow
 All operations create a new list, but preserves references to the original elements.
 | What | How | Details |
 |---|---|---|
@@ -124,7 +124,7 @@ All operations create a new list, but preserves references to the original eleme
 | Replicate to ensure length $n$ | ? | |
 | Append a list | `x + y` | |
 
-# Iterate
+## Iterate
 | What | How | Details |
 |---|---|---|
 | Iterate | <pre lang='python'>for e in x: | |
@@ -134,7 +134,7 @@ All operations create a new list, but preserves references to the original eleme
 | Iterate over multiple lists with index | <pre lang='python'>for i, (a, b) in enumerate(zip(x, y)): | |
 | Iterate over a list of lists for each nested element | <pre lang='python'>itertools.chain.from_iterable(x) | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Multiple assignment | <pre lang='python'>x = [1, 2]&#13;a, b = x | |
@@ -144,6 +144,6 @@ All operations create a new list, but preserves references to the original eleme
 | To dict (from keys and values) | `dict(zip(keys, values))` | | 
 | Flatten a list of lists | `list(itertools.chain.from_iterable(x))` | |
 
-# Tips
+## Tips
 * Sorting seems to be broken for numeric lists containing NaN
 * Lists can be efficiently used as a stack through `append()` (for push) and `pop()`.

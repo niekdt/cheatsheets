@@ -1,3 +1,6 @@
+# PBS
+
+## Basics
 | What | How | Details |
 |---|---|---|
 | Start interactive shell | `qsh` | |
@@ -13,7 +16,7 @@
 | Kill array job range | `qdel -t 1-10 $id[]` | |
 | Kill all jobs | `qselect -u $user \| xargs qdel` | | 
 
-# Qsub shell script options
+## qsub arguments
 | What | How | Details |
 |---|---|---|
 | Job name | `#PBS -N $name` | |

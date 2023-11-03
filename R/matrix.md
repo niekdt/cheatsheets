@@ -1,23 +1,24 @@
+# Matrix
 WIP 
 
-# Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | From vector to column matrix | `matrix(x)` | |
 | From vector to column matrix | `cbind(x)` | |
 
-# Extract
+## Get
 | What | How | Details |
 |---|---|---|
-| Access elements by (row,col) pairs | `mat[matrix(c(2,3), c(4,5)), ncol=2)]` | |
+| Elements by (row,col) pairs | `mat[matrix(c(2,3), c(4,5)), ncol=2)]` | |
 
-# Tests
+## Test
 | What | How | Details |
 |---|---|---|
 | Check if each column contains at most 1 unique value (i.e. all equal) | `apply(x, 2, uniqueN) == 1` | |
 | Check if all rows are equal | `all(mat[1,] == t(mat))` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | To list of row vectors | `split(mat, row(mat))` | |

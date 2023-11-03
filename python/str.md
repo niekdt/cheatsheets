@@ -1,4 +1,4 @@
-# Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | Empty | `''` | |
@@ -8,7 +8,7 @@
 | From list with comma separator | `','.join(['a', 'b'])` | |
 | Object to string | `str(x)` | |
 
-# Format
+## Format
 | What | How | Details |
 |---|---|---|
 | Positional formatting | `'First {0} then {1}'.format(1 + 1, 2 * 2)` | |
@@ -26,7 +26,7 @@
 | Float with decimal-point padding | `'a = {:06.2f}'.format(3.1234)` | |
 | Datetime with format | `'{:%Y-%m-%d %H:%M}'.format(datetime(2001, 2, 3, 4, 5))` | |
 
-# Query
+## Get
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
@@ -34,9 +34,9 @@
 | Try find index of substring | `x.find(substr)` | |
 | Try find last index of substring | `x.rfind(substr)` | |
 | Count number of non-overlapping substring occurrences | `x.count(substr)` | |
-| Count number of non-overlapping substring occurrences in range [$n$, $m$] | `x.count(substr, n, m)` | |
+| Count number of non-overlapping substring occurrences in range \[$n$, $m$] | `x.count(substr, n, m)` | |
 
-# Tests
+## Tests
 | What | How | Details |
 |---|---|---|
 | String | `isinstance(x, str)` | |
@@ -53,7 +53,7 @@
 | Matches regex pattern | `bool(re.search('\\w', 'abc'))` | |
 | Contains $n$ regex substrings | `len(re.findall('\\w', 'a. a')) == n` | |
 
-# Substring
+## Substring
 | What | How | Details |
 |---|---|---|
 | First character | `x[0]` | |
@@ -71,7 +71,7 @@
 | Remove substring |  | |
 | Remove regex group pattern | ? | |
 
-# Transform
+## Transform
 | What | How | Details |
 |---|---|---|
 | Lower case | `x.lower()` | |
@@ -80,7 +80,7 @@
 | Map from dict | `{'yes': 'ja', 'no': 'nee'}[x]` |
 | Reverse | `x[::-1]` | |
 
-# Grow
+## Grow
 | What | How | Details |
 |---|---|---|
 | Left-pad to length $n$ | `x.ljust(n)` | |
@@ -90,14 +90,14 @@
 | Concatenate | `x + y` | |
 | Join with iterable | `x.join(iter)` | |
 
-# Multiple
+## Split
 | What | How | Details |
 |---|---|---|
 | Split string into two parts by separator (as triplet) | `x.partition(sep)` | |
 | Split string into multiple parts by comma (as list) | `x.split(sep=',')` | |
 | Split string into lines (as list) | `x.splitlines()` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Session hash | `hash(x)` | |

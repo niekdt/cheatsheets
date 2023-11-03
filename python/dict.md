@@ -1,4 +1,5 @@
-# Creation
+# Dict
+## Create
 | What | How | Details |
 |---|---|---|
 | Empty | `x = {}` | |
@@ -8,24 +9,24 @@
 | Merge dictionaries | `z = x \| y` | |
 | Merge dictionaries | `z = {**x, **y}` | ? |
 
-# Query
+## Get
 | What | How | Details |
 |---|---|---|
-| Get entry | `x['color']` | Throws an error if missing |
-| Try get entry | `x.get('color')` | Returns `None` if missing |
-| Try get entry with default $v$ | `x.get('color', v)` | |
-| Get entries from list of keys | `[x[k] for k in keys_list]` | | 
-| Get keys (as dict_keys) | `x.keys()` | |
-| Get keys as list | `list(x)` | |
-| Get keys as sorted list | `sorted(x)` | |
-| Get values (as dict_values) | `x.values()` | |
-| Get values as list | `list(x.values())` | |
-| Get values sorted by keys | `[x[k] for k in sorted(x)]` | |
-| Get entries (as list of tuples) | `x.items()` | |
-| Get first key with value $v$ | `next(k for k in x if x[k] == v)` | |
-| Get all keys with value $v$ | `[k for k in x if x[k] == v]` | |
+| Value | `x['color']` | Throws an error if missing |
+| Try get value | `x.get('color')` | Returns `None` if missing |
+| Try get value with default $v$ | `x.get('color', v)` | |
+| Values from list of keys | `[x[k] for k in keys_list]` | | 
+| Keys (as dict_keys) | `x.keys()` | |
+| Keys as list | `list(x)` | |
+| Keys as sorted list | `sorted(x)` | |
+| Values (as dict_values) | `x.values()` | |
+| Values as list | `list(x.values())` | |
+| Values sorted by keys | `[x[k] for k in sorted(x)]` | |
+| Entries (as list of tuples) | `x.items()` | |
+| First key with value $v$ | `next(k for k in x if x[k] == v)` | |
+| All keys with value $v$ | `[k for k in x if x[k] == v]` | |
 
-# Tests
+## Test
 | What | How | Details |
 |---|---|---|
 | Empty | `if x:` | |
@@ -34,21 +35,21 @@
 | Contains value $v$ | `v in x.values()` | |
 | Contains duplicate values | `len(x) != len(set(x.values()))` | |
 
-# Update
+## Update
 | What | How | Details |
 |---|---|---|
 | Set default entry value for missing key | `x.setdefault('size', 'medium')` |
 | Update entry value | `x['size'] = 'small'` | |
 | Update entry, error if missing | ? | |
 
-# Grow
+## Grow
 | What | How | Details |
 |---|---|---|
 | Add/update entry | `x['size'] = 'small'` | |
 | Merge with another dictionary | `x \|= y` | |
 | Merge with another dictionary | `x.update(y)` | |
 
-# Shrink
+## Shrink
 | What | How | Details |
 |---|---|---|
 | Remove key | `del x['size']` | |
@@ -58,7 +59,7 @@
 | Remove last item, get value | `x.popitem()` | |
 | Clear | `x.clear()` | |
 
-# Derive
+## Derive
 | What | How | Details |
 |---|---|---|
 | Copy | `x.copy()` | |
@@ -68,7 +69,7 @@
 | Subset (intersection) for keys | `{k: x[k] for k in x.keys() if k in keys}` | Returns empty dict if all keys are missing |
 | Subset except for keys | `{k: x[k] for k in x.keys() if k not in keys}` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Pretty print | `pprint.pprint(x)` | |

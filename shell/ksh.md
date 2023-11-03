@@ -1,5 +1,6 @@
+# ksh
 
-# Command-line arguments
+## Command-line arguments
 | What | How | Details |
 |---|---|---|
 | Program name, including the path if started from another directory | `$0` | |
@@ -11,7 +12,7 @@
 | Expand all arguments to single string | `$@` | |
 | Expand arguments to separate words | `"$@"` | |
 
-# Special variables
+## Special variables
 Note that the positional parameters are special variables too.
 | What | How | Details |
 |---|---|---|
@@ -19,12 +20,12 @@ Note that the positional parameters are special variables too.
 | Process id of current program | `$$` | |
 | Process id of last background job | `$!` | |
 
-# Constants
+## Constants
 | What | How | Details |
 |---|---|---|
 | Declare constant | `declare -r PASSWD_FILE=/etc/passwd` | |
 
-# Variables
+## Variables
 Don't put dots in variable names!
 By default, all variables are global! Even within functions!
 | What | How | Details |
@@ -40,7 +41,7 @@ By default, all variables are global! Even within functions!
 | Declare local variable | `typeset var` | |
 | Set local variable | `typeset var = value` | |
 
-# Functions
+## Functions
 Use the local statement to define local variables.
 | What | How | Details |
 |---|---|---|
@@ -49,7 +50,7 @@ Use the local statement to define local variables.
 | Call function | `foo` | |
 | Call function with arguments | `foo arg1 arg2` | |
 
-# Control flows
+## Control flows
 See http://www.bolthole.com/solaris/ksh-basics.html
 | What | How | Details |
 |---|---|---|
@@ -62,7 +63,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Until | | |
 | Pause for $n$ seconds | `sleep n` |
 
-## Error handling
+### Error handling
 | What | How | Details |
 |---|---|---|
 | Stop execution with unspecified error | `exit 1` | |
@@ -75,14 +76,14 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Run code on process termination | `trap "echo whoops" TERM` | |
 | Run cleanup function on error | `trap cleanup ERR` | For a previously defined `cleanup` function |
 
-# Arithmetic
+## Arithmetic
 | What | How | Details |
 |---|---|---|
 | Increment variable | `(( a += 1))` | |
 | Increment variable | `let a += 1` | |
 | Sum variables | `sum = $(( a + b ))` | |
 
-# Comparisons
+## Comparisons
 | What | How | Details |
 |---|---|---|
 | And operator | `&&` |
@@ -94,22 +95,23 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Greater than number _num_ | `$var -gt num` | |
 | Less than number _num_ | `$bar -lt num` | |
 
-# Strings
+## Strings
 | What | How | Details |
 |---|---|---|
 | Length | `"${#var}"` | |
 | Get filename from path | `${name##*/}` | |
 | Get parent path | `${name%/*}` | |
 
-# Output
-## Standard
+## Output
+
+### Standard
 | What | How | Details |
 |---|---|---|
 | Print message | `echo "Hello world!"` | |
 | Print variable | `echo $var` | |
 | Formatted printing | `printf "counting %d days" $days` | |
 
-## Data redirection
+### Data redirection
 | What | How | Details |
 |---|---|---|
 | Write to new file or overwrite file | `command > file` | |
@@ -120,7 +122,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Discard all output | `command > /dev/null 2>&1` | |
 | File as input to command | `command < file` | |
 
-# File handling
+## File handling
 | What | How | Details |
 |---|---|---|
 | Check if directory exists | `[ -d "$DIRPATH" ]` | |
@@ -129,6 +131,6 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Create directory | `mkdir "$DIRPATH"` | |
 | Count the number of files in a directory | <pre lang='ksh'>count=`find $dir -maxdepth 1 -name "*.txt" -type f \| wc -l`</pre> | |
 
-Notes: 
+## Notes
 * Start script with: `#!/bin/ksh`
 * Enable executation for file by running `chmod u+x script.sh`

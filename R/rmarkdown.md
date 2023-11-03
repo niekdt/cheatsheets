@@ -1,4 +1,6 @@
-# Title page
+# Rmarkdown
+
+## Title page
 | What | How | Details |
 |---|---|---|
 | Title | `title: my title` | |
@@ -9,7 +11,7 @@
 | Current date | `` date: "`r format(Sys.time(), '%d %B %Y')`" `` | |
 | Keywords | `tags: [longitudinal, sleep]` | |
 
-# Formatting
+## Format
 | What | How | Details |
 |---|---|---|
 | Bold | `**text**` | |
@@ -18,8 +20,9 @@
 | Code | `code` | |
 | Equation | `$\mu$` | |
 
-# Structures
-## Sections / paragraphs
+## Structures
+
+### Sections / paragraphs
 | What | How | Details |
 |---|---|---|
 | Section | `# Section title` | |
@@ -32,21 +35,21 @@
 | Collapsible paragraph | <pre lang='html'>\<details>&#13;\<summary>Show details…\</summary>&#13;\<p>Derp\</p>&#13;\</details> </pre> | |
 | Horizontal line | `***` | |
 
-## Lists
+### Lists
 | What | How | Details |
 |---|---|---|
 | Define list | `* a`<br>`* b` | |
 | Define nested list | `* a`<br>`  + b`<br>`* c` |
 | Dynamic list from code section | <pre lang='md'>\```{r, results='asis'}&#13;paste0('* ', items, collapse='\n') %>% cat&#13;\```</pre> | |
 
-## Figures
+### Figures
 | What | How | Details |
 |---|---|---|
 | Figure | `{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}` | [Source](https://holtzy.github.io/Pimp-my-rmd/) |
 | Subfigures | <pre lang='md'>\```{r out.width=c('50%', '50%'), fig.show='hold'}&#13;boxplot(1:10)&#13;plot(rnorm(10))&#13;``` | [Source](https://holtzy.github.io/Pimp-my-rmd/) | 
 | Interactive ggplot | `p = ggplot(data, aes(x=x, y=y, color=z)) + geom_point()`<br>`plotly::ggplotly(p)` | |
 
-## Tables
+### Tables
 | What | How | Details |
 |---|---|---|
 | Table | `kable(df)` | |
@@ -55,7 +58,7 @@
 | Named list as table | `` `r unlist(mylist) %>% as.data.frame %>% kable(col.names='Value')` `` | |
 | Knitr params list as table | `` `r unlist(params) %>% as.data.frame %>% kable(col.names='Value', caption='Parameters')` `` | |
 
-# Code block arguments
+## Code block arguments
 To hide code blocks by default, set `code_folding: "hide"` in the output document parameters.
 | What | How | Details |
 |---|---|---|

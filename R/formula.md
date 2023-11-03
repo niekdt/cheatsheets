@@ -1,4 +1,6 @@
-# Creation
+# Formula
+
+## Create
 | What | How | Details |
 |---|---|---|
 | With intercept and single variable | `y ~ x` | |
@@ -7,22 +9,22 @@
 | From string | `as.formula(str)` | |
 | From string | `eval(parse(text='y ~ x'))` | Not recommended | 
 
-# Tests
+## Test
 | What | How | Details |
 |---|---|---|
 | Is formula | `is(f, 'formula')` | |
 | Formulas are equal | `f1 == f2` | |
 | Formulas are equal | `isTRUE(all.equal(f1, f2))` | |
 
-# Extract
+## Get
 | What | How | Details |
 |---|---|---|
-| Get variable names | `all.vars(f)` | |
-| Get left-hand side variable names | `all.vars(update(y ~ x,  ~ 1))` | |
-| Get right-hand side variable names | `all.vars(update(y ~ x,  1 ~ .))` | |
-| Get the environment of the formula | `environment(f)` | |
+| Variable names | `all.vars(f)` | |
+| Left-hand side variable names | `all.vars(update(y ~ x,  ~ 1))` | |
+| Right-hand side variable names | `all.vars(update(y ~ x,  1 ~ .))` | |
+| Environment | `environment(f)` | |
 
-# Update
+## Update
 | What | How | Details |
 |---|---|---|
 | Change terms | `update(y~x, ~ w + z)` | |
@@ -31,12 +33,12 @@
 | Drop response | `formula(delete.response(terms(y ~ x)))` | |
 | Remove the environment | `environment(f) = NULL` | |
 
-# Evaluate
+## Evaluate
 | What | How | Details |
 |---|---|---|
 | Evaluate a formula with known coefficients | `mm = model.matrix( ~ a + poly(b, 2, raw=TRUE), data.frame(a=1, b=2:4))`<br>`pred = coef %*% t(mm)` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | String | `deparse(f)` | |

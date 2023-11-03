@@ -1,4 +1,6 @@
-# Create
+# Vector
+
+## Create
 | What | How | Details |
 |---|---|---|
 | Define vector | `c(1, 2, 3)` | |
@@ -11,7 +13,7 @@
 | Repeat vector up to length $n$ | `rep_len(x, n)` | |
 | Create vector or matrix depending on the columns | `mat.or.vec(1:5, nc=2)` | |
 
-# Extract
+## Get
 | What | How | Details |
 |---|---|---|
 | Length | `length(x)` | |
@@ -19,14 +21,14 @@
 | First element | `x[0]` | |
 | Last element | `last(x)` | |
 
-# Reorder 
+## Reorder 
 | What | How | Details |
 |---|---|---|
 | Sort descending | `sort(x)` | |
 | Reverse | `rev(x)` | |
 | Shuffle | `sample(x)` | |
 
-# Indexing
+## Indexing
 | What | How | Details |
 |---|---|---|
 | `TRUE` values | `which(x)` | |
@@ -35,7 +37,7 @@
 | Order by value, breaking ties with further args | `order(x)` | |
 | Ranking, with ties option | `rank(x, ties='first')` | |
 
-# Update (element-wise)
+## Update (element-wise)
 | What | How | Details |
 |---|---|---|
 | If-else | `ifelse(x == TRUE, 1, 0)` |
@@ -53,7 +55,7 @@
 | Spline interpolation | `splinefun(x)(x2)` | |
 | Smoothing spline interpolation | `smooth.spline(x) %>% predict(x2)` | |
 
-# Aggregate
+## Aggregate
 | What | How | Details |
 |---|---|---|
 | Sum | `sum(x)` | |
@@ -62,7 +64,7 @@
 | Mode of positive integers `1:K` | `tabulate(x) %>% which.max()` | |
 | Compute function per group, as list | `tapply(x, INDEX = rep_len(1:2, length(x)), mean)` | outputs a list with the results per group |
 
-# Shrink
+## Shrink
 | What | How | Details |
 |---|---|---|
 | Exclude NA | `na.exclude(x)` | |
@@ -73,7 +75,7 @@
 | Lagged difference | `diff(x)` | |
 | Sample $n$ elements | `sample(x, n)` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Split vector into list of vectors, according to grouping | `split(1:10, rep(1:2, 5)` | Can be undone by `unsplit(x, rep(1:2, 5))` |

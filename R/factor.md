@@ -1,4 +1,6 @@
-# Creation
+# Factor
+
+## Create
 | What | How | Details |
 |---|---|---|
 | From vector | `factor(x)` | |
@@ -7,14 +9,14 @@
 | Generate factor of interactions with another | `interaction(f1, f2)` | |
 | Combine factors | `factor(c(as.character(x), as.character(y)), union(levels(x), levels(y)))` | |
 
-# Extract
+## Get
 | What | How | Details |
 |---|---|---|
-| Get levels | `levels(f)` | |
-| Get number of levels | `nlevels(f)` | |
-| Get subset and drop unused levels | `f[1:2, drop=TRUE]` | |
+| Levels | `levels(f)` | |
+| Number of levels | `nlevels(f)` | |
+| Subset and drop unused levels | `f[1:2, drop=TRUE]` | |
 
-# Update
+## Update
 | What | How | Details |
 |---|---|---|
 | Add NA as a factor level | `addNA(f)` | |

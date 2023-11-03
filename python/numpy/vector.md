@@ -1,6 +1,6 @@
-1D array operations (row vectors)
+# Vector: 1D array operations
 
-# Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | Undefined, length $n$ | `np.empty(n)` | Warning: don't use the initial values |
@@ -21,7 +21,7 @@
 | From two vectors | `np.append(v1, v2)` | |
 | From vectors (concat) | `np.concatenate((v1, v2))` | |
 
-# Test
+## Test
 | What | How | Details |
 |---|---|---|
 | Vector | `v.ndim == 1` | |
@@ -39,7 +39,7 @@
 | All numerical elements are equal | `np.ptp(v) == 0` | |
 | Vectors are equal | `np.array_equal(v, v2)` | |
 
-# Update
+## Update
 Operations are in-place.
 | What | How | Details |
 |---|---|---|
@@ -51,7 +51,7 @@ Operations are in-place.
 | Sort elements ascending | `v.sort()` | NaNs are put last|
 | Sort elements descending | `v[::-1].sort()` | Note that this puts NaNs first! |
 
-# Query
+## Get
 | What | How | Details |
 |---|---|---|
 | Unique values | `numpy.unique(v)` | |
@@ -61,7 +61,7 @@ Operations are in-place.
 | Count per unique value | `np.unique(v, return_counts=True)` | |
 | Count per positive integer from [0, `max(v)`] | `np.bincount(v)` | Elements must be nonnegative ints|
 
-# Aggregate
+## Aggregate
 All operations produce a scalar value.
 | What | How | Details |
 |---|---|---|
@@ -77,7 +77,7 @@ All operations produce a scalar value.
 | Median | `np.median(v)` | |
 | Quantile $q$ | `np.quantile(v, q)` | |
 
-# Map
+## Map
 | What | How | Details |
 |---|---|---|
 | Clip (truncate) between [ $a$, $b$ ] | `np.clip(v, a_min=a, a_max=b)` | |
@@ -85,7 +85,7 @@ All operations produce a scalar value.
 | Piecewise-linear interpolation of coordinate mapping `xp -> yp` | `np.interp(v, xp, yp)` | No option for extrapolation! |
 | Piecewise-linear interpolation with extrapolation | `f = scipy.interpolate.interp1d(xp, yp, fill_value = 'extrapolate')`<br>`f(v)` | Deprecated and without replacement lol |
 
-# Reorder
+## Reorder
 | What | How | Details |
 |---|---|---|
 | Reverse elements | `v[::-1]` | |
@@ -97,13 +97,13 @@ All operations produce a scalar value.
 | Sort ascending | `np.sort(v)` | NaNs are last |
 | Sort descending | `v[np.argsort(-v)]` | NaNs are last |
 
-# Shrink
+## Shrink
 | What | How | Details |
 |---|---|---|
 | Difference | `np.diff(v)` | |
 | Difference with lag $l$ | `np.diff(v, n=l)` | |
 
-# Grow
+## Grow
 | What | How | Details |
 |---|---|---|
 | Pad with value | `np.pad(v, pad_width=1, constant_values=v)` | | 
@@ -112,7 +112,7 @@ All operations produce a scalar value.
 | Append vector | `np.append(v1, v2)` | |
 | Concatenate vectors | `np.concatenate((v1, v2, v3))` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Bytes | `v.tobytes()` | |

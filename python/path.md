@@ -1,4 +1,4 @@
-# Generate path
+## Generate path
 | What | How | Details |
 |---|---|---|
 | From directory for given file name | `os.path.join(dir_path, filename)` | | 
@@ -9,17 +9,17 @@
 | Temporary directory path | `tempfile.mkdtemp()` | |
 | Temporary directory path in directory | `tempfile.mkdtemp(dir=dir_path)` | |
 
-# Generate paths from directory
+## Generate paths from directory
 All snippets return a list of string paths.
 | What | How | Details |
 |---|---|---|
 | File names | <pre lang='python'>os.listdir(dir_path) | |
 | File names that match Unix filter | <pre lang='python'>fnmatch.filter(os.listdir(dir_path), '*.csv') | |
-| File names that match regex pattern | <pre lang='python'>[f for f in os.listdir(dir_path) if re.match('\.csv$', f)] | |
-| File paths | <pre lang='python'>[os.path.join(dir_path, f) for f in os.listdir(dir_path)] | |
-| File paths that match regex pattern | <pre lang='python'>[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)] | |
+| File names that match regex pattern | <pre lang='python'>\[f for f in os.listdir(dir_path) if re.match('\.csv$', f)] | |
+| File paths | <pre lang='python'>\[os.path.join(dir_path, f) for f in os.listdir(dir_path)] | |
+| File paths that match regex pattern | <pre lang='python'>\[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)] | |
 
-# Tests
+## Test
 | What | How | Details |
 |---|---|---|
 | File/dir exists | `os.path.exists(path)` | |
@@ -28,7 +28,7 @@ All snippets return a list of string paths.
 | Absolute path | `os.path.isabs(path)` | |
 | Paths refer to same file | `os.path.samefile(path1, path2)` | |
 
-# Path manipulation
+## Path manipulation
 | What | How | Details |
 |---|---|---|
 | Normalize path | `os.path.normpath(path)` | |
@@ -41,7 +41,7 @@ All snippets return a list of string paths.
 | Split path into parent path and basename | `parent_path, base_name = os.path.split(path)` | |
 | Split path into file path and extension | `file_path, ext = os.path.splitext(path)` | |
 
-# File info
+## File info
 | What | How | Details |
 |---|---|---|
 | Filename | `os.path.basename(r'C:\Files\derp.csv')` | Returns `derp.csv` |

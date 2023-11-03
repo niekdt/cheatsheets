@@ -1,13 +1,13 @@
-N-D array operations
+# N-D array operations
 
-# Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | Ensure at least 1D array | `np.atleast_1d(x)` | |
 | Ensure at least 2D array | `np.atleast_2d(x)` | |
 | Ensure at least 3D array | `np.atleast_3d(x)` | |
 
-# Properties
+## Properties
 | What | How | Details |
 |---|---|---|
 | Number of dimensions | `x.ndim` | |
@@ -15,26 +15,26 @@ N-D array operations
 | Size of the first dimension | `len(x)` | |
 | Number of elements | `x.size` | |
 
-# Query
+## Get
 | What | How | Details |
 |---|---|---|
 
-# Aggregate to scalar 
+## Aggregate to scalar 
 | What | How | Details |
 |---|---|---|
 | Sum of all elements | `np.sum(a)` | |
 
-# Aggregate along axis
+## Aggregate along axis
 | What | How | Details |
 |---|---|---|
 | Sum | `np.sum(a, axis=ax)` | |
 
-# Map 
+## Map 
 | What | How | Details |
 |---|---|---|
 | Cumulative sum along axis | `np.cumsum(a, axis=ax)` | |
 
-# Shrink
+## Shrink
 | What | How | Details |
 |---|---|---|
 | Drop singular dimensions | `a.squeeze()` | |
@@ -42,12 +42,12 @@ N-D array operations
 | Difference along axis | `np.diff(a, axis=ax)` | |
 | Difference along axis with lag $l$ | `np.diff(a, n=l, axis=ax)` | |
 
-# Reshape
+## Reshape
 | What | How | Details |
 |---|---|---|
 | Reshape to dimensions $d$ | `x.reshape(d)` |  
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Bytes | `x.tobytes()` | Not sure what difference with `data.tobytes()` is |

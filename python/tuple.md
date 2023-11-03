@@ -1,4 +1,4 @@
-# Creation
+## Create
 | What | How | Details |
 |---|---|---|
 | Empty | `()` | |
@@ -10,12 +10,7 @@
 | From iterator by unpacking | `(*a,)` | |
 | From comprehension | `tuple(v * 2 for v in a)` | |
 
-# Properties
-| What | How | Details |
-|---|---|---|
-| Length | `len(x)` | |
-
-# Tests
+## Test
 | What | How | Details |
 |---|---|---|
 | Empty | `if not x:` | |
@@ -27,23 +22,24 @@
 | Any element is True | `any(x)` | |
 | No elements are True | `not any(x)` | |
 
-# Query
+## Get
 | What | How | Details |
 |---|---|---|
+| Length | `len(x)` | |
 | Value at index $i$ | `x[i]` | |
 | Value from end index $i$ | `x[-i]` | |
 | Count occurrences of value $v$ | `x.count(v)` | |
 | First index of value $v$ | `x.index(v)` | Error if missing |
-| First index of value $v$ between index range [$n$, $m$] | `x.index(v, n, m)` | Error if missing in range |
+| First index of value $v$ between index range \[$n$, $m$] | `x.index(v, n, m)` | Error if missing in range |
 | Sum elements | `sum(x)` | |
 | Min of elements | `min(x)` | |
 | Max of elements | `max(x)` | |
 
-# Derive
+## Derive
 Creates a new immutable copy.
 | What | How | Details |
 |---|---|---|
-| Subset between [$n$, $m$] (slice) | `x[n:m]` | |
+| Subset between \[$n$, $m$] (slice) | `x[n:m]` | |
 | First $n$ elements | `x[:n]` | |
 | Last $n$ elements | `x[-n:]` | |
 | Append element | `x += (1,)` | |
@@ -54,7 +50,7 @@ Creates a new immutable copy.
 | Shuffle | `tuple(random.sample(x, k=len(x)))` | |
 | Replicate elements $n$ times | `x * n` | |
 
-# Convert
+## Convert
 | What | How | Details |
 |---|---|---|
 | Multiple assignment | `a, b = x` | |
