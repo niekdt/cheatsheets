@@ -1,6 +1,17 @@
+---
+layout: default
+title: Vector
+parent: Numpy
+---
+
 # Vector: 1D array operations
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Undefined, length $n$ | `np.empty(n)` | Warning: don't use the initial values |
@@ -22,6 +33,7 @@
 | From vectors (concat) | `np.concatenate((v1, v2))` | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Vector | `v.ndim == 1` | |
@@ -41,6 +53,7 @@
 
 ## Update
 Operations are in-place.
+
 | What | How | Details |
 |---|---|---|
 | Set first element | `v[0] = value` | |
@@ -52,6 +65,7 @@ Operations are in-place.
 | Sort elements descending | `v[::-1].sort()` | Note that this puts NaNs first! |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Unique values | `numpy.unique(v)` | |
@@ -63,6 +77,7 @@ Operations are in-place.
 
 ## Aggregate
 All operations produce a scalar value.
+
 | What | How | Details |
 |---|---|---|
 | Min | `np.min(v)` | Use `nanmin()` if NaNs are present |
@@ -78,6 +93,7 @@ All operations produce a scalar value.
 | Quantile $q$ | `np.quantile(v, q)` | |
 
 ## Map
+
 | What | How | Details |
 |---|---|---|
 | Clip (truncate) between \[ $a$, $b$ ] | `np.clip(v, a_min=a, a_max=b)` | |
@@ -86,6 +102,7 @@ All operations produce a scalar value.
 | Piecewise-linear interpolation with extrapolation | `f = scipy.interpolate.interp1d(xp, yp, fill_value = 'extrapolate')`<br>`f(v)` | Deprecated and without replacement lol |
 
 ## Reorder
+
 | What | How | Details |
 |---|---|---|
 | Reverse elements | `v[::-1]` | |
@@ -98,12 +115,14 @@ All operations produce a scalar value.
 | Sort descending | `v[np.argsort(-v)]` | NaNs are last |
 
 ## Shrink
+
 | What | How | Details |
 |---|---|---|
 | Difference | `np.diff(v)` | |
 | Difference with lag $l$ | `np.diff(v, n=l)` | |
 
 ## Grow
+
 | What | How | Details |
 |---|---|---|
 | Pad with value | `np.pad(v, pad_width=1, constant_values=v)` | | 
@@ -113,6 +132,7 @@ All operations produce a scalar value.
 | Concatenate vectors | `np.concatenate((v1, v2, v3))` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | Bytes | `v.tobytes()` | |

@@ -1,6 +1,17 @@
+---
+layout: default
+title: Matrix
+parent: Numpy
+---
+
 # Matrix: 2D array operations
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Undefined (size $n$ x $m$) | `np.empty((n, m))` | Warning: don't use the initial values |
@@ -19,12 +30,14 @@
 | From vectors as columns | `np.vstack((v1, v2)).transpose()` | |
 
 ## Get
+
 | What | How | Details |
 |---|---|---|
 | Element at row $i$, column $j$ | `m[i,j]` | |
 
 ## Update
 All operations are in-place.
+
 | What | How | Details |
 |---|---|---|
 | Update element at row $i$, column $j$ | `m[i,j] = v` | |
@@ -36,6 +49,7 @@ All operations are in-place.
 
 ## Map
 Operations are element-wise and preserve the shape of the matrix.
+
 | What | How | Details |
 |---|---|---|
 | Increment all elements | `m + v` | |
@@ -46,6 +60,7 @@ Operations are element-wise and preserve the shape of the matrix.
 
 ## Reorder
 Operations preserve the shape of the matrix.
+
 | What | How | Details |
 |---|---|---|
 | Reverse elements | `np.flip(m)` | Flattened view in reverse order |
@@ -57,6 +72,7 @@ Operations preserve the shape of the matrix.
 
 ## Aggregate (per column)
 Summarize along an axis. Set `axis=1` for per-row operation.
+
 | What | How | Details |
 |---|---|---|
 | Min | `np.min(m, axis=0)` | Use `nanmin()` to ignore NaNs |
@@ -67,17 +83,20 @@ Summarize along an axis. Set `axis=1` for per-row operation.
 | Median | `np.median(m, axis=0)` | Use `nanmedian()` to ignore NaNs |
 
 ## Shrink
+
 | What | How | Details |
 |---|---|---|
 | Diagonal vector | `np.diag(m)` | | 
 
 ## Grow
+
 | What | How | Details |
 |---|---|---|
 | Pad with value | `np.pad(m, pad_width=1, constant_values=v)` | |
 | Pad with edge element | `np.pad(m, pad_width=1, mode='edge')` | |
 
 ## Reshape
+
 | What | How | Details |
 |---|---|---|
 | Transpose | `m.T` | |
@@ -86,6 +105,7 @@ Summarize along an axis. Set `axis=1` for per-row operation.
 | Reshape to dimensions | `m.reshape(d)` | |
 
 ## Convert
+
 | What | How | Details |
 |---|---|---|
 | 1D array (concat rows) | `m.flatten()` | |

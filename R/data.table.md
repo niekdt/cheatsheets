@@ -40,8 +40,8 @@ parent: R
 | Number of duplicated rows | <pre lang='R'>sum(duplicated(dt)) | |
 
 ## Sort
+Sorting can be handled automatically by setting a column as one of the keys through `setkey()`.
 
-Data tables are sorted by the keys
 | What | How | Details |
 |---|---|---|
 | Sort by column symbols byref | <pre lang='R'>setorder(dt, Age, Sex) | |

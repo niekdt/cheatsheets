@@ -1,6 +1,17 @@
+---
+layout: default
+title: Scalar
+parent: Numpy
+---
+
 # Scalar: 0D array operations.
+{: .no_toc}
+
+1. TOC
+{:toc}
 
 ## Create
+
 | What | How | Details |
 |---|---|---|
 | Boolean scalar | `np.array(True)` | |
@@ -8,6 +19,7 @@
 | Int scalar | `np.array(0, dtype=np.int64)` | |
 
 ## Test
+
 | What | How | Details |
 |---|---|---|
 | Is NaN | `np.isnan(x)` | |
@@ -15,6 +27,7 @@
 | Is finite | `np.isfinite(x)` | |
 
 ## Map
+
 | What | How | Details |
 |---|---|---|
 | Log transform | `np.log(x)` | |

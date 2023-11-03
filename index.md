@@ -7,7 +7,3 @@ permalink: /
 ---
 
 Hello world!
-
-{:toc}
-
-Foo
