@@ -2,6 +2,7 @@
 layout: default
 title: List
 parent: Python
+nav_order: 2.1
 ---
 
 # List

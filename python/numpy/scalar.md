@@ -3,6 +3,7 @@ layout: default
 title: Scalar
 parent: Numpy
 grand_parent: Python
+nav_order: 0
 ---
 
 # Scalar: 0D array operations.

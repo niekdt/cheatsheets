@@ -2,6 +2,7 @@
 layout: default
 title: Iterator
 parent: Python
+nav_order: 2.2
 ---
 
 # Iterators

@@ -2,6 +2,7 @@
 layout: default
 title: String
 parent: Python
+nav_order: 1
 ---
 
 # String

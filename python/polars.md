@@ -2,6 +2,7 @@
 layout: default
 title: Polars
 parent: Python
+nav_order: 150
 ---
 
 # Polars

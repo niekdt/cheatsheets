@@ -2,6 +2,7 @@
 layout: default
 title: File system path
 parent: Python
+nav_order: 10
 ---
 
 # File system paths

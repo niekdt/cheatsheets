@@ -2,6 +2,7 @@
 layout: default
 title: Data.table
 parent: R
+nav_order: 50
 ---
 
 # data.table

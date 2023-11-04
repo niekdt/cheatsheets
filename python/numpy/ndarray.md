@@ -3,6 +3,7 @@ layout: default
 title: ND-array
 parent: Numpy
 grand_parent: Python
+nav_order: -1
 ---
 
 # N-D array operations

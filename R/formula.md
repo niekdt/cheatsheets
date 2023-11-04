@@ -2,6 +2,7 @@
 layout: default
 title: Formula
 parent: R
+nav_order: 3
 ---
 
 # Formula

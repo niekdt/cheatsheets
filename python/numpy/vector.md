@@ -3,6 +3,7 @@ layout: default
 title: Vector
 parent: Numpy
 grand_parent: Python
+nav_order: 1
 ---
 
 # Vector: 1D array operations

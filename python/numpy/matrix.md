@@ -3,6 +3,7 @@ layout: default
 title: Matrix
 parent: Numpy
 grand_parent: Python
+nav_order: 2
 ---
 
 # Matrix: 2D array operations

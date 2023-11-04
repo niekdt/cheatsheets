@@ -2,6 +2,7 @@
 layout: default
 title: Factor
 parent: R
+nav_order: 1
 ---
 
 # Factor

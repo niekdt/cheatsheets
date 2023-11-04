@@ -2,6 +2,7 @@
 layout: default
 title: Evaluation
 parent: R
+nav_order: 0.2
 ---
 
 # Evaluation

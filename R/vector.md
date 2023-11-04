@@ -2,6 +2,7 @@
 layout: default
 title: Vector
 parent: R
+nav_order: 0
 ---
 
 # Vector

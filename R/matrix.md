@@ -2,6 +2,7 @@
 layout: default
 title: Matrix
 parent: R
+nav_order: 0.1
 ---
 
 # Matrix

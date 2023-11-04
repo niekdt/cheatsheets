@@ -2,6 +2,7 @@
 layout: default
 title: Tuple
 parent: Python
+nav_order: 2
 ---
 
 # Tuple

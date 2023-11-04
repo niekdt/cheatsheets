@@ -2,6 +2,7 @@
 layout: default
 title: Dictionary
 parent: Python
+nav_order: 2.3
 ---
 
 # Dictionary

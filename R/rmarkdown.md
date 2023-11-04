@@ -2,6 +2,7 @@
 layout: default
 title: Rmarkdown
 parent: R
+nav_order: 100
 ---
 
 # Rmarkdown
