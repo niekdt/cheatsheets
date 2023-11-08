@@ -45,7 +45,7 @@ nav_order: 1.9
 | Weekday number | `x.isoweekday()` | Mon=1, Sun=7 |
 | Weekday number (zero-based) | `x.weekday()` | Mon=0, Sun=6 |
 
-# Test
+## Test
 | What | How | Details |
 |---|---|---|
 | Same moment | `x == y` | Up to `x.resolution` precision (usually 1μs) |
