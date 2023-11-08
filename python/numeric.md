@@ -35,7 +35,7 @@ nav_order: 0
 
 | What | How | Details |
 |---|---|---|
-| Number of bits needed to represent the integer (ignoring sign) | `x.bit_length()` | Same as `floor(log2(\|x\|))` |
+| Number of bits needed to represent the integer (ignoring sign) | `x.bit_length()` | Same as `floor(log2(|x|))` |
 
 ## Test
 
