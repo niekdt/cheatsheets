@@ -12,19 +12,21 @@ nav_order: 1.9
 {:toc}
 
 ## Create
+These assume the `datetime` methods have been imported. Otherwise, prefix with `datetime.`.
 
 | What | How | Details |
 |---|---|---|
-| Define date | `datetime.date(year, month, day)` | |
-| Define time | `datetime.time(hour, minute, second)` | |
-| Define datetime | `datetime.datetime(year, month, day, hour, minute, second)` | |
+| Define date | `date(year, month, day)` | |
+| Define time | `time(hour, minute, second)` | |
+| Define datetime | `datetime(year, month, day, hour, minute, second)` | |
 | Current date | `datetime.now().date()` | |
 | Current time | `datetime.now().time()` | |
 | Current datetime | `datetime.now()` | |
 | Current datetime in UTC timezone | `datetime.now(timezone.utc)` | |
+| Combine date and time | `datetime.combine(date, time)` | |
 | Date from any valid [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date string | `date.fromisoformat(date_string)` | e.g., `2023-01-30` or `20230130` |
-| Time from any valid [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time string | `datetime.time.fromisoformat(time_str)` | e.g. `23:59:01` |
-| Datetime from any valid [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) datetime string | `datetime.datetime.fromisoformat(datetime_str)` | e.g. `2023-01-30 23:59`, `2023-01-30T23:59:01` |
+| Time from any valid [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) time string | `time.fromisoformat(time_str)` | e.g. `23:59:01` |
+| Datetime from any valid [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) datetime string | `datetime.fromisoformat(datetime_str)` | e.g. `2023-01-30 23:59`, `2023-01-30T23:59:01` |
 | Date from YYYY-MM-DD string | `datetime.strptime(datetime_str, '%y-%m-%d')` | |
 | Date from DD-MMM-YYYY string | `datetime.strptime(datetime_str, '%d-%b-%y')` | |
 | Datetime from YYYY-MM-DD HH\:mm:ss | `x.strptime('%y-%m-%d %H:%M:%S')` | |
