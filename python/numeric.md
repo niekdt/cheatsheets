@@ -11,6 +11,28 @@ nav_order: 0
 1. TOC
 {:toc}
 
+## Constants
+
+| What | How | Details |
+|---|---|---|
+| NaN | `math.nan` | |
+| NaN | `float('nan')` | |
+| NaN | `numpy.nan` | |
+| Infinity | `math.inf` | |
+| Infinity | `float('inf')` | |
+| Infinity | `numpy.inf` | |
+| Negative infinity | `-math.inf` | |
+| Negative infinity | `float('-inf')` | |
+| Negative infinity | `numpy.NINF` | |
+| Pi | `math.pi` | |
+| e | `math.e` | |
+| Min int | `-sys.maxsize` | |
+| Max int | `sys.maxsize` | |
+| Float epsilon (smallest representable difference) | `sys.float_info.epsilon` | |
+| Min float | `sys.float_info.min` | |
+| Max float | `sys.float_info.max` | |
+
+
 ## Create
 `int()` and `float()` throw `ValueError` if the input cannot be parsed.
 
@@ -31,6 +53,7 @@ nav_order: 0
 | Float from string for temporary locale | `Babel.parse_decimal('1,25', locale='nl_NL.utf8')` | No way to do this cleanly and thread-safe in standard Python... |
 | Float from string for temporary locale | `loc = locale.getlocale(locale.LC_NUMERIC)`<br>`locale.setlocale(locale.LC_NUMERIC, 'nl_NL')`<br>`f = locale.atof(x)`<br>`locale.setlocale(locale.LC_NUMERIC, loc)` | |
 
+
 ## Extract
 
 | What | How | Details |
@@ -41,8 +64,16 @@ nav_order: 0
 
 | What | How | Details |
 |---|---|---|
-| Integer | 
+| Integer | | |
 | Whole number | `float.is_integer(x)` | e.g., `TRUE` for `5.0` |
+| Approximately equal | `math.isclose(x, y)` | Uses proportional tolerance |
+| Approximately equal with absolute tolerance _tol_ | `math.isclose(x, y, abs_tol=tol)` | |
+| Approximately equal with proportional tolerance _tol_% | `math.isclose(x, y, rel_tol=tol)` | |
+| NaN | `math.isnan(x)` | Does not work for complex numbers |
+| Finite | `math.isfinite(x)` | |
+| Infinite | `math.isinf(x)` | |
+| Positive infinity | `math.isinf(x) and x > 0` | |
+| Negative infinity | `math.isinf(x) and x < 0` | |
 
 ## Convert
 
