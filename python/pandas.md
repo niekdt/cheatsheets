@@ -6,6 +6,7 @@ nav_order: 151
 ---
 
 # Pandas (WIP)
+{: .no_toc}
 Pandas.DataFrame seems to be the MS Excel of the Python data processing universe. Slow, write-once, inconsistent API, and many ways to achieve the same thing (the true pythonic way), but useful for quick & dirty data manipulation and popular for that reason.
 
 Words of caution:
@@ -14,9 +15,7 @@ Words of caution:
 * MultiIndex versus multiple indices. Just don't. If you cared about speed you would not be using pandas anyway.
 * Complex queries will be a series of data variable updates, which is hard to read, and guaranteed to lead to bugs at a later stage during refactoring.
 
-{: .no_toc}
-
-1. TOC
+- TOC
 {:toc}
 
 ## Create
