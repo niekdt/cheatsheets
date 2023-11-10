@@ -5,7 +5,7 @@ parent: Python
 nav_order: 151
 ---
 
-# Pandas
+# Pandas (WIP)
 Pandas.DataFrame seems to be the MS Excel of the Python data processing universe. Slow, write-once, inconsistent API, and many ways to achieve the same thing (the true pythonic way), but useful for quick & dirty data manipulation and popular for that reason.
 
 Words of caution:
