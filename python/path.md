@@ -19,7 +19,7 @@ nav_order: 10
 | Temporary file path | `tempfile.mktemp()` | |
 | Temporary file path in directory | `tempfile.mktemp(dir=dir_path)` | |
 | Temporary file path with extension (suffix) | `tempfile.mktemp('.txt')` | |
-| Open temporary file with clean-up | `with tempfile.NamedTemporaryFile() as file:`<br>`  path = file.name` | |
+| Open temporary file with clean-up | `with tempfile.NamedTemporaryFile() as file:`<br>`    path = file.name` | |
 | Temporary directory path | `tempfile.mkdtemp()` | |
 | Temporary directory path in directory | `tempfile.mkdtemp(dir=dir_path)` | |
 
