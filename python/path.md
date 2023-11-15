@@ -30,9 +30,9 @@ All snippets return a list of string paths.
 |---|---|---|
 | File names | `os.listdir(dir_path)` | |
 | File names that match Unix filter | `fnmatch.filter(os.listdir(dir_path), '*.csv')` | |
-| File names that match regex pattern | `\[f for f in os.listdir(dir_path) if re.match('\.csv$', f)]` | |
-| File paths | `\[os.path.join(dir_path, f) for f in os.listdir(dir_path)]` | |
-| File paths that match regex pattern | `\[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)]` | |
+| File names that match regex pattern | `[f for f in os.listdir(dir_path) if re.match('\.csv$', f)]` | |
+| File paths | `[os.path.join(dir_path, f) for f in os.listdir(dir_path)]` | |
+| File paths that match regex pattern | `[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)]` | |
 
 ## Test
 
