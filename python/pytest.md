@@ -53,8 +53,10 @@ Pytest caches fixtures within the defined scope (for the given parameters).
 | Define fixture with module scope | `@pytest.fixture(scope="module")` | |
 | Define fixture with cleanup | Define clean-up after `yield` | |
 | Define fixture for use in every test | `@pytest.fixture(autouse=True)` | |
+| Define parameterized fixture, resulting in multiple tests | `@pytest.fixture(params=[1, 2, 3, 4, 5])`<br>`def number(request):`<br>`return request.param` | |
 | Disable GC for every test, collect in-between | `@pytest.fixture(autouse=True)`<br>`def cleanup():`<br>`    gc.collect()`<br>`    gc.disable()` | |
-| Parameterized fixtures resulting in multiple tests | `@pytest.fixture(params=[1, 2, 3, 4, 5])`<br>`def number(request):`<br>`return request.param` | |
+| Parameterize tests with a dynamic list of file paths (using fixture) | `@fixture(params = glob.glob(r'data\*.csv')`<br>`def file_paths(request)`<br>`    return request.param` | |
+| Parameterize tests with a dynamic list of file names (using fixture) | `@fixture(params = fnmatch.filter(os.listdir('data'), '*.csv')`<br>`def file_names(request)`<br>`    return request.param` | |
 | Parameterized test using a parameterizable fixture | `@pytest.fixture`<br>`def tester(request):`<br>`return MyTester(request.param)`<br><br>`@pytest.mark.parametrize('tester', [['var1', 'var2']], indirect=True)`<br>`def test_tc1(self, tester):`<br>`tester.dothis()` | |
 
 
