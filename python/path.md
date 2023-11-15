@@ -19,7 +19,7 @@ nav_order: 10
 | Temporary file path | `tempfile.mktemp()` | |
 | Temporary file path in directory | `tempfile.mktemp(dir=dir_path)` | |
 | Temporary file path with extension (suffix) | `tempfile.mktemp('.txt')` | |
-| Open temporary file with clean-up | <pre lang='python'>with tempfile.NamedTemporaryFile() as file:&#13;&#9;path = file.name | |
+| Open temporary file with clean-up | `with tempfile.NamedTemporaryFile() as file:`<br>`  path = file.name` | |
 | Temporary directory path | `tempfile.mkdtemp()` | |
 | Temporary directory path in directory | `tempfile.mkdtemp(dir=dir_path)` | |
 
@@ -28,11 +28,11 @@ All snippets return a list of string paths.
 
 | What | How | Details |
 |---|---|---|
-| File names | <pre lang='python'>os.listdir(dir_path) | |
-| File names that match Unix filter | <pre lang='python'>fnmatch.filter(os.listdir(dir_path), '*.csv') | |
-| File names that match regex pattern | <pre lang='python'>\[f for f in os.listdir(dir_path) if re.match('\.csv$', f)] | |
-| File paths | <pre lang='python'>\[os.path.join(dir_path, f) for f in os.listdir(dir_path)] | |
-| File paths that match regex pattern | <pre lang='python'>\[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)] | |
+| File names | `os.listdir(dir_path)` | |
+| File names that match Unix filter | `fnmatch.filter(os.listdir(dir_path), '*.csv')` | |
+| File names that match regex pattern | `\[f for f in os.listdir(dir_path) if re.match('\.csv$', f)]` | |
+| File paths | `\[os.path.join(dir_path, f) for f in os.listdir(dir_path)]` | |
+| File paths that match regex pattern | `\[os.path.join(dir_path, f) for f in os.listdir(dir_path) if re.match(r'.+\.csv$', f)]` | |
 
 ## Test
 
