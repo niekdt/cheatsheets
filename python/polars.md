@@ -84,7 +84,12 @@ Lazy operations are advised because they allow for query optimization and more p
 </tr>
 <tr>
 <td>Mean of column</td>
-<td><pre lang='python'>data.group_by('sex').agg(pl.col('age').mean())</pre></td>
+
+```python
+data.group_by('sex').agg(pl.col('age').mean())
+```
+
+</td>
 <td></td>
 </tr>
 </table>
