@@ -15,28 +15,27 @@ nav_order: 150
 
 | What | How | Details |
 |---|---|---|
-| Create series | <pre lang='python'>pl.Series('name', \[1, 2, 3]) |  |
-| Create data frame | <pre lang='python'>pl.DataFrame('A': \[1, 2], 'fruits': \['banana', 'apple']) | |
-| Clone (create new instance) | <pre lang='python'>data.clone() | |
-| From `pandas.DataFrame` | <pre lang='python'>pl.from_pandas(data) | |
-| From dict | <pre lang='python'>pl.DataFrame(dict) | |
-| From dict with schema | <pre lang='python'>pl.DataFrame(dict, schema = {'col1': pl.Float32, 'col2': pl.Int64, 'col3': pl.Date} | |
-| From array | <pre lang='python'>data = np.array(\[\[1, 2], \[3, 4]])&#13;pl.DataFrame(data, schema = \['a', 'b'], orient = 'col') | |
-| From list of lists | <pre lang='python'>data = \[\[1, 2, 3], \[4, 5, 6]]&#13;pl.DataFrame(data, schema=\['a', 'b', 'c']) | |
-| From CSV file | <pre lang='python'>pl.read_csv('derp.csv') | |
-| From list of data frames | <pre lang='python'>pl.concat(\[data, data2, ..., dataN]) | |
-| From list of data frames with different columns | <pre lang='python'>pl.concat(\[data, data2, ..., dataN], how = 'diagonal') | |
+| Create series from list | `pl.Series('name', \[1, 2, 3])` |  |
+| From lists | `pl.DataFrame('A': \[1, 2], 'fruits': \['banana', 'apple'])` | |
+| From `pandas.DataFrame` | `pl.from_pandas(data)` | |
+| From dict | `pl.DataFrame(dict)` | |
+| From dict with schema | `pl.DataFrame(dict, schema = {'col1': pl.Float32, 'col2': pl.Int64, 'col3': pl.Date})` | |
+| From array | `data = np.array(\[\[1, 2], \[3, 4]])`<br>`pl.DataFrame(data, schema = \['a', 'b'], orient = 'col')` | |
+| From list of lists | `data = \[\[1, 2, 3], \[4, 5, 6]]`<br>`pl.DataFrame(data, schema=\['a', 'b', 'c'])` | |
+| From CSV file | `pl.read_csv('derp.csv')` | |
+| From list of data frames | `pl.concat(\[data, data2, ..., dataN])` | |
+| From list of data frames with different columns | `pl.concat(\[data, data2, ..., dataN], how = 'diagonal')` | |
 
 ## Properties
 
 | What | How | Details |
 |---|---|---|
-| Number of columns | <pre lang='python'>len(data.columns) | ? |
-| Column names | <pre lang='python'>data.columns | |
-| Column dtypes | <pre lang='python'>data.dtypes | |
-| Column-dtype map | <pre lang='python'>data.schema | |
-| Find column index by name | <pre lang='python'>data.find_idx_by_name('age') | |
-| Number of rows | <pre lang='python'>data.height | |
+| Number of columns | `len(data.columns)` | ? |
+| Column names | `data.columns` | |
+| Column dtypes | `data.dtypes` | |
+| Column-dtype map | `data.schema` | |
+| Find column index by name | `data.find_idx_by_name('age')` | |
+| Number of rows | `data.height` | |
 
 ## Query
 
@@ -47,8 +46,9 @@ Lazy operations are advised because they allow for query optimization and more p
 
 | What | How | Details |
 |---|---|---|
-| Single column | <pre lang='python'>data.select('col1') | |
-| Multiple columns | <pre lang='python'>data.select('col1', 'col2') | |
+| Single column | `data.select('col1')` | |
+| Multiple columns | `data.select('col1', 'col2')` | |
+| Multiple columns, dynamically | ? | |
 
 ### Rows
 
@@ -60,16 +60,16 @@ Lazy operations are advised because they allow for query optimization and more p
 | First $n$ rows | `data.head(n)` | |
 | Last $n$ rows | `data.tail(n)` | |
 | Slice of rows from $a$ to $b$ | `data[a:b]` or `data.slice(a, b)` | |
-| By list of row numbers | <pre lang='python'>data\[rows] | |
-| Exclude the given row numbers | <pre lang='python'>data.with_row_count().filter(pl.col('row_nr').is_in(rows).not_()) | Leftover row_nr column |
-| Exclude rows that contain null values | <pre lang='python'>data.drop_nulls() | |
-| Exclude rows that contain null values in certain columns | <pre lang='python'>data.drop_nulls(\['fruits', 'cars']) | |
-| Conditionally on column | <pre lang='python'>data.filter(pl.col('age') >= 18) | |
-| From multiple column conditions | <pre lang='python'>data.filter((pl.col('age') >= 18) & (pl.col('sex') == 'male')) | |
-| Limit query to first $n$ rows | <pre lang='python'>data.limit(n) | |
-| Limit query to last $n$ rows | <pre lang='python'>data.limit(-n) | |
-| Number of missing values | <pre lang='python'>data.null_count() | |
-| Number of unique values in a column | <pre lang='python'>data\['col1'].n_unique() | |
+| By list of row numbers | `data\[rows]` | |
+| Exclude the given row numbers | `data.with_row_count().filter(pl.col('row_nr').is_in(rows).not_())` | Leftover row_nr column |
+| Exclude rows that contain null values | `data.drop_nulls()` | |
+| Exclude rows that contain null values in certain columns | `data.drop_nulls(\['fruits', 'cars'])` | |
+| Conditionally on column | `data.filter(pl.col('age') >= 18)` | |
+| From multiple column conditions | <code lang='python'>data.filter((pl.col('age') >= 18) & (pl.col('sex') == 'male')) </code> | |
+| Limit query to first $n$ rows | <code>data.limit(n)</code> | |
+| Limit query to last $n$ rows | <code>data.limit(-n) | |
+| Number of missing values | `data.null_count()` | |
+| Number of unique values in a column | `data\['col1'].n_unique()` | |
 | Number of unique rows over columns | ? | |
 
 ### Aggregate
@@ -78,7 +78,7 @@ Lazy operations are advised because they allow for query optimization and more p
 
 | What | How | Details |
 |---|---|---|
-| Mean of column | <pre lang='python'>data.group_by('sex').agg(pl.col('age').mean()) | |
+| Mean of column | <code lang='python'>data.group_by('sex').agg(pl.col('age').mean()) | |
 
 #### Over time
 
