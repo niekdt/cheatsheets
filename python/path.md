@@ -43,7 +43,9 @@ All snippets return a list of string paths.
 |---|---|---|
 | File/dir exists | `os.path.exists(path)` | |
 | File | `os.path.isfile(path)` | |
+| Empty file | `os.path.getsize(path) == 0` | Throws error if the file does not exist |
 | Directory | `os.path.isdir(path)` | |
+| Empty directory | `not os.listdir(path)` | |
 | Absolute path | `os.path.isabs(path)` | |
 | Paths refer to same file | `os.path.samefile(path1, path2)` | |
 | Parent of | ? | |
@@ -63,6 +65,7 @@ All snippets return a list of string paths.
 | File path without extension | `os.path.splitext(path)[0]` | |
 | Split path into parent path and basename | `parent_path, base_name = os.path.split(path)` | |
 | Split path into file path and extension | `file_path, ext = os.path.splitext(path)` | |
+
 
 ## File info
 
