@@ -69,6 +69,18 @@ All snippets return a list of string paths.
 | Split path into file path and extension | `file_path, ext = os.path.splitext(path)` | |
 
 
+## Directory manipulation
+
+To be moved to filesystem cheatsheet when created.
+
+| What | How | Details |
+|---|---|---|
+| Create directory | `os.mkdir(path)` | Error when directory already exists |
+| Create directory if needed | `Path(path).mkdir(exist_ok=True)` | |
+| Create directories recursively | `os.makedirs(dest_dir)` | |
+| Create directories recursively if needed | `os.makedirs(dest_dir, exist_ok=True)` | |
+
+
 ## File info
 
 | What | How | Details |
