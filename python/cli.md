@@ -1,11 +1,11 @@
 ---
 layout: default
-title: File system path
+title: Command-line interface
 parent: Python
 nav_order: 10
 ---
 
-# Command-line interfacing
+# Command-line interface
 {: .no_toc}
 
 1. TOC
