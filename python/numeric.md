@@ -38,8 +38,8 @@ nav_order: 0
 
 | What | How | Details |
 |---|---|---|
-| Binary integer | `[sign]0b[b2int]` | e.g., `-0b10` (-2) | |
-| Hex integer | `[sign]0x[b16int]` | e.g., `-0xF` (-16) | |
+| Binary integer | `[sign]0b[b2int]` | e.g., `-0b10` (-2) |
+| Hex integer | `[sign]0x[b16int]` | e.g., `-0xF` (-16) |
 | Integer from string | `int(x)` | |
 | Integer from hex string (base 16) | `int(x, 16)` | `e.g., DEADBEEF` |
 | Integer from string with base determined by prefix | `int(x, 0)` | Base 10 by default, base-16 for `0x`, base-2 for `0b` |
@@ -85,7 +85,6 @@ nav_order: 0
 | Count to bytes | `x.to_bytes(8, byteorder='big')` | `OverflowError` is raised if the integer is not representable with the given number of bytes |
 | Count to byte array (mutable) | `bytearray(x) ` | |
 | Integer to bytes | `x.to_bytes(8, byteorder='big', signed=True)` | |
-| Float to bytes | |
+| Float to bytes | `struct.pack('f', x)` | |
 | Int to hex string | `hex(x)` | Format: `[sign] ['0x'] integer` |
 | Float to hex string representation | `x.hex()` | Format: `[sign] ['0x'] integer ['.' fraction] ['p' exponent]`, e.g., `0x1.400000p+1` |
-| Float to bytes | `struct.pack('f', x)` | |
