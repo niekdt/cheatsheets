@@ -15,6 +15,7 @@ nav_order: 10
 
 | What | How | Details |
 |---|---|---|
+| Current working directory | `os.getcwd()` | Can be set using `os.chdir()` |
 | From directory for given file name | `os.path.join(dir_path, filename)` | | 
 | Temporary file path | `tempfile.mktemp()` | |
 | Temporary file path in directory | `tempfile.mktemp(dir=dir_path)` | |
@@ -45,14 +46,17 @@ All snippets return a list of string paths.
 | Directory | `os.path.isdir(path)` | |
 | Absolute path | `os.path.isabs(path)` | |
 | Paths refer to same file | `os.path.samefile(path1, path2)` | |
+| Parent of | ? | |
+| Child of | ? | |
 
 ## Path manipulation
 
 | What | How | Details |
 |---|---|---|
 | Normalize path | `os.path.normpath(path)` | |
-| Absolute path | `os.path.abspath(path)` | |
+| Absolute path | `os.path.abspath(path)` | Paths are relative to the working directory |
 | Canonical path (resolving symlinks) | `os.path.realpath(path)` | |
+| Parent path | `os.path.dirname(r'C:\Files\derp.csv')` | Returns `C:\Files` | | 
 | Relative path to directory | `os.path.relpath(path, start=dir_path)` | |
 | Get common parent path between two or more paths | `os.path.commonpath(paths)` | |
 | Extend path with subdirectories | `os.path.join(path, ..., dirN, file)` | |
@@ -67,5 +71,5 @@ All snippets return a list of string paths.
 | Filename | `os.path.basename(r'C:\Files\derp.csv')` | Returns `derp.csv` |
 | Filename without extension | `os.path.splitext(os.path.basename(r'C:\Files\derp.csv'))[0]` | Returns `derp` |
 | File extension | `os.path.splitext(r'C:\Files\derp.csv')[1]` | Returns `.csv` |
-| Parent directory name | `os.path.dirname(r'C:\Files\derp.csv')` | Returns `Files` |
+| Parent directory name | `os.path.basename(os.path.dirname((r'C:\Files\derp.csv'))` | Returns `Files` |
 | File size | `os.path.getsize(path)` | |
