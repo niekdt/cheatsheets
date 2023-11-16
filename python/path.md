@@ -22,6 +22,8 @@ nav_order: 10
 | Open temporary file with clean-up | `with tempfile.NamedTemporaryFile() as file:`<br>`    path = file.name` | |
 | Temporary directory path | `tempfile.mkdtemp()` | |
 | Temporary directory path in directory | `tempfile.mkdtemp(dir=dir_path)` | |
+| Directory path obtained interactively from user via dialog | `import tkinter`<br>`from tkinter import filedialog`<br>`tkinter.Tk().withdraw()`<br>`path = tkinter.filedialog.askdirectory()` | `withdraw()` is needed to prevent an annoying empty window from opening |
+| File path obtained interactively from user via dialog | `import tkinter`<br>`from tkinter import filedialog`<br>`tkinter.Tk().withdraw()`<br>`path = tkinter.filedialog.askopenfile()` | `withdraw()` is needed to prevent an annoying empty window from opening |
 
 ## Generate paths from directory
 All snippets return a list of string paths.
