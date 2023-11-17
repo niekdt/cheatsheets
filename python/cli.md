@@ -43,11 +43,12 @@ parser = argparse.ArgumentParser(
 
 | What | How | Details |
 |---|---|---|
-| Define positional argument | `parser.add_argument('file', type = str)` | |
+| Define positional argument | `parser.add_argument('file')` | |
+| Define optional positional argument | `parser.add_argument('dest', nargs='?')` | |
 | Define positional argument accepting multiple values | `parser.add_argument('files', type = str, nargs='+')` | |
-| Define flag to enable a feature (default is `False`) | `parser.add_argument('--force', '-f', action = 'store_true')` | |
+| Define flag to enable a feature (default is `False`) | `parser.add_argument('-f', '--force', action = 'store_true')` | |
 | Define flag to disable a feature (default is `True`) | `parser.add_argument('--disable', action = 'store_false')` | |
-| Define string option | `parser.add_argument('--source', '-s', type = str)` | |
+| Define string option | `parser.add_argument('-s', '--source', type = str)` | |
 | Define int option | `parser.add_argument('--seed', type = int)` | |
 | Define float option | `parser.add_argument('value', type = float)` | |
 | Define categorical option | `parser.add_argument('answer', choices = ['a', 'b', 'c'])` | |
