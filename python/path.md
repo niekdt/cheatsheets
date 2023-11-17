@@ -1,11 +1,11 @@
 ---
 layout: default
-title: File system path
-parent: Python
-nav_order: 10
+title: Path
+parent: File system
+grand_parent: Python
 ---
 
-# File system paths
+# File system path handling
 {: .no_toc}
 
 1. TOC
@@ -45,9 +45,7 @@ All snippets return a list of string paths.
 |---|---|---|
 | File/dir exists | `os.path.exists(path)` | |
 | File | `os.path.isfile(path)` | |
-| Empty file | `os.path.getsize(path) == 0` | Throws error if the file does not exist |
 | Directory | `os.path.isdir(path)` | |
-| Empty directory | `not os.listdir(path)` | |
 | Absolute path | `os.path.isabs(path)` | |
 | Paths refer to same file | `os.path.samefile(path1, path2)` | |
 | Parent of | ? | |
@@ -68,19 +66,6 @@ All snippets return a list of string paths.
 | Split path into parent path and basename | `parent_path, base_name = os.path.split(path)` | |
 | Split path into file path and extension | `file_path, ext = os.path.splitext(path)` | |
 
-
-## Directory manipulation
-
-To be moved to filesystem cheatsheet when created.
-
-| What | How | Details |
-|---|---|---|
-| Create directory | `os.mkdir(path)` | Error when directory already exists |
-| Create directory if needed | `Path(path).mkdir(exist_ok=True)` | |
-| Create directories recursively | `os.makedirs(dest_dir)` | |
-| Create directories recursively if needed | `os.makedirs(dest_dir, exist_ok=True)` | |
-
-
 ## File info
 
 | What | How | Details |
@@ -89,4 +74,3 @@ To be moved to filesystem cheatsheet when created.
 | Filename without extension | `os.path.splitext(os.path.basename(r'C:\Files\derp.csv'))[0]` | Returns `derp` |
 | File extension | `os.path.splitext(r'C:\Files\derp.csv')[1]` | Returns `.csv` |
 | Parent directory name | `os.path.basename(os.path.dirname((r'C:\Files\derp.csv'))` | Returns `Files` |
-| File size | `os.path.getsize(path)` | |
