@@ -94,3 +94,5 @@ nav_order: 2.3
 |---|---|---|
 | Pretty print | `pprint.pprint(x)` | |
 | List of key-value tuples | `x.items()` | |
+| JSON string | `json.dumps(x)` | |
+| JSON string, handle non-string entries | `json.dumps(x, default = str)` | |
