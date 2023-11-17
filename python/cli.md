@@ -11,9 +11,17 @@ nav_order: 10
 1. TOC
 {:toc}
 
-## Argument parsing (`argparse` module)
+## Execute
 
-https://docs.python.org/3/library/argparse.html#
+| What | How | Details |
+|---|---|---|
+| Start Python script, wait for completion | `os.system('python script.py')` | |
+| Start Python script with arguments, wait for completion | `os.system('python script.py -file "hello.csv"')` | |
+
+
+## Parse arguments
+
+Uses the [argparse](https://docs.python.org/3/library/argparse.html#) module.
 
 | What | How | Details |
 |---|---|---|
