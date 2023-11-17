@@ -28,6 +28,9 @@ nav_order: 500
 
 ## Poetry
 
+Manages dependencies, package setup and building using the standardized `pyproject.toml` file. This replaces the need for `setup.py`, `requirements.txt`, `MANIFEST.in` and `Pipfile.*`.
+Poetry isolates the virtualenv from the project.
+
 | What | How | Details |
 |---|---|---|
 | Start a new Python project | `poetry new $pkg` | |
