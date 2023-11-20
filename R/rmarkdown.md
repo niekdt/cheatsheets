@@ -46,7 +46,7 @@ nav_order: 100
 | Unnumbered section |`# Section title {-}` | |
 | Hide section from ToC | `# Section title {.toc-ignore}` | |
 | Tabbed section | `## title {.tabset .tabset-fade}`<br>`content above tabbed region.`<br><br>`### tab 1 `<br>`tab content 1`<br><br>`### tab 2`<br>`tab content 2`<br><br>`##`<br>`content below tabbed region` | [Source](https://stackoverflow.com/questions/38062706/rmarkdown-how-to-end-tabbed-content). The newlines are crucial! |
-| Collapsible paragraph | <pre lang='html'>\<details>`<br>`\<summary>Show details…\</summary>`<br>`\<p>Derp\</p>`<br>`\</details> ` | |
+| Collapsible paragraph | `<details>`<br>`\<summary>Show details…\</summary>`<br>`\<p>Derp\</p>`<br>`\</details>` | |
 | Horizontal line | `***` | |
 
 ### Lists
