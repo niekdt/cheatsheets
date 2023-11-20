@@ -17,12 +17,12 @@ nav_order: 2.1
 |---|---|---|
 | Empty | `x = []` | |
 | Define | `x = [1, 3, 9]` | |
-| Define with $n$ repeated values $v$ | `x = [v] * n` | |
-| Sample $n$ random numbers between \[ $a$, $b$ ) with replacement | `random.choices(range(a, b), k=n)` | About 6 times faster than list comprehension |
-| Sample $n$ random numbers between \[ $a$, $b$ ) w/o replacement | `random.sample(range(a, b), n)` | |
+| Define with _n_ repeated values _v_ | `x = [v] * n` | |
+| Sample _n_ random numbers between \[ _a_, _b_ ) with replacement | `random.choices(range(a, b), k=n)` | About 6 times faster than list comprehension |
+| Sample _n_ random numbers between \[ _a_, _b_ ) w/o replacement | `random.sample(range(a, b), n)` | |
 | From tuple | `t = (1, 3, 9)`<br>`x = [t]` | Faster than `list(t)` |
 | From iterator (consumes) | `x = list(iter)` | |
-| Lists from zipped list | <pre lang='python'>a = (1, 2); b = (-1, -2)&#13;ab = zip(a, b)&#13;a2, b2 = zip(*ab) | |
+| Lists from zipped list | `a = (1, 2); b = (-1, -2)`<br>`ab = zip(a, b)`<br>`a2, b2 = zip(*ab)` | |
 
 ## Test
 
@@ -49,8 +49,8 @@ nav_order: 2.1
 | First element | `x[0]` | |
 | Last element | `x[-1]` | |
 | Slice | `x[1:3]` | |
-| First $n$ elements | `x[:n]` | |
-| Last $n$ elements | `x[-n:]` | |
+| First _n_ elements | `x[:n]` | |
+| Last _n_ elements | `x[-n:]` | |
 | List of elements from a list of indices | `[x[i] for i in indices]` | |
 | Number of occurrences of element | `x.count(e)` | |
 | Index of element | `x.index(e)` | Throws error if not found |
@@ -71,7 +71,7 @@ All operations are in-place.
 
 | What | How | Details |
 |---|---|---|
-| Update value at index $i$ | `x[i] = new_value` | |
+| Update value at index _i_ | `x[i] = new_value` | |
 | Update slice with list | `x[2:3] = [5, 6]` | |
 | Reverse elements | `x.reverse()` | |
 | Sort elements ascending | `x.sort()` | |
@@ -87,10 +87,10 @@ All operations are in-place.
 |---|---|---|
 | Clear | `x.clear()` | |
 | Clear by slicing | `x[:] = []` | Probably slower |
-| Remove at index $i$ | `del x[i]` | |
-| Remove at index $i$ | `x[i] = []` | |
+| Remove at index _i_ | `del x[i]` | |
+| Remove at index _i_ | `x[i] = []` | |
 | Remove last index and return the element | `x.pop()` | |
-| Remove at index $i$ and return the element | `x.pop(e, i)` |
+| Remove at index _i_ and return the element | `x.pop(e, i)` |
 | Remove slice | `del x[2:3]` | |
 | Remove slice | `x[2:3] = []` | |
 | Remove element (first occurrence) | `x.remove(e)` | |
@@ -105,7 +105,7 @@ All operations are in-place.
 | Append/push element | `x.append(e)` | |
 | Append/push a list | `x += y` | |
 | Append/push a list | `x.extend(y)` | |
-| Insert at index $i$ | `x.insert(i, e)` | |
+| Insert at index _i_ | `x.insert(i, e)` | |
 
 ## Derive
 
@@ -136,33 +136,33 @@ All operations create a new list unless specified otherwise, but preserves refer
 | Filter on condition | `[e for e in x if e > 0]` | |
 | Filter on predicate function | `filter(fun, x)` | |
 | Elements to string | `[str(e) for e in x]` | |
-| Replicate $n$ times | `x * n` | |
+| Replicate _n_ times | `x * n` | |
 
 ### Grow
 All operations create a new list, but preserves references to the original elements.
 
 | What | How | Details |
 |---|---|---|
-| Replicate $n$ times | `x * n` | |
-| Replicate to ensure length $n$ | ? | |
+| Replicate _n_ times | `x * n` | |
+| Replicate to ensure length _n_ | ? | |
 | Append a list | `x + y` | |
 
 ## Iterate
 
 | What | How | Details |
 |---|---|---|
-| Iterate | <pre lang='python'>for e in x: | |
-| Iterate with index | <pre lang='python'>for i, e in enumerate(x): | |
-| Iterate with index starting from $s$ | <pre lang='python'>for i, e in enumerate(x, s): | |
-| Iterate over multiple lists | <pre lang='python'>for a, b in zip(x, y): | |
-| Iterate over multiple lists with index | <pre lang='python'>for i, (a, b) in enumerate(zip(x, y)): | |
-| Iterate over a list of lists for each nested element | <pre lang='python'>itertools.chain.from_iterable(x) | |
+| Iterate | `for e in x: | |
+| Iterate with index | `for i, e in enumerate(x): | |
+| Iterate with index starting from _s_ | `for i, e in enumerate(x, s): | |
+| Iterate over multiple lists | `for a, b in zip(x, y): | |
+| Iterate over multiple lists with index | `for i, (a, b) in enumerate(zip(x, y)): | |
+| Iterate over a list of lists for each nested element | `itertools.chain.from_iterable(x) | |
 
 ## Convert
 
 | What | How | Details |
 |---|---|---|
-| Multiple assignment | <pre lang='python'>x = [1, 2]&#13;a, b = x | |
+| Multiple assignment | `x = [1, 2]`<br>`a, b = x | |
 | Hash | `hash(tuple(x))` | |
 | To tuple | `tuple(x)` | |
 | To set | `set(x)` | | 

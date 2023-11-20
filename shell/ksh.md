@@ -17,9 +17,9 @@ parent: Shell
 |---|---|---|
 | Program name, including the path if started from another directory | `$0` | |
 | Number of arguments | `$#` | |
-| Check for zero arguments | <pre lang='ksh'>if \[\[ $# -eq 0 ]];then&#13;&#09;print "No Arguments"&#13;&#09;exit&#13;fi </pre> | |
-| Get the $n$th argument | `$n` | |
-| Get the $n$th argument, with default value | `${n-"Default value here"}` | |
+| Check for zero arguments | `if [[ $# -eq 0 ]];then`<br>`    print "No Arguments"`<br>`    exit`<br>`fi` | |
+| Get the _n_th argument | `$n` | |
+| Get the _n_th argument, with default value | `${n-"Default value here"}` | |
 | Expand all arguments to a single word | `$*` | |
 | Expand all arguments to single string | `$@` | |
 | Expand arguments to separate words | `"$@"` | |
@@ -52,7 +52,7 @@ Note that the positional parameters are special variables too.
 | Check if variable is set | `${var:+1}` | Returns 1 if set, else nothing |
 | Set value for variable | `var=value` | |
 | Set value from user input | `read var` | |
-| Set command output for variable | <pre>var=`command args`</pre> | |
+| Set command output for variable | `var=``command args``` | |
 | Declare local variable | `typeset var` | |
 | Set local variable | `typeset var = value` | |
 
@@ -61,8 +61,8 @@ Use the local statement to define local variables.
 
 | What | How | Details |
 |---|---|---|
-| Define function | <pre lang='ksh'>function foo {&#13;&#09;return $name&#13;}</pre> | |
-| Define function with arguments | <pre lang='ksh'>function foo {&#13;&#09;typeset a = $1&#13;&#09;return $a&#13;}</pre> | |
+| Define function | `function foo {`<br>`    return $name`<br>`}` | |
+| Define function with arguments | `function foo {`<br>`    typeset a = $1`<br>`    return $a`<br>`}` | |
 | Call function | `foo` | |
 | Call function with arguments | `foo arg1 arg2` | |
 
@@ -72,13 +72,13 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | What | How | Details |
 |---|---|---|
 | Chain (pipe) commands | `command1 \| command2 \| command3` | |
-| If | <pre lang='ksh'>if \[\[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;fi</pre> | |
-| If-else | <pre lang='ksh'>if \[\[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;else&#13;&#09;print "$value is not 7"&#13;fi</pre> | |
-| If-elseif | <pre lang='ksh'>if \[\[ $value -eq 7 ]];then&#13;&#09;print "$value is 7"&#13;elif \[\[ $value -eq 8 ]];then&#13;&#09;print "$value is not 7 but 8"&#13;else&#13;&#09;print "$value is neither 7 or 8"&#13;fi</pre> | |
-| Switch | <pre lang='ksh'>case $var in&#13;&#09;john\|fred) print $invitation;;&#13;&#09;martin)  print $declination;;&#13;&#09;*)  print "Wrong name...";;&#13;esac</pre> | There is no "fall through" with ;;. You hit only one set of commands.. UNLESS you use ";&" instead of ";;'. You can use WILDCARDS to match strings.
-| For | <pre lang='ksh'>for foo in $(ls);do&#13;&#09;print "\$count is $count"&#13;&#09;(( count -= 1 ))&#13;done | Use `continue` to skip the loop. Use `break` to exit the loop. |
+| If | `if [[ $value -eq 7 ]];then`<br>`    print "$value is 7"`<br>`fi` | |
+| If-else | `if [[ $value -eq 7 ]];then`<br>`    print "$value is 7"`<br>`else`<br>`    print "$value is not 7"`<br>`fi` | |
+| If-elseif | `if [[ $value -eq 7 ]];then`<br>`    print "$value is 7"`<br>`elif [[ $value -eq 8 ]];then`<br>`    print "$value is not 7 but 8"`<br>`else`<br>`    print "$value is neither 7 or 8"`<br>`fi` | |
+| Switch | `case $var in`<br>`    john\|fred) print $invitation;;`<br>`    martin)  print $declination;;`<br>`    *)  print "Wrong name...";;`<br>`esac` | There is no "fall through" with ;;. You hit only one set of commands.. UNLESS you use ";&" instead of ";;'. You can use WILDCARDS to match strings.
+| For | `for foo in $(ls);do`<br>`    print "\$count is $count"`<br>`    (( count -= 1 ))`<br>`done | Use `continue` to skip the loop. Use `break` to exit the loop. |
 | Until | | |
-| Pause for $n$ seconds | `sleep n` |
+| Pause for _n_ seconds | `sleep n` |
 
 ### Error handling
 
@@ -153,7 +153,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Check if directory is missing | `[ ! -d "$DIRPATH" ]` | |
 | Check if file exists | `[ -f "$FILEPATH" ]` | |
 | Create directory | `mkdir "$DIRPATH"` | |
-| Count the number of files in a directory | <pre lang='ksh'>count=`find $dir -maxdepth 1 -name "*.txt" -type f \| wc -l`</pre> | |
+| Count the number of files in a directory | `count=``find $dir -maxdepth 1 -name "*.txt" -type f \| wc -l`` | |
 
 ## Notes
 * Start script with: `#!/bin/ksh`

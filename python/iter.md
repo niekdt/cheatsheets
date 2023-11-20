@@ -16,37 +16,37 @@ nav_order: 2.2
 | What | How | Details |
 |---|---|---|
 | Create counter | `itertools.count()` | |
-| Create counter starting from $n$ | `itertools.count(n)` | |
-| Create counter starting from $n$ with step size $s$ | `itertools.count(n, s)` | |
-| Create limited counter from $n$ to $m$ | ? | |
-| Repeat constant $n$ times | `itertools.repeat(123, n)` | |
-| 2D coordinates grid from (0, 0) to ($n - 1$, $m - 1$) | `itertools.product(range(n), range(m))` | |
+| Create counter starting from _n_ | `itertools.count(n)` | |
+| Create counter starting from _n_ with step size $s$ | `itertools.count(n, s)` | |
+| Create limited counter from _n_ to _m_ | ? | |
+| Repeat constant _n_ times | `itertools.repeat(123, n)` | |
+| 2D coordinates grid from (0, 0) to (_n - 1_, _m - 1_ ) | `itertools.product(range(n), range(m))` | |
 | From string (over chars) | `iter(str)` | |
 | From list | `iter(lst)` | |
 | Index-element pairs from list | `enumerate(lst)` | |
 | Key-value pairs from dict | `enumerate(dct)` | |
 | Recycle through list | `itertools.cycle(lst)` | |
-| Recycle through list $n$ times | `itertools.product(lst, n)` | |
+| Recycle through list _n_ times | `itertools.product(lst, n)` | |
 | Concatenate lists | `itertools.chain(lst1, lst2)` | | 
-| Create $n$ copies of iterable | `itertools.tee(x, 2)`<br>or<br>`x1, x2 = itertools.tee(x)` | |
+| Create _n_ copies of iterable | `itertools.tee(x, 2)`<br>or<br>`x1, x2 = itertools.tee(x)` | |
 
 ## Using iterators
 Note that each operation consumes element(s) of the iterator!
 
 | What | How | Details |
 |---|---|---|
-| Iterate over iterator elements | <pre lang='python'>for i in iter:&#13;print(i) | |
+| Iterate over iterator elements | `for i in iter:`<br>`print(i)` | |
 | Consume fully | `collections.deque(x, maxlen=0)` | |
 | Get next element | `next(iter)` | |
 | Get next element with default if depleted | `next(iter, 0)` |
-| Get $n$ th element | `next(itertools.islice(x, n, None), default)` | |
+| Get _n_ th element | `next(itertools.islice(x, n, None), default)` | |
 | Get first element according to criterion | `next(e for e in x if e == 1)`<br>or<br>`next(filter(lambda e: e == 1, x))` | | 
 | Get last element according to criterion | ? | |
 | Get index of first true element | ? | |
 | Get index of first false element | ? | |
 | Get index of last true element | ? | |
 | Get index of last false element | ? | |
-| Get remaining length | <pre lang='python'>sum(1 for _ in iter)</pre> | |
+| Get remaining length | `sum(1 for _ in iter)` | |
 
 ## Map
 
@@ -65,9 +65,9 @@ Note that each operation consumes element(s) of the iterator!
 
 | What | How | Details |
 |---|---|---|
-| First $n$ items of iterable | `itertools.islice(x, n)` | |
-| Last $n$ items of iterable | `iter(collections.deque(x, maxlen = n))` | |
-| Drop first $n$ items of iterable | `itertools.islice(x, start=n)` | |
+| First _n_ items of iterable | `itertools.islice(x, n)` | |
+| Last _n_ items of iterable | `iter(collections.deque(x, maxlen = n))` | |
+| Drop first _n_ items of iterable | `itertools.islice(x, start=n)` | |
 | Slice based on (index) integer iterable | ? | |
 | Filter based on boolean function | `filter(bool_fun, iterable)` | |
 | Filter based on boolean iterable | `itertools.compress(x, mask_iter)` | |
@@ -83,14 +83,14 @@ Note that each operation consumes element(s) of the iterator!
 | Append iterable | `itertools.chain(iter, append_iter)` | |
 | Prepend iterable | `itertools.chain(prepend_iter, iter)` | |
 | Create combinations of pairs | `itertools.combinations(x, 2)` | |
-| Create combinations of size $n$ | `itertools.combinations(x, n)` | |
+| Create combinations of size _n_ | `itertools.combinations(x, n)` | |
 | Create combinations of pairs with replacement (so including pairs of (A, A)) | `itertools.combinations_with_replacement(x, 2)` | |
 | Create combinations of size n with replacement | `itertools.combinations_with_replacement(x, n)` | |
 | Create permutations | `itertools.permutations(x)` | |
 | Cartesian product of two or more iterables | `itertools.product(x, y, ...)` | |
 | Repeat iterable indefinitely | `itertools.cycle(x)` | |
-| Repeat iterable $n$ times | `itertools.repeat(x, n)` | |
-| Repeat each element of iterable $n$ times | `itertools.chain.from_iterable(itertools.repeat(tuple(x), n))` | |
+| Repeat iterable _n_ times | `itertools.repeat(x, n)` | |
+| Repeat each element of iterable _n_ times | `itertools.chain.from_iterable(itertools.repeat(tuple(x), n))` | |
 | Chain iterables | `itertools.chain.from_iterable(x, y, ...)` | |
 
 ## Aggregate
@@ -102,7 +102,7 @@ Note that each operation consumes element(s) of the iterator!
 | Sum | `sum(iter)` | |
 | Hash | `hash(iter)` | |
 | Reduce | `reduce(binary_fun, iter)` | |
-| Group by | <pre lang='python'>for key, group in itertools.groupby(robots, key=lambda x: x['faction']):&#13;print(key)&#13;print(list(group)) | |
+| Group by | `for key, group in itertools.groupby(robots, key=lambda x: x['faction']):`<br>`print(key)`<br>`print(list(group)) | |
 
 ## Test
 
@@ -110,7 +110,7 @@ Note that each operation consumes element(s) of the iterator!
 |---|---|---|
 | All elements are true | `all(bool_iter)` | |
 | All elements are false | `not any(bool_iter)` | |
-| All elements are equal | <pre lang='python'>g = groupby(x)&#13;return next(g, True) and not next(g, False) | |
+| All elements are equal | `g = groupby(x)`<br>`return next(g, True) and not next(g, False) | |
 | All elements are true conditional on function | `all(map(boolFun, iter))` | |
 | Any element is true | `any(bool_iter)` | |
 | Any element is false | `not all(bool_iter)` | |

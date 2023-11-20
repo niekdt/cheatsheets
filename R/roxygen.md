@@ -36,16 +36,16 @@ nav_order: 100
 | Display equation | `\deqn{a + b}` | |
 | Code | `` `mu <- mean(data)` `` | |
 | Code | `\code{mu <- mean(data)}` | |
-| Code block | <pre>\```&#13;mu <- mean(data)&#13;\```</pre> | |
-| Monospace font (looks like code) | <pre>\preformatted{&#13;&#09;text&#13;}</pre> | | 
+| Code block | `\````<br>`mu <- mean(data)`<br>`\```` | |
+| Monospace font (looks like code) | `\preformatted{`<br>`    text`<br>`}` | | 
 | Package name | `\pkg{stats}` | |
-| Unordered list | <pre>\itemize{&#13;&#09;\item Option A&#13;&#09;\item Option B&#13;}</pre> | |
-| Ordered list | <pre>\enumerate{&#13;&#09;\item First item&#13;&#09;\item Second item&#13;}</pre> | |
-| Named list | <pre>\describe{&#13;&#09;\item{Opt A}{Describe option A}&#13;&#09;\item{Opt B}{Describe option B}&#13;}</pre> | |
+| Unordered list | `\itemize{`<br>`    \item Option A`<br>`    \item Option B`<br>`}` | |
+| Ordered list | `\enumerate{`<br>`    \item First item`<br>`    \item Second item`<br>`}` | |
+| Named list | `\describe{`<br>`    \item{Opt A}{Describe option A}`<br>`    \item{Opt B}{Describe option B}`<br>`}` | |
 | Tables | ? | |
-| Sections | <pre>@details First part&#13;@details Second part (will be a new section)</pre> | |
-| Arbitrary sections | <pre>@section Title:&#13;Text here </pre> | |
-| Subsections | <pre>@details&#13;## This is a subsection &#13;With text &#13;#### Subsubsection here&#13;With text</pre> | |
+| Sections | `@details First part`<br>`@details Second part (will be a new section)` | |
+| Arbitrary sections | `@section Title:`<br>`Text here ` | |
+| Subsections | `@details`<br>`## This is a subsection `<br>`With text `<br>`#### Subsubsection here`<br>`With text` | |
 
 ## Link
 
@@ -74,10 +74,10 @@ nav_order: 100
 
 | What | How | Details |
 |---|---|---|
-| Examples | <pre>@examples&#13;1 + 1&#13;mean(1:9)</pre> | |
-| Examples that should not be run | <pre>@examples&#13;1 + 1&#13;\dontrun{&#13;&#09;stop('oops')&#13;}</pre> | |
-| Examples that should not be tested | <pre>@examples&#13;\donttest{&#13;&#09;stop('oops')&#13;}</pre> | |
-| Interactive example only | <pre>@examples&#13;if interactive()&#13;&#09;browseURL("https://roxygen2.r-lib.org")</pre>
+| Examples | `@examples`<br>`1 + 1`<br>`mean(1:9)` | |
+| Examples that should not be run | `@examples`<br>`1 + 1`<br>`\dontrun{`<br>`    stop('oops')`<br>`}` | |
+| Examples that should not be tested | `@examples`<br>`\donttest{`<br>`    stop('oops')`<br>`}` | |
+| Interactive example only | `@examples`<br>`if interactive()`<br>`    browseURL("https://roxygen2.r-lib.org")`
 
 ## Function/class import/export and loading
 
@@ -127,8 +127,8 @@ nav_order: 100
 | What | How | Details |
 |---|---|---|
 | In-line code evaluation | `` `r getRversion()` `` | Evaluated during every roxygenize call |
-| Code block evaluation | <pre>\```{r}&#13;&#13;```</pre> | Code blocks cannot refer to each other |
-| Generate figure | <pre>\```{r iris-pairs-plot}&#13;&#09;pairs(iris[1:4])[unclass(iris$Species)])&#13;```</pre> | |
+| Code block evaluation | `\```{r}`<br>``<br>````` | Code blocks cannot refer to each other |
+| Generate figure | `\```{r iris-pairs-plot}`<br>`    pairs(iris[1:4])[unclass(iris$Species)])`<br>````` | |
 | Dynamic documentation | ![image](https://github.com/niekdt/cheatsheets/assets/8193083/e8cd9182-e05b-4f48-a9a1-ff5edf34dcba) | |
 
 

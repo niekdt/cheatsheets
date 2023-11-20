@@ -45,8 +45,8 @@ nav_order: 100
 | Paragraph | `#### Paragraph title` | |
 | Unnumbered section |`# Section title {-}` | |
 | Hide section from ToC | `# Section title {.toc-ignore}` | |
-| Tabbed section | <pre lang='md'>## title {.tabset .tabset-fade}&#13;content above tabbed region.&#13;&#13;### tab 1 &#13;tab content 1&#13;&#13;### tab 2&#13;tab content 2&#13;&#13;##&#13;content below tabbed region</pre> | [Source](https://stackoverflow.com/questions/38062706/rmarkdown-how-to-end-tabbed-content). The newlines are crucial! |
-| Collapsible paragraph | <pre lang='html'>\<details>&#13;\<summary>Show details…\</summary>&#13;\<p>Derp\</p>&#13;\</details> </pre> | |
+| Tabbed section | `## title {.tabset .tabset-fade}`<br>`content above tabbed region.`<br><br>`### tab 1 `<br>`tab content 1`<br><br>`### tab 2`<br>`tab content 2`<br><br>`##`<br>`content below tabbed region` | [Source](https://stackoverflow.com/questions/38062706/rmarkdown-how-to-end-tabbed-content). The newlines are crucial! |
+| Collapsible paragraph | <pre lang='html'>\<details>`<br>`\<summary>Show details…\</summary>`<br>`\<p>Derp\</p>`<br>`\</details> ` | |
 | Horizontal line | `***` | |
 
 ### Lists
@@ -55,14 +55,14 @@ nav_order: 100
 |---|---|---|
 | Define list | `* a`<br>`* b` | |
 | Define nested list | `* a`<br>`  + b`<br>`* c` |
-| Dynamic list from code section | <pre lang='md'>\```{r, results='asis'}&#13;paste0('* ', items, collapse='\n') %>% cat&#13;\```</pre> | |
+| Dynamic list from code section | `\`\``{r, results='asis'}`<br>`paste0('* ', items, collapse='\n') %>% cat`<br>`\`\``` | |
 
 ### Figures
 
 | What | How | Details |
 |---|---|---|
 | Figure | `{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}` | [Source](https://holtzy.github.io/Pimp-my-rmd/) |
-| Subfigures | <pre lang='md'>\```{r out.width=c('50%', '50%'), fig.show='hold'}&#13;boxplot(1:10)&#13;plot(rnorm(10))&#13;\``` | [Source](https://holtzy.github.io/Pimp-my-rmd/) </pre> | 
+| Subfigures | `\`\``{r out.width=c('50%', '50%'), fig.show='hold'}`<br>`boxplot(1:10)`<br>`plot(rnorm(10))`\``` | [Source](https://holtzy.github.io/Pimp-my-rmd/) ` | 
 | Interactive ggplot | `p = ggplot(data, aes(x=x, y=y, color=z)) + geom_point()`<br>`plotly::ggplotly(p)` | |
 
 ### Tables

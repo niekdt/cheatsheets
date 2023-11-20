@@ -51,4 +51,4 @@ has_children: true
 
 | What | How | Details |
 |---|---|---|
-| Run code conditional on R version | <pre lang='R'>if (compareVersion(paste(version$major, version$minor, sep='.'), '3.6.0') >= 0) {&#13;&#09;RNGkind(sample.kind='Rounding') # fix to reproduce RNG of R 3.5.0&#13;}</pre> | |
+| Run code conditional on R version | `if (compareVersion(paste(version$major, version$minor, sep='.'), '3.6.0') >= 0) {`<br>`    RNGkind(sample.kind='Rounding') # fix to reproduce RNG of R 3.5.0`<br>`}` | |

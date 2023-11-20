@@ -17,7 +17,7 @@ nav_order: 2.3
 |:-------------|:------------------|:------|
 | Empty | `x = {}` | |
 | Define with string keys | `x = {'color': 'blue', 'size': 'large'}` | |
-| Define from keys (iterator) and constant value $v$ | `dict.fromkeys(key_iter, v)` | |
+| Define from keys (iterator) and constant value _v_ | `dict.fromkeys(key_iter, v)` | |
 | Define dynamically from iterators for keys and values | `x = dict(zip(key_iter, value_iter))` | |
 | Merge dictionaries | `z = x \| y` | |
 | Merge dictionaries | `z = {**x, **y}` | ? |
@@ -28,7 +28,7 @@ nav_order: 2.3
 |---|---|---|
 | Value | `x['color']` | Throws an error if missing |
 | Try get value | `x.get('color')` | Returns `None` if missing |
-| Try get value with default $v$ | `x.get('color', v)` | |
+| Try get value with default _v_ | `x.get('color', v)` | |
 | Values from list of keys | `[x[k] for k in keys_list]` | | 
 | Keys (as dict_keys) | `x.keys()` | |
 | Keys as list | `list(x)` | |
@@ -37,8 +37,8 @@ nav_order: 2.3
 | Values as list | `list(x.values())` | |
 | Values sorted by keys | `[x[k] for k in sorted(x)]` | |
 | Entries (as list of tuples) | `x.items()` | |
-| First key with value $v$ | `next(k for k in x if x[k] == v)` | |
-| All keys with value $v$ | `[k for k in x if x[k] == v]` | |
+| First key with value _v_ | `next(k for k in x if x[k] == v)` | |
+| All keys with value _v_ | `[k for k in x if x[k] == v]` | |
 
 ## Test
 
@@ -46,8 +46,8 @@ nav_order: 2.3
 |---|---|---|
 | Empty | `if x:` | |
 | Not empty | `if not x:` | |
-| Contains key $k$ | `k in x` | |
-| Contains value $v$ | `v in x.values()` | |
+| Contains key _k_ | `k in x` | |
+| Contains value _v_ | `v in x.values()` | |
 | Contains duplicate values | `len(x) != len(set(x.values()))` | |
 
 ## Update
@@ -84,7 +84,7 @@ nav_order: 2.3
 | Copy | `x.copy()` | |
 | Copy | `dict(x)` | ? |
 | Subset for keys | `{k: x[k] for k in keys}` | Error if a key is missing |
-| Subset for keys with default $v$ | `{k: x.get(k, default=v) for k in keys}` | |
+| Subset for keys with default _v_ | `{k: x.get(k, default=v) for k in keys}` | |
 | Subset (intersection) for keys | `{k: x[k] for k in x.keys() if k in keys}` | Returns empty dict if all keys are missing |
 | Subset except for keys | `{k: x[k] for k in x.keys() if k not in keys}` | |
 

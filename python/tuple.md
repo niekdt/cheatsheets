@@ -30,8 +30,8 @@ nav_order: 2
 |---|---|---|
 | Empty | `if not x:` | |
 | Not empty | `if x:` | |
-| Contains value $v$ | `v in x` | |
-| Does not contain value $v$ | `v not in x` | |
+| Contains value _v_ | `v in x` | |
+| Does not contain value _v_ | `v not in x` | |
 | Contains duplicate values | `len(v) != len(set(v))` | |
 | All elements are True | `all(x)` | |
 | Any element is True | `any(x)` | |
@@ -42,11 +42,11 @@ nav_order: 2
 | What | How | Details |
 |---|---|---|
 | Length | `len(x)` | |
-| Value at index $i$ | `x[i]` | |
-| Value from end index $i$ | `x[-i]` | |
-| Count occurrences of value $v$ | `x.count(v)` | |
-| First index of value $v$ | `x.index(v)` | Error if missing |
-| First index of value $v$ between index range \[$n$, $m$] | `x.index(v, n, m)` | Error if missing in range |
+| Value at index _i_ | `x[i]` | |
+| Value from end index _i_ | `x[-i]` | |
+| Count occurrences of value _v_ | `x.count(v)` | |
+| First index of value _v_ | `x.index(v)` | Error if missing |
+| First index of value _v_ between index range \[ _n_, _m_ ] | `x.index(v, n, m)` | Error if missing in range |
 | Sum elements | `sum(x)` | |
 | Min of elements | `min(x)` | |
 | Max of elements | `max(x)` | |
@@ -56,16 +56,16 @@ Creates a new immutable copy.
 
 | What | How | Details |
 |---|---|---|
-| Subset between \[$n$, $m$] (slice) | `x[n:m]` | |
-| First $n$ elements | `x[:n]` | |
-| Last $n$ elements | `x[-n:]` | |
+| Subset between \[ _n_, _m_ ] (slice) | `x[n:m]` | |
+| First _n_ elements | `x[:n]` | |
+| Last _n_ elements | `x[-n:]` | |
 | Append element | `x += (1,)` | |
 | Append tuple | `x += y` | |
 | Reverse | `x[::-1]` | |
 | Reverse | `tuple(reversed(x))` | Much slower in all cases |
 | Sort | `tuple(sorted(x))` | |
 | Shuffle | `tuple(random.sample(x, k=len(x)))` | |
-| Replicate elements $n$ times | `x * n` | |
+| Replicate elements _n_ times | `x * n` | |
 
 ## Convert
 

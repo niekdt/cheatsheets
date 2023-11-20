@@ -50,7 +50,7 @@ nav_order: 1
 | Try find index of substring | `x.find(substr)` | |
 | Try find last index of substring | `x.rfind(substr)` | |
 | Count number of non-overlapping substring occurrences | `x.count(substr)` | |
-| Count number of non-overlapping substring occurrences in range \[$n$, $m$] | `x.count(substr, n, m)` | |
+| Count number of non-overlapping substring occurrences in range \[ _n_, _m_ ] | `x.count(substr, n, m)` | |
 
 ## Tests
 
@@ -68,18 +68,18 @@ nav_order: 1
 | Digits only | `x.isdigit()` | |
 | Alphanumeric characters only | `x.isalnum()` | |
 | Matches regex pattern | `bool(re.search('\\w', 'abc'))` | |
-| Contains $n$ regex substrings | `len(re.findall('\\w', 'a. a')) == n` | |
+| Contains _n_ regex substrings | `len(re.findall('\\w', 'a. a')) == n` | |
 
 ## Substring
 
 | What | How | Details |
 |---|---|---|
 | First character | `x[0]` | |
-| Character $i$ | `x[i]` | Index beyond length will raise error |
+| Character _i_ | `x[i]` | Index beyond length will raise error |
 | Last character | `x[-1]` | |
 | Substring (slice) | `x[2:3]` | |
-| First $n$ characters | `x[:n]` | |
-| Last $n$ characters | `x[-n:]` | |
+| First _n_ characters | `x[:n]` | |
+| Last _n_ characters | `x[-n:]` | |
 | Strip leading whitespace | `x.strip()` | | 
 | Strip leading characters | `x.strip('abc')` | |
 | Substring up to first occurrence of _y_ | `x.split(y)[0]` | _y_ is excluded | 
@@ -103,10 +103,10 @@ nav_order: 1
 
 | What | How | Details |
 |---|---|---|
-| Left-pad to length $n$ | `x.ljust(n)` | |
-| Right-pad to length $n$ | `x.rjust(n)` | |
-| Left-right padding to length $n$ | `x.center(n)` | |
-| Replicate $n$ times | `x * n` | |
+| Left-pad to length _n_ | `x.ljust(n)` | |
+| Right-pad to length _n_ | `x.rjust(n)` | |
+| Left-right padding to length _n_ | `x.center(n)` | |
+| Replicate _n_ times | `x * n` | |
 | Concatenate | `x + y` | |
 | Join with iterable | `x.join(iter)` | |
 

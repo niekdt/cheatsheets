@@ -16,13 +16,13 @@ nav_order: 0
 | What | How | Details |
 |---|---|---|
 | Define vector | `c(1, 2, 3)` | |
-| Zeros, length $n$ | `numeric(n)` | |
-| Zeros, length $n$ | `vector('numeric', n)` | |
-| NaNs, length $n$ | `NaN[1:3]` | |
-| Sequence from $a$ to $b$ | `seq(a, b)` | |
-| Sequence between $a$ to $b$ of length $n$ | `seq(a, b, length.out=n)` | |
+| Zeros, length _n_ | `numeric(n)` | |
+| Zeros, length _n_ | `vector('numeric', n)` | |
+| NaNs, length _n_ | `NaN[1:3]` | |
+| Sequence from _a_ to _b_ | `seq(a, b)` | |
+| Sequence between _a_ to _b_ of length _n_ | `seq(a, b, length.out=n)` | |
 | Repeat vector | `rep(x, 2)` | |
-| Repeat vector up to length $n$ | `rep_len(x, n)` | |
+| Repeat vector up to length _n_ | `rep_len(x, n)` | |
 | Create vector or matrix depending on the columns | `mat.or.vec(1:5, nc=2)` | |
 
 ## Get
@@ -61,11 +61,11 @@ nav_order: 0
 | Replace NAs by zeros | `ifelse(is.na(x), 0, x)` | |
 | Replace specific values by zeros | `ifelse(x %in% values, 0, x)` | |
 | Replace elements at index with given values | `replace(x, c(2, 4), c(NA, Inf))` | |
-| Clip values below $a$ | `pmin(x, a)` | |
-| Clip values above $b$ | `pmax(x, b)` | |
+| Clip values below _a_ | `pmin(x, a)` | |
+| Clip values above _b_ | `pmax(x, b)` | |
 | Find element-wise min/max values between vectors | `pmax(x, y)` | |
 | Discretize values into bin number | `findInterval(1:4, c(0, 2, 4))` | |
-| Discretize values into $n$ levels | `cut(x, n)` | |
+| Discretize values into _n_ levels | `cut(x, n)` | |
 | Discretize values in intervals | `cut(x, breaks)` | |
 | Linear interpolation | `approxfun(x, method='linear')(x2)` | |
 | Spline interpolation | `splinefun(x)(x2)` | |
@@ -91,7 +91,7 @@ nav_order: 0
 | Exclude non-finite values | `x[is.finite(x)]` | |
 | Exclude non-finite values | `Filter(is.finite, x)` | |
 | Lagged difference | `diff(x)` | |
-| Sample $n$ elements | `sample(x, n)` | |
+| Sample _n_ elements | `sample(x, n)` | |
 
 ## Convert
 
