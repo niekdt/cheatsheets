@@ -174,7 +174,7 @@ Sorting can be handled automatically by setting a column as one of the keys thro
 | To wide format with aggregation | `dcast(dt, IDa + IDb ~ Param, value.var='Value', fun.aggregate=list(first, last), fill=NA)` | |
 | To wide format on a single grouping factor | `dcast(dt, ... ~ Group, value.var = "Value")` | |
 | To wide format with value column prefix | `dcast(dt, IDa + IDb ~ paste0('prefix', Param), value.var='Value')` | |
-| To wide format without index | ` unstack(dt, Value ~ Param) %>% as.data.table()` | |
+| To wide format without index | `unstack(dt, Value ~ Param) %>% as.data.table()` | |
 | To long format | `melt(dt, id=c('IDa', 'IDb'), measure=c('Param1', 'Param2'))` | |
 | To long format for specific columns (no index) | `melt(dt, id=character(), measure=c('Param1', 'Param2'))` | |
 | Transpose | `t(dt) %>% as.data.table()` | Drops column names! |

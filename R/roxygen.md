@@ -128,8 +128,8 @@ nav_order: 100
 | What | How | Details |
 |---|---|---|
 | In-line code evaluation | `` `r getRversion()` `` | Evaluated during every roxygenize call |
-| Code block evaluation | `\```{r}`<br>``<br>````` | Code blocks cannot refer to each other |
-| Generate figure | `\```{r iris-pairs-plot}`<br>`    pairs(iris[1:4])[unclass(iris$Species)])`<br>````` | |
+| Code block evaluation | ` ```{r}`<br><br>` ``` ` | Code blocks cannot refer to each other |
+| Generate figure | ` ```{r iris-pairs-plot}`<br>`    pairs(iris[1:4])[unclass(iris$Species)])`<br>` ``` ` | |
 | Dynamic documentation | ![image](https://github.com/niekdt/cheatsheets/assets/8193083/e8cd9182-e05b-4f48-a9a1-ff5edf34dcba) | |
 
 
