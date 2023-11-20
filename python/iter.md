@@ -17,7 +17,7 @@ nav_order: 2.2
 |---|---|---|
 | Create counter | `itertools.count()` | |
 | Create counter starting from _n_ | `itertools.count(n)` | |
-| Create counter starting from _n_ with step size $s$ | `itertools.count(n, s)` | |
+| Create counter starting from _n_ with step size _s_ | `itertools.count(n, s)` | |
 | Create limited counter from _n_ to _m_ | ? | |
 | Repeat constant _n_ times | `itertools.repeat(123, n)` | |
 | 2D coordinates grid from (0, 0) to (_n - 1_, _m - 1_ ) | `itertools.product(range(n), range(m))` | |
@@ -102,7 +102,7 @@ Note that each operation consumes element(s) of the iterator!
 | Sum | `sum(iter)` | |
 | Hash | `hash(iter)` | |
 | Reduce | `reduce(binary_fun, iter)` | |
-| Group by | `for key, group in itertools.groupby(robots, key=lambda x: x['faction']):`<br>`print(key)`<br>`print(list(group)) | |
+| Group by | `for key, group in itertools.groupby(robots, key=lambda x: x['faction']):`<br>`print(key)`<br>`print(list(group))` | |
 
 ## Test
 
@@ -110,7 +110,7 @@ Note that each operation consumes element(s) of the iterator!
 |---|---|---|
 | All elements are true | `all(bool_iter)` | |
 | All elements are false | `not any(bool_iter)` | |
-| All elements are equal | `g = groupby(x)`<br>`return next(g, True) and not next(g, False) | |
+| All elements are equal | `g = groupby(x)`<br>`return next(g, True) and not next(g, False)` | |
 | All elements are true conditional on function | `all(map(boolFun, iter))` | |
 | Any element is true | `any(bool_iter)` | |
 | Any element is false | `not all(bool_iter)` | |
@@ -119,6 +119,6 @@ Note that each operation consumes element(s) of the iterator!
 
 | What | How | Details |
 |---|---|---|
-| To list | `list(iter)` | |
-| To tuple | `tuple(iter)` | |
-| To dict | `dict(zip(key_iter, value_iter))` | |
+| List | `list(iter)` | |
+| Tuple | `tuple(iter)` | |
+| Dict | `dict(zip(key_iter, value_iter))` | |
