@@ -156,7 +156,7 @@ Sorting can be handled automatically by setting a column as one of the keys thro
 
 | What | How | Details |
 |---|---|---|
-| Inner join | `merge(dt1, dt2)`or`dt1[dt2, nomatch=0]` | |
+| Inner join | `merge(dt1, dt2)` or `dt1[dt2, nomatch=0]` | |
 | Inner join with mismatching keys | `merge(dt1, dt2, by.x=c('a1', 'b1'), by.y=c('b1', 'b2'))` | |
 | Outer join | `merge(dt1, dt2, all=TRUE)` | |
 | Outer join (mem efficient) | `dt12 = d[dt2, nomatch=0]`<br>`rbind(dt1[!dt12], dt12, dt2[!dt12])` | |
@@ -181,12 +181,14 @@ Sorting can be handled automatically by setting a column as one of the keys thro
 | Repeat rows by group | `dt[, lapply(.SD, rep, 10), by=ID]` | |
 | Repeat data.table along a sequence | `s = LETTERS[1:5]`<br>`dt2 = replicate(length(s), dt, simplify=FALSE) %>% setNames(s) %>% rbindlist(idcol=TRUE)` | |
 
+
 ## Convert
 
 | What | How | Details |
 |---|---|---|
-| To grouped list | `split(dt, by='Id')` | |
-| To matrix | `data.matrix(dt)` | |
+| Data.frame | `as.data.frame(dt)` | |
+| Grouped list | `split(dt, by='Id')` | |
+| Matrix | `data.matrix(dt)` | |
 
 
 ## Syntax notes
