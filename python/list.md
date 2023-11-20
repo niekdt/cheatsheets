@@ -151,21 +151,21 @@ All operations create a new list, but preserves references to the original eleme
 
 | What | How | Details |
 |---|---|---|
-| Iterate | `for e in x: | |
-| Iterate with index | `for i, e in enumerate(x): | |
-| Iterate with index starting from _s_ | `for i, e in enumerate(x, s): | |
-| Iterate over multiple lists | `for a, b in zip(x, y): | |
-| Iterate over multiple lists with index | `for i, (a, b) in enumerate(zip(x, y)): | |
-| Iterate over a list of lists for each nested element | `itertools.chain.from_iterable(x) | |
+| Iterate | `for e in x:` | |
+| Iterate with index | `for i, e in enumerate(x):` | |
+| Iterate with index starting from _s_ | `for i, e in enumerate(x, s):` | |
+| Iterate over multiple lists | `for a, b in zip(x, y):` | |
+| Iterate over multiple lists with index | `for i, (a, b) in enumerate(zip(x, y)):` | |
+| Iterate over a list of lists for each nested element | `itertools.chain.from_iterable(x)` | |
 
 ## Convert
 
 | What | How | Details |
 |---|---|---|
-| Multiple assignment | `x = [1, 2]`<br>`a, b = x | |
+| Multiple assignment | `x = [1, 2]`<br>`a, b = x` | |
 | Hash | `hash(tuple(x))` | |
-| To tuple | `tuple(x)` | |
-| To set | `set(x)` | | 
+| Tuple | `tuple(x)` | |
+| Set | `set(x)` | | 
 | To dict (from keys and values) | `dict(zip(keys, values))` | | 
 | Flatten a list of lists | `list(itertools.chain.from_iterable(x))` | |
 
