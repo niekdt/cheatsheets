@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Roxygen2
+title: roxygen2
 parent: R
 nav_order: 100
 ---
 
-# Roxygen2
+# roxygen2
 {: .no_toc}
 
 1. TOC
@@ -36,7 +36,8 @@ nav_order: 100
 | Display equation | `\deqn{a + b}` | |
 | Code | `` `mu <- mean(data)` `` | |
 | Code | `\code{mu <- mean(data)}` | |
-| Code block | `\````<br>`mu <- mean(data)`<br>`\```` | |
+| Code with backticks | ```` ` ``` code block example ``` ` ```` | |
+| Code block | ` ``` `<br>`mu <- mean(data)`<br>` ``` ` | |
 | Monospace font (looks like code) | `\preformatted{`<br>`    text`<br>`}` | | 
 | Package name | `\pkg{stats}` | |
 | Unordered list | `\itemize{`<br>`    \item Option A`<br>`    \item Option B`<br>`}` | |
