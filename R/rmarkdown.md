@@ -61,8 +61,8 @@ nav_order: 100
 
 | What | How | Details |
 |---|---|---|
-| Figure | ` ```{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}``` ` | [Source](https://holtzy.github.io/Pimp-my-rmd/) |
-| Subfigures | ` ```{r out.width=c('50%', '50%'), fig.show='hold'}`<br>`boxplot(1:10)`<br>`plot(rnorm(10))``` ` | [Source](https://holtzy.github.io/Pimp-my-rmd/) ` | 
+| Figure | ```` ```{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}``` ```` | [Source](https://holtzy.github.io/Pimp-my-rmd/) |
+| Subfigures | ```` ```{r out.width=c('50%', '50%'), fig.show='hold'}`<br>`boxplot(1:10)`<br>`plot(rnorm(10))``` ```` | [Source](https://holtzy.github.io/Pimp-my-rmd/) | 
 | Interactive ggplot | `p = ggplot(data, aes(x=x, y=y, color=z)) + geom_point()`<br>`plotly::ggplotly(p)` | |
 
 ### Tables
