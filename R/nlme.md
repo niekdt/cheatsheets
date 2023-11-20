@@ -60,4 +60,12 @@ Extract info from a fitted model.
 | What | How | Details |
 |---|---|---|
 | Coefficient significance | `car::Anova(model)` | |
-| Nested model improvement (likelihood ratio test) | `anova(model0, model1)` | |
+| Test for nested model improvement (likelihood ratio test) | `anova(model0, model1)` | |
+
+## Effects
+
+| What | How | Details |
+|---|---|---|
+| Cohen's _d_ (effect size) for main effects  | `EMAtools::lme.dscore(model, type = 'nlme')` | ? |
+| Cohen's _f_ for main effects | `effectsize::cohens_f(model)` | `d = 2 * f` |
+| Cohen's _d_ (effect size) for group difference | `emg = emmeans::emmeans(model, ~ diagnosis)`<br>`emmeans::eff_size(emg, sigma = sigma(model), edf = data.frame(pairs(emg))$df[1])` | ? |
