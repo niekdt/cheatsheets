@@ -1,11 +1,10 @@
-# Ksh
 ---
 layout: default
-title: Ksh
+title: ksh
 parent: Shell
 ---
 
-# Ksh
+# ksh
 {: .no_toc}
 
 1. TOC
@@ -71,11 +70,11 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 
 | What | How | Details |
 |---|---|---|
-| Chain (pipe) commands | `command1 \| command2 \| command3` | |
+| Chain (pipe) commands | `command1 | command2 | command3` | |
 | If | `if [[ $value -eq 7 ]];then`<br>`    print "$value is 7"`<br>`fi` | |
 | If-else | `if [[ $value -eq 7 ]];then`<br>`    print "$value is 7"`<br>`else`<br>`    print "$value is not 7"`<br>`fi` | |
 | If-elseif | `if [[ $value -eq 7 ]];then`<br>`    print "$value is 7"`<br>`elif [[ $value -eq 8 ]];then`<br>`    print "$value is not 7 but 8"`<br>`else`<br>`    print "$value is neither 7 or 8"`<br>`fi` | |
-| Switch | `case $var in`<br>`    john\|fred) print $invitation;;`<br>`    martin)  print $declination;;`<br>`    *)  print "Wrong name...";;`<br>`esac` | There is no "fall through" with ;;. You hit only one set of commands.. UNLESS you use ";&" instead of ";;'. You can use WILDCARDS to match strings.
+| Switch | `case $var in`<br>`    john|fred) print $invitation;;`<br>`    martin)  print $declination;;`<br>`    *)  print "Wrong name...";;`<br>`esac` | There is no "fall through" with ;;. You hit only one set of commands.. UNLESS you use ";&" instead of ";;'. You can use WILDCARDS to match strings.
 | For | `for foo in $(ls);do`<br>`    print "\$count is $count"`<br>`    (( count -= 1 ))`<br>`done | Use `continue` to skip the loop. Use `break` to exit the loop. |
 | Until | | |
 | Pause for _n_ seconds | `sleep n` |
@@ -87,7 +86,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Stop execution with unspecified error | `exit 1` | |
 | Throw error with message | `echo "Error!" 1>&2`<br>`exit 2`
 | Run command conditional on success of former | `command1 && command2` | |
-| Run command only if first fails | `command1 \|\| command2` | |
+| Run command only if first fails | `command1 || command2` | |
 | Run code on error | `trap "echo whoops" ERR` | |
 | Run code on interupt | `trap "echo whoops" INT` | e.g., Ctrl+C |
 | Run code on error or interrupt | `trap "echo whoops" ERR INT` | |
@@ -107,7 +106,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | What | How | Details |
 |---|---|---|
 | And operator | `&&` |
-| Or operator | `\|\|` |
+| Or operator | `||` |
 | Equal string _str_ | `$var = "str"` | |
 | Not equals string _str_ | `$var != "str"` | |
 | Equals number _num_ | `$var -eq num` | |
@@ -153,7 +152,7 @@ See http://www.bolthole.com/solaris/ksh-basics.html
 | Check if directory is missing | `[ ! -d "$DIRPATH" ]` | |
 | Check if file exists | `[ -f "$FILEPATH" ]` | |
 | Create directory | `mkdir "$DIRPATH"` | |
-| Count the number of files in a directory | `count=``find $dir -maxdepth 1 -name "*.txt" -type f \| wc -l`` | |
+| Count the number of files in a directory | `count=``find $dir -maxdepth 1 -name "*.txt" -type f | wc -l`` | |
 
 ## Notes
 * Start script with: `#!/bin/ksh`

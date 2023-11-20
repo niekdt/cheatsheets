@@ -19,7 +19,7 @@ nav_order: 2.3
 | Define with string keys | `x = {'color': 'blue', 'size': 'large'}` | |
 | Define from keys (iterator) and constant value _v_ | `dict.fromkeys(key_iter, v)` | |
 | Define dynamically from iterators for keys and values | `x = dict(zip(key_iter, value_iter))` | |
-| Merge dictionaries | `z = x \| y` | |
+| Merge dictionaries | `z = x | y` | |
 | Merge dictionaries | `z = {**x, **y}` | ? |
 
 ## Get
@@ -63,7 +63,7 @@ nav_order: 2.3
 | What | How | Details |
 |---|---|---|
 | Add/update entry | `x['size'] = 'small'` | |
-| Merge with another dictionary | `x \|= y` | |
+| Merge with another dictionary | `x |= y` | |
 | Merge with another dictionary | `x.update(y)` | |
 
 ## Shrink

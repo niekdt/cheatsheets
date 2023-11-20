@@ -1,4 +1,3 @@
-# PBS
 ---
 layout: default
 title: PBS
@@ -26,7 +25,7 @@ parent: Shell
 | Kill range of jobs | `qdel {$id_low, $id_high)` | |
 | Kill array job | `qdel $id[]` | |
 | Kill array job range | `qdel -t 1-10 $id[]` | |
-| Kill all jobs | `qselect -u $user \| xargs qdel` | | 
+| Kill all jobs | `qselect -u $user | xargs qdel` | | 
 
 ## qsub arguments
 
