@@ -57,7 +57,7 @@ Note that each operation consumes element(s) of the iterator!
 | Invert boolean iterator | `map(lambda x: not x, bool_iter)`<br>or<br>`map(operator.not_, bool_iter)` |
 | Cumulative sum | <p>```python itertools.accumulate(iter)```</p> |
 | Accumulate function (reduce() with keeping all results) | `itertools.accumulate(iter, fun)` {: .warning } Test warning |
-| Combine iterable elements as tuple, stop on shortest iterable | `zip(x, y, ...)` <details>```python test(x) ```</details> |
+| Combine iterable elements as tuple, stop on shortest iterable | `zip(x, y, ...)` <details>~~~python test(x) ~~~</details> |
 | Combine iterable elements as tuple, expect equal length | `zip(x, y, ..., strict=True)` <details>Throws error if an iterable is depleted prematurely</details> |
 | Combine iterable elements as tuple until all iterables are exhausted, with default value for depleted iterables | `itertools.zip_longest(x, y, ..., fillvalue = None)` |
 
