@@ -55,10 +55,10 @@ Note that each operation consumes element(s) of the iterator!
 | Map elements | `x + 1 for x in iter` |
 | Map elements with function | `map(fun, iter)` |
 | Invert boolean iterator | `map(lambda x: not x, bool_iter)`<br>or<br>`map(operator.not_, bool_iter)` |
-| Cumulative sum | `itertools.accumulate(iter)` |
-| Accumulate function (reduce() with keeping all results) | `itertools.accumulate(iter, fun)` |
-| Combine iterable elements as tuple, stop on shortest iterable | `zip(x, y, ...)` |
-| Combine iterable elements as tuple, expect equal length | `zip(x, y, ..., strict=True)` <details><summary>Details</summary>Throws error if an iterable is depleted prematurely</details> |
+| Cumulative sum | <p>```python itertools.accumulate(iter)```</p> |
+| Accumulate function (reduce() with keeping all results) | `itertools.accumulate(iter, fun)` <details><code>python test(x)</code></details> |
+| Combine iterable elements as tuple, stop on shortest iterable | `zip(x, y, ...)` <details>```python test(x) ```</details> |
+| Combine iterable elements as tuple, expect equal length | `zip(x, y, ..., strict=True)` <details>Throws error if an iterable is depleted prematurely</details> |
 | Combine iterable elements as tuple until all iterables are exhausted, with default value for depleted iterables | `itertools.zip_longest(x, y, ..., fillvalue = None)` |
 
 ## Shrink
