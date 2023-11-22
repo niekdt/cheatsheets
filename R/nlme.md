@@ -49,6 +49,7 @@ Extract info from a fitted model.
 | Log-likelihood | `logLik(model)` | |
 | AIC | `AIC(model)` | |
 | BIC | `BIC(model)` | |
+| ICC | `performance::icc(model)` | Proportion of the total variance explained by the between-cluster variance. Higher is better. 0.1 is considered a meaningful threshold. |
 | Marginal pseudo R-squared | `r.squaredGLMM(model)[1, 'R2m']` | |
 | Conditional pseudo R-squared | `r.squaredGLMM(model)[1, 'R2c']` | |
 | Plot residuals against predicted | `plot(model)` | |
@@ -60,6 +61,7 @@ Extract info from a fitted model.
 | What | How | Details |
 |---|---|---|
 | Coefficient significance | `car::Anova(model)` | |
+| Test for nested model improvement (likelihood ratio test) | `performance::test_lrt(model0, model1)` | |
 | Test for nested model improvement (likelihood ratio test) | `anova(model0, model1)` | |
 
 ## Effects
